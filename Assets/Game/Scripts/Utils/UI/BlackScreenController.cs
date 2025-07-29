@@ -1,4 +1,3 @@
-using System;
 using Utils.Singleton;
 using DG.Tweening;
 using UnityEngine;
