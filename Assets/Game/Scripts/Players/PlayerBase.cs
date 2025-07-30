@@ -67,14 +67,15 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         float x = Move.ReadValue<Vector2>().x;
         IsMovingFromInput = x != 0;
 
-        if (!isGrounded && OtherPlayerBase.isGrounded)
-        {
-            SwingMovement(x);
-        }
-        else
-        {
-            Movement(x);
-        }
+        Movement(x);
+        // if (!isGrounded && OtherPlayerBase.isGrounded)
+        // {
+        //     SwingMovement(x);
+        // }
+        // else
+        // {
+        //     Movement(x);
+        // }
     }
     
     #region Movement

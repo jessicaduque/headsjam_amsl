@@ -15,7 +15,7 @@ public class Door : MonoBehaviour
     {
         _height = GetComponent<SpriteRenderer>().bounds.size.y;
         _closedPosition = transform.position;
-        _openedPosition = _closedPosition + new Vector3(0, _height, 0);
+        _openedPosition = _closedPosition - new Vector3(0, _height, 0);
     }
 
     private void Start()
