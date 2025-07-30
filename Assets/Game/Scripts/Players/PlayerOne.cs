@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerOne : PlayerBase
 {
+    [Header("For rope mechanics")]
     [SerializeField] private SpringJoint2D springJoint;
     [SerializeField] private Transform playerTwoTransform;
     [SerializeField] private Rigidbody2D playerTwoRigidbody;
-    [SerializeField] private int maxDistance = 4;
+    [SerializeField] private int maxRopeLength = 4;
     private Player1 _playerInputs;
+    private GameObject _carriedObject;
     
     protected override void Awake()
     {
@@ -25,13 +28,13 @@ public class PlayerOne : PlayerBase
     {
         float playerDistance = Vector2.Distance(transform.position, playerTwoTransform.position);
         
-        if (playerDistance < maxDistance)
+        if (playerDistance < maxRopeLength)
         {
             springJoint.distance = playerDistance;
         }
         else
         {
-            springJoint.distance = maxDistance;
+            springJoint.distance = maxRopeLength;
         }
     }
 
@@ -40,5 +43,4 @@ public class PlayerOne : PlayerBase
         Debug.Log("Player 1's power not implemented yet!");
         // Não implementado ainda
     }
-
 }
