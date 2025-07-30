@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 685db7aaf6434d344aab0d01f337b11e, type: 3}
-  m_Name: buttonclick
+  m_Name: uibuttonclick
   m_EditorClassIdentifier: 
-  soundName: buttonclick
+  soundName: uibuttonclick
   clip: {fileID: 0}
   loop: 0
   volume: 1

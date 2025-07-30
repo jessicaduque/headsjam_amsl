@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -55,6 +56,11 @@ public class SettingsUI : MonoBehaviour
         CheckInitialAudio();
     }
 
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
     #region Audio Changes
 
     private void CheckInitialAudio()
@@ -71,7 +77,7 @@ public class SettingsUI : MonoBehaviour
     {
         if (!_musicCooldown)
         {
-            _audioManager.PlaySfx("buttonclick");
+            _audioManager.PlaySfx("uibuttonclick");
             _musicOn = !_musicOn;
             ChangeSpritesMusic();
             _audioManager.ChangeStateMixerMusic(_musicOn);
@@ -87,7 +93,7 @@ public class SettingsUI : MonoBehaviour
             _effectsOn = !_effectsOn;
             ChangeSpritesEffects();
             _audioManager.ChangeStateMixerSFX(_effectsOn);
-            if (_effectsOn) { _audioManager.PlaySfx("buttonclick"); }
+            if (_effectsOn) { _audioManager.PlaySfx("uibuttonclick"); }
             StartCoroutine(EffectsCooldown());
             b_effects.enabled = false;
             _effectsCooldown = true;

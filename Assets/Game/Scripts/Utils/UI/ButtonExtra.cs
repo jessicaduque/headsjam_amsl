@@ -21,7 +21,7 @@ public class ButtonExtra : MonoBehaviour
 
     private void MakeSound()
     {
-        _audioManager.PlaySfx("buttonclick");
+        _audioManager.PlaySfx("uibuttonclick");
         _thisButton.enabled = false;
         StartCoroutine(Reset());
     }        

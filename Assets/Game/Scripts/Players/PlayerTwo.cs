@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerTwo : PlayerBase
 {
+    [SerializeField] private float rayLength;
     private Player2 _playerInputs;
 
     protected override void Awake()
@@ -17,7 +18,19 @@ public class PlayerTwo : PlayerBase
     
     protected override void DoPowerControl(InputAction.CallbackContext context)
     {
-        Debug.Log("Player 2's power not implemented yet!");
-        // Não implementado ainda
+        Vector2 direction = transform.right * Mathf.Sign(transform.localScale.x);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayLength, LayerMask.GetMask("InteractableObjects"));
+        Debug.DrawRay(transform.position, direction * rayLength, Color.red, 1f);
+
+        if (hit.collider != null)
+        {
+            GlassObject glass = hit.collider.GetComponent<GlassObject>();
+            if (glass != null)
+            {
+                Debug.Log("Glass object hit! Breaking...");
+                glass.BreakGlassObject();
+            }
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EndLevelObject : MonoBehaviour
@@ -8,7 +9,12 @@ public class EndLevelObject : MonoBehaviour
     private float _fadeOutTime = 1.2f;
     private BlackScreenController BlackScreenController => BlackScreenController.I;
     private LevelManager _levelManager => LevelManager.I;
-    
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

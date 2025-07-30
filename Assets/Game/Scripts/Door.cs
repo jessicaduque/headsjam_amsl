@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -23,6 +24,11 @@ public class Door : MonoBehaviour
         {
             transform.position = _openedPosition;
         }
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator Move(bool buttonPressed)

@@ -1,27 +1,20 @@
 using System.Collections;
 using UnityEngine;
+using Utils.Singleton;
 using Random = UnityEngine.Random;
 
-public class CameraShake : MonoBehaviour
+public class CameraShake : DontDestroySingleton<CameraShake>
 {
     [SerializeField] private AnimationCurve curve;
-    private readonly float _shakeDuration = 1f;
-    
-    //private Player_Penguin_Controller _playerPenguinController => Player_Penguin_Controller.I;
+    private readonly float _shakeDuration = 0.8f;
 
-
-    private void Start()
-    {
-        //_playerPenguinController.HealthAffectedEvent += DoCameraShake;
-    }
-
-    private void DoCameraShake()
+    public void DoCameraShake()
     {
         StopAllCoroutines();
         StartCoroutine(Shake());
     }
 
-    IEnumerator Shake()
+    private IEnumerator Shake()
     {
         Vector3 startPosition = transform.position;
         float elapsedTime = 0f;
