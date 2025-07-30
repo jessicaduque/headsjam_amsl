@@ -1,6 +1,8 @@
+using DG.Tweening;
 using UnityEngine;
+using Utils.Singleton;
 
-public class RopeVisual : MonoBehaviour
+public class RopeVisual : Singleton<RopeVisual>
 {
     [SerializeField] Transform playerOne;
     [SerializeField] Transform playerTwo;
@@ -10,8 +12,10 @@ public class RopeVisual : MonoBehaviour
 
     private LineRenderer line;
 
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
+        
         line = GetComponent<LineRenderer>();
         line.positionCount = points;
         line.startWidth = 0.5f;
@@ -37,5 +41,10 @@ public class RopeVisual : MonoBehaviour
         }
 
         line.material.mainTextureScale = new Vector2(distance * 5f, 1);
+    }
+
+    public void RopeFadeOut(float time)
+    {
+        line.DOColor(new Color2(Color.white, Color.white), new Color2(Color.clear, Color.clear), time);
     }
 }

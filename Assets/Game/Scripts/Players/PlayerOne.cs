@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,4 +40,5 @@ public class PlayerOne : PlayerBase
         Debug.Log("Player 1's power not implemented yet!");
         // Não implementado ainda
     }
+
 }

@@ -3,12 +3,36 @@ using UnityEngine;
 public class EndLevelObject : MonoBehaviour
 {
     [SerializeField] private string nameScene;
-    
+
+    private int _amountPlayersIn = 0;
+    private float _fadeOutTime = 1.2f;
     private BlackScreenController BlackScreenController => BlackScreenController.I;
+    private LevelManager _levelManager => LevelManager.I;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Players"))
+        if (collision.CompareTag("Player"))
+        {
+            if (_levelManager._levelState == LevelState.END) // Make sure the level hasn't been considered finished already by some death or something
+            {
+                return;
+            }
+            
+            _levelManager.LevelComplete();
+            
+            PlayerBase[] players = FindObjectsByType<PlayerBase>(FindObjectsSortMode.None);
+            RopeVisual.I.RopeFadeOut(_fadeOutTime);
+            foreach (PlayerBase player in players)
+            {
+                StartCoroutine(player.GoToEndLevelObject(transform.position, this, _fadeOutTime));
+            }
+        }
+    }
+
+    public void PlayerEntered()
+    {
+        _amountPlayersIn++;
+        if (_amountPlayersIn == 2)
         {
             BlackScreenController.FadeOutScene(nameScene);
         }

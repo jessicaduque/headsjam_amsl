@@ -1,3 +1,5 @@
+using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +10,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     // Movement
     private readonly float _speed = 50f;
-    private Rigidbody2D _rigidbody2D;
     
     // Jumping
     private bool _isJumping;
@@ -18,55 +19,60 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     [HideInInspector] public bool isGrounded = true;
     
     // Health
-    private float _health = 10f;
+    private float _health = 1f;
     public bool _isDead { get; private set; }
     
     // Animation
     private Animator _animator;
     
+    // Sprite
+    private SpriteRenderer _spriteRenderer;
+    
     // Input
     protected InputAction Move, Jump, Power;
 
-    //private LevelController _levelController => LevelController.I;
+    private LevelManager _levelManager => LevelManager.I;
     
     protected virtual void Awake()
     {
         _animator = GetComponent<Animator>();
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     private void Start()
     {
         Debug.Log("Remember that for now player inputs are being automatically turned on at the start!");
         EnableInputs();
-        _rigidbody = GetComponent<Rigidbody2D>();
-        // _levelController.beginLevelEvent += EnableInputs;
-        //
-        // _levelController.timeUpEvent += DisableInputs;
-        // _levelController.pauseEvent += DisableInputs;
+        
+        _levelManager.startLevelEvent += EnableInputs;
+        
+        _levelManager.timeUpEvent += DisableInputs;
+        _levelManager.pauseEvent += DisableInputs;
+        _levelManager.gameOverEvent += DisableInputs;
+        _levelManager.levelCompleteEvent += EnableInputs;
     }
 
     private void FixedUpdate()
     {
-        Movement();
+        Movement(Move.ReadValue<Vector2>().x);
     }
     
     #region Movement
     
-    private void Movement()
+    private void Movement(float speedX)
     {
-        float speedX = Move.ReadValue<Vector2>().x;
         MovementAnimationControl(speedX);
         BodyRotate(speedX);
 
         // Apply force for movement
         Vector2 force = new Vector2(speedX * _speed, 0f);
-        _rigidbody2D.AddForce(force, ForceMode2D.Force);
+        _rigidbody.AddForce(force, ForceMode2D.Force);
         
         float maxSpeed = 5f;
-        if (_rigidbody2D.linearVelocity.magnitude > maxSpeed)
+        if (_rigidbody.linearVelocity.magnitude > maxSpeed)
         {
-            _rigidbody2D.linearVelocity = _rigidbody2D.linearVelocity.normalized * maxSpeed;
+            _rigidbody.linearVelocity = _rigidbody.linearVelocity.normalized * maxSpeed;
         }
     }
     
@@ -76,6 +82,32 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
             transform.localScale = new Vector3(1, 1, 1);
         else if(speedX < 0f)
             transform.localScale = new Vector3(-1, 1, 1);
+    }
+    public IEnumerator GoTo(Vector3 position)
+    {
+        float speed = 1;
+        if(position.x < transform.position.x) speed = -1f;
+        
+        while (!Mathf.Approximately(transform.position.x, position.x))
+        {
+            Movement(speed);
+            yield return null;
+        }
+        _rigidbody.linearVelocity = Vector2.zero;
+    }
+    
+    public IEnumerator GoToEndLevelObject(Vector3 position, EndLevelObject endObject, float fadeDuration)
+    {
+        float speed = 1;
+        if(position.x < transform.position.x) speed = -1f;
+
+        while (Mathf.Abs(transform.position.x - position.x) > 0.2f) 
+        {
+            Movement(speed);
+            yield return null;
+        }
+        _rigidbody.linearVelocity = Vector2.zero;
+        _spriteRenderer.DOFade(0, fadeDuration).OnComplete(endObject.PlayerEntered);
     }
     
     #endregion
@@ -124,7 +156,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
 
     private void DoJumpStarted(InputAction.CallbackContext context)
     {
-        // Pulo
         if (isGrounded)
         {
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _speed);
@@ -169,8 +200,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         if (_health <= 0)
         {
             _isDead = true;
-            Debug.Log("Something to happen when player dies not implemented yet!");
-            // Nada implementado ainda
+            _levelManager.GameOver();
         }
     }
     
