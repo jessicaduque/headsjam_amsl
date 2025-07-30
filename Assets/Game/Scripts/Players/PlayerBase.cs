@@ -3,9 +3,19 @@ using UnityEngine.InputSystem;
 
 public abstract class PlayerBase : MonoBehaviour, IDamageable
 {
+    // Collider
+    private Rigidbody2D _rigidbody;
+    
     // Movement
     private readonly float _speed = 50f;
     private Rigidbody2D _rigidbody2D;
+    
+    // Jumping
+    private bool _isJumping;
+    private float _jumpCounter;
+    private readonly float _jumpTime = 0.3f;
+    private readonly float _jumpForce = 0.5f;
+    [HideInInspector] public bool isGrounded = true;
     
     // Health
     private float _health = 10f;
@@ -29,6 +39,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     {
         Debug.Log("Remember that for now player inputs are being automatically turned on at the start!");
         EnableInputs();
+        _rigidbody = GetComponent<Rigidbody2D>();
         // _levelController.beginLevelEvent += EnableInputs;
         //
         // _levelController.timeUpEvent += DisableInputs;
@@ -88,7 +99,8 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     public void EnableInputs()
     {
         Power.started += DoPowerControl;
-        Jump.started += DoJumpControl;
+        Jump.started += DoJumpStarted;
+        Jump.performed += DoJumpPerformed;
     
         Move.Enable();
         Power.Enable();
@@ -98,7 +110,8 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     public void DisableInputs()
     {
         Power.started -= DoPowerControl;
-        Jump.started += DoJumpControl;
+        Jump.started -= DoJumpStarted;
+        Jump.performed -= DoJumpPerformed;
     
         Move.Disable();
         Power.Disable();
@@ -109,10 +122,30 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     #region Jump Control
 
-    private void DoJumpControl(InputAction.CallbackContext context)
+    private void DoJumpStarted(InputAction.CallbackContext context)
     {
-        Debug.Log("Jump not implemented yet!");
-        // Nada implementado ainda
+        // Pulo
+        if (isGrounded)
+        {
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _speed);
+        }
+
+        // Isso não foi implementado ainda (isso vai pro Update)
+        // if (_rigidbody.linearVelocity.y > 0f && _isJumping)
+        // {
+        //     _rigidbody.linearVelocity += ;
+        // }
+    }
+
+    private void DoJumpPerformed(InputAction.CallbackContext context)
+    {
+        _isJumping = false;
+        _jumpCounter = 0f;
+
+        if (_rigidbody.linearVelocity.y > 0f)
+        {
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 0.6f);
+        }
     }
     
     #endregion
