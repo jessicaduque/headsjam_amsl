@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public abstract class PlayerBase : MonoBehaviour, IDamageable
 {
     // Other player
-    [SerializeField] private Transform otherPlayerTransform;
+    [SerializeField] GameObject otherPlayer;
+    protected Transform OtherPlayerTransform;
     protected PlayerBase OtherPlayerBase;
     
     // Collider
@@ -20,7 +21,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     private bool _isJumping;
     private float _jumpCounter;
     private readonly float _jumpTime = 0.3f;
-    private readonly float _jumpForce = 0.5f;
+    private readonly float _jumpForce = 4f;
     public bool isGrounded { get; private set; } = true;
     
     // Health
@@ -45,9 +46,10 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
-    private void Start()
+    protected virtual void Start()
     {
-        OtherPlayerBase = otherPlayerTransform.GetComponent<PlayerBase>();
+        OtherPlayerBase = otherPlayer.GetComponent<PlayerBase>();
+        OtherPlayerTransform = otherPlayer.GetComponent<Transform>();
         
         Debug.Log("Remember that for now player inputs are being automatically turned on at the start!");
         EnableInputs();
@@ -74,8 +76,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
             Movement(x);
         }
     }
-    
-    
     
     #region Movement
     
@@ -108,7 +108,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     private void SwingMovement(float speedX)
     {
-        Vector2 ropeDirection = (otherPlayerTransform.position - transform.position).normalized;
+        Vector2 ropeDirection = (OtherPlayerTransform.position - transform.position).normalized;
         Vector2 perpendicular = Vector2.Perpendicular(ropeDirection); 
         float input = speedX;
 
@@ -141,8 +141,14 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
             Movement(speed);
             yield return null;
         }
-        _rigidbody.linearVelocity = Vector2.zero;
+        FreezePlayer();
         _spriteRenderer.DOFade(0, fadeDuration).OnComplete(endObject.PlayerEntered);
+    }
+
+    public void FreezePlayer()
+    {
+        DisableInputs();
+        _rigidbody.linearVelocity = Vector2.zero;
     }
     
     #endregion
@@ -157,6 +163,11 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     protected void AnimationTrigger(string triggerName)
     {
         _animator.SetTrigger(triggerName);
+    }
+    
+    protected void AnimationBool(string boolName, bool enable)
+    {
+        _animator.SetBool(boolName, enable);
     }
     
     #endregion

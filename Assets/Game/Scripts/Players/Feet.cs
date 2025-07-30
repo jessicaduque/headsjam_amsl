@@ -4,8 +4,9 @@ public class Feet : MonoBehaviour
 {
     [SerializeField] private PlayerBase _player;
     
-    public void IsGrounded(bool isGrounded)
+    private void IsGrounded(bool isGrounded)
     {
+        Debug.Log("isGrounded: " + isGrounded);
         _player.SetIsGrounded(isGrounded);
     }
 

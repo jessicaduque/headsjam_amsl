@@ -22,11 +22,13 @@ public class PlayerTwo : PlayerBase
         OtherPlayerBase.DisableInputs();
         DisableInputs();
         
-        AnimationTrigger("singchirp");
+        AnimationBool("singchirp", true);
+        StartCoroutine(ChirpingCoroutine());
     }
 
-    public void ChirpingEndAnimatorCallback()
+    private IEnumerator ChirpingCoroutine()
     {
+        yield return new WaitForSeconds(2);
         Vector2 direction = transform.right * Mathf.Sign(transform.localScale.x);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayLength, LayerMask.GetMask("InteractableObjects"));
@@ -42,6 +44,7 @@ public class PlayerTwo : PlayerBase
             }
         }
         
+        AnimationBool("singchirp", false);
         OtherPlayerBase.EnableInputs();
         EnableInputs();
     }

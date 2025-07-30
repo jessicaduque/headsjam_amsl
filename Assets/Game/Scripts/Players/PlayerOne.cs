@@ -1,16 +1,12 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerOne : PlayerBase
 {
     [Header("For rope mechanics")]
     [SerializeField] private SpringJoint2D springJoint;
-    [SerializeField] private Transform playerTwoTransform;
-    [SerializeField] private Rigidbody2D playerTwoRigidbody;
     [SerializeField] private int maxRopeLength = 4;
+    
     private Player1 _playerInputs;
     private GameObject _carriedObject;
     
@@ -23,13 +19,12 @@ public class PlayerOne : PlayerBase
         Jump = _playerInputs.Player.Jump;
         Power = _playerInputs.Player.Power;
     }
-    
 
     protected override void Update()
     {
         base.Update();
         
-        float playerDistance = Vector2.Distance(transform.position, playerTwoTransform.position);
+        float playerDistance = Vector2.Distance(transform.position, OtherPlayerTransform.position);
         
         if (playerDistance < maxRopeLength)
         {
