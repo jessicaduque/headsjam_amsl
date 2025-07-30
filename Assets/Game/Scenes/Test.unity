@@ -167,6 +167,7 @@ MonoBehaviour:
   occurAfterVelocity: 4
   dustFormationPeriod: 0.2
   playerRb: {fileID: 1918300467}
+  player: {fileID: 1918300465}
 --- !u!1 &624722257
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +831,7 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 0
+    enabled: 1
     type: 12
     angle: 25
     length: 5
@@ -6375,7 +6376,7 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 0
+    enabled: 1
     type: 12
     angle: 25
     length: 5
@@ -10651,6 +10652,7 @@ MonoBehaviour:
   occurAfterVelocity: 4
   dustFormationPeriod: 0.2
   playerRb: {fileID: 1118960905}
+  player: {fileID: 1118960903}
 --- !u!1001 &1483282572
 PrefabInstance:
   m_ObjectHideFlags: 0

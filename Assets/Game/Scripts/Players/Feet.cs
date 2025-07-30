@@ -6,7 +6,7 @@ public class Feet : MonoBehaviour
     
     public void IsGrounded(bool isGrounded)
     {
-        _player.isGrounded = isGrounded;
+        _player.SetIsGrounded(isGrounded);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

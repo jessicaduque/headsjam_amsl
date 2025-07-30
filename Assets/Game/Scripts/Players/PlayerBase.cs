@@ -9,15 +9,15 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     private Rigidbody2D _rigidbody;
     
     // Movement
-    private readonly float _speed = 50f; 
-    private FeetParticleController _feetParticles;
+    private readonly float _speed = 50f;
+    public bool IsMovingFromInput { get; private set; }
     
     // Jumping
     private bool _isJumping;
     private float _jumpCounter;
     private readonly float _jumpTime = 0.3f;
     private readonly float _jumpForce = 0.5f;
-    [HideInInspector] public bool isGrounded = true;
+    public bool isGrounded { get; private set; } = true;
     
     // Health
     private float _health = 1f;
@@ -39,7 +39,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _feetParticles = GetComponentInChildren<FeetParticleController>();
     }
     
     private void Start()
@@ -57,7 +56,9 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
 
     private void FixedUpdate()
     {
-        Movement(Move.ReadValue<Vector2>().x);
+        float x = Move.ReadValue<Vector2>().x;
+        IsMovingFromInput = x != 0;
+        Movement(x);
     }
     
     #region Movement
@@ -208,6 +209,15 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
             _isDead = true;
             _levelManager.GameOver();
         }
+    }
+    
+    #endregion
+    
+    #region SET
+
+    public void SetIsGrounded(bool grounded)
+    {
+        isGrounded = grounded;
     }
     
     #endregion
