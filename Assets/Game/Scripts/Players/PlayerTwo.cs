@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,14 @@ public class PlayerTwo : PlayerBase
     
     protected override void DoPowerControl(InputAction.CallbackContext context)
     {
+        OtherPlayerBase.DisableInputs();
+        DisableInputs();
+        
+        AnimationTrigger("singchirp");
+    }
+
+    public void ChirpingEndAnimatorCallback()
+    {
         Vector2 direction = transform.right * Mathf.Sign(transform.localScale.x);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayLength, LayerMask.GetMask("InteractableObjects"));
@@ -32,5 +41,8 @@ public class PlayerTwo : PlayerBase
                 glass.BreakGlassObject();
             }
         }
+        
+        OtherPlayerBase.EnableInputs();
+        EnableInputs();
     }
 }
