@@ -23,9 +23,12 @@ public class PlayerOne : PlayerBase
         Jump = _playerInputs.Player.Jump;
         Power = _playerInputs.Player.Power;
     }
+    
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         float playerDistance = Vector2.Distance(transform.position, playerTwoTransform.position);
         
         if (playerDistance < maxRopeLength)

@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 
 public abstract class PlayerBase : MonoBehaviour, IDamageable
 {
+    // Other player
+    [SerializeField] private Transform otherPlayerTransform;
+    private PlayerBase _otherPlayerBase;
+    
     // Collider
     private Rigidbody2D _rigidbody;
     
@@ -43,6 +47,8 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     private void Start()
     {
+        _otherPlayerBase = otherPlayerTransform.GetComponent<PlayerBase>();
+        
         Debug.Log("Remember that for now player inputs are being automatically turned on at the start!");
         EnableInputs();
         
@@ -54,12 +60,22 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         _levelManager.levelCompleteEvent += EnableInputs;
     }
 
-    private void FixedUpdate()
+    protected virtual void Update()
     {
         float x = Move.ReadValue<Vector2>().x;
         IsMovingFromInput = x != 0;
-        Movement(x);
+
+        if (!isGrounded && _otherPlayerBase.isGrounded)
+        {
+            SwingMovement(x);
+        }
+        else
+        {
+            Movement(x);
+        }
     }
+    
+    
     
     #region Movement
     
@@ -90,6 +106,19 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
             transform.localScale = new Vector3(-1, 1, 1);   
         }
     }
+    
+    private void SwingMovement(float speedX)
+    {
+        Vector2 ropeDirection = (otherPlayerTransform.position - transform.position).normalized;
+        Vector2 perpendicular = Vector2.Perpendicular(ropeDirection); 
+        float input = speedX;
+
+        if (Vector2.Dot(perpendicular, Vector2.up) < 0)
+            perpendicular = -perpendicular;
+
+        _rigidbody.AddForce(perpendicular * (input * 10f), ForceMode2D.Force); 
+    }
+    
     public IEnumerator GoTo(Vector3 position)
     {
         float speed = 1;
