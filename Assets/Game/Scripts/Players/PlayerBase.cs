@@ -84,7 +84,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         MovementAnimationControl(speedX);
         BodyRotate(speedX);
 
-        // Apply force for movement
         Vector2 force = new Vector2(speedX * _speed, 0f);
         _rigidbody.AddForce(force, ForceMode2D.Force);
         
