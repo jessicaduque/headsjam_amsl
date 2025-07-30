@@ -15,18 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Power",
-                    "type": "Button",
-                    "id": "328ad109-e6b3-4f5e-9066-171c3bb6dc32",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "da0af694-5e02-4cf0-ad99-85d271d8625e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Tap,Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Power",
+                    "type": "Button",
+                    "id": "328ad109-e6b3-4f5e-9066-171c3bb6dc32",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
