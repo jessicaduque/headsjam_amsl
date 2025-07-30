@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public abstract class PlayerBase : MonoBehaviour, IDamageable
 {
     // Movement
-    private readonly float _speed = 5f;
+    private readonly float _speed = 50f;
+    private Rigidbody2D _rigidbody2D;
     
     // Health
     private float _health = 10f;
@@ -21,6 +22,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     protected virtual void Awake()
     {
         _animator = GetComponent<Animator>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
     }
     
     private void Start()
@@ -44,8 +46,17 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     {
         float speedX = Move.ReadValue<Vector2>().x;
         MovementAnimationControl(speedX);
-        transform.position += new Vector3(speedX, 0) * (_speed * Time.deltaTime);
         BodyRotate(speedX);
+
+        // Apply force for movement
+        Vector2 force = new Vector2(speedX * _speed, 0f);
+        _rigidbody2D.AddForce(force, ForceMode2D.Force);
+        
+        float maxSpeed = 5f;
+        if (_rigidbody2D.linearVelocity.magnitude > maxSpeed)
+        {
+            _rigidbody2D.linearVelocity = _rigidbody2D.linearVelocity.normalized * maxSpeed;
+        }
     }
     
     private void BodyRotate(float speedX)
