@@ -5,7 +5,7 @@ using Utils.Singleton;
 public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] int thisLevel;
-    
+    [SerializeField] private float thisLevelTime;
     public event Action startLevelEvent;
     public event Action timeUpEvent;
     public event Action pauseEvent;
@@ -61,4 +61,12 @@ public class LevelManager : Singleton<LevelManager>
 
     #endregion
 
+    #region GET
+
+    public float GetLevelTime()
+    {
+        return thisLevelTime;
+    }
+    
+    #endregion
 }

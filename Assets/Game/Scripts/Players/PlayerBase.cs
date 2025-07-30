@@ -9,7 +9,8 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     private Rigidbody2D _rigidbody;
     
     // Movement
-    private readonly float _speed = 50f;
+    private readonly float _speed = 50f; 
+    private FeetParticleController _feetParticles;
     
     // Jumping
     private bool _isJumping;
@@ -38,6 +39,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _feetParticles = GetComponentInChildren<FeetParticleController>();
     }
     
     private void Start()
@@ -79,9 +81,13 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     private void BodyRotate(float speedX)
     {
         if (speedX > 0f)
+        {
             transform.localScale = new Vector3(1, 1, 1);
-        else if(speedX < 0f)
-            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (speedX < 0f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);   
+        }
     }
     public IEnumerator GoTo(Vector3 position)
     {
