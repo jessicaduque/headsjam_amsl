@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public abstract class PlayerBase : MonoBehaviour, IDamageable
 {
@@ -20,8 +22,10 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     // Jumping
     private bool _isJumping;
     private float _jumpCounter;
-    private readonly float _jumpTime = 0.3f;
+    private readonly float _jumpTime = 5f;
     private readonly float _jumpForce = 4f;
+    private readonly float _fallForce = 3f;
+    private Vector2 _gravity;
     public bool isGrounded { get; private set; } = true;
     
     // Health
@@ -48,6 +52,8 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     protected virtual void Start()
     {
+        _gravity = new(0f, -Physics2D.gravity.y);
+        
         OtherPlayerBase = otherPlayer.GetComponent<PlayerBase>();
         OtherPlayerTransform = otherPlayer.GetComponent<Transform>();
         
@@ -67,7 +73,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         float x = Move.ReadValue<Vector2>().x;
         IsMovingFromInput = x != 0;
 
-        Movement(x);
+        // Movement(x);
         // if (!isGrounded && OtherPlayerBase.isGrounded)
         // {
         //     SwingMovement(x);
@@ -76,24 +82,42 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         // {
         //     Movement(x);
         // }
+        
+        if (_rigidbody.linearVelocity.y < 0f)
+        {
+            _rigidbody.linearVelocity -= _gravity * (_fallForce * Time.deltaTime);
+        }
+        
+        if (_rigidbody.linearVelocity.y > 0f && _isJumping)
+        {
+            _jumpCounter += Time.deltaTime;
+            if (_jumpCounter > _jumpTime) _isJumping = false;
+
+            var t = _jumpCounter / _jumpTime;
+            var currentJumpF = _jumpForce;
+            
+            if (t < 0.5f) currentJumpF = _jumpForce * (1 - t);
+            
+            _rigidbody.linearVelocity += _gravity * (currentJumpF * Time.deltaTime);
+        }
     }
     
     #region Movement
     
-    private void Movement(float speedX)
-    {
-        MovementAnimationControl(speedX);
-        BodyRotate(speedX);
-
-        Vector2 force = new Vector2(speedX * _speed, 0f);
-        _rigidbody.AddForce(force, ForceMode2D.Force);
-        
-        float maxSpeed = 5f;
-        if (_rigidbody.linearVelocity.magnitude > maxSpeed)
-        {
-            _rigidbody.linearVelocity = _rigidbody.linearVelocity.normalized * maxSpeed;
-        }
-    }
+    // private void Movement(float speedX)
+    // {
+    //     MovementAnimationControl(speedX);
+    //     BodyRotate(speedX);
+    //
+    //     Vector2 force = new Vector2(speedX * _speed, 0f);
+    //     _rigidbody.AddForce(force, ForceMode2D.Force);
+    //     
+    //     float maxSpeed = 5f;
+    //     if (_rigidbody.linearVelocity.magnitude > maxSpeed)
+    //     {
+    //         _rigidbody.linearVelocity = _rigidbody.linearVelocity.normalized * maxSpeed;
+    //     }
+    // }
     
     private void BodyRotate(float speedX)
     {
@@ -126,7 +150,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         
         while (!Mathf.Approximately(transform.position.x, position.x))
         {
-            Movement(speed);
+            // Movement(speed);
             yield return null;
         }
         _rigidbody.linearVelocity = Vector2.zero;
@@ -139,7 +163,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
 
         while (Mathf.Abs(transform.position.x - position.x) > 0.2f) 
         {
-            Movement(speed);
+            // Movement(speed);
             yield return null;
         }
         FreezePlayer();
@@ -178,8 +202,9 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     public void EnableInputs()
     {
         Power.started += DoPowerControl;
-        Jump.started += DoJumpStarted;
-        Jump.performed += DoJumpPerformed;
+        // Jump.started += DoJumpStarted;
+        // Jump.canceled += DoJumpPerformed;
+        // Jump.performed += DoJumpPerformed;
     
         Move.Enable();
         Power.Enable();
@@ -189,8 +214,9 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     public void DisableInputs()
     {
         Power.started -= DoPowerControl;
-        Jump.started -= DoJumpStarted;
-        Jump.performed -= DoJumpPerformed;
+        // Jump.started -= DoJumpStarted;
+        // Jump.canceled -= DoJumpCanceled;
+        // Jump.performed -= DoJumpPerformed;
     
         Move.Disable();
         Power.Disable();
@@ -206,23 +232,41 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         if (isGrounded)
         {
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _speed);
+            _isJumping = true;
+            _jumpCounter = 0f;
         }
-
-        // Isso não foi implementado ainda (isso vai pro Update)
-        // if (_rigidbody.linearVelocity.y > 0f && _isJumping)
-        // {
-        //     _rigidbody.linearVelocity += ;
-        // }
     }
 
     private void DoJumpPerformed(InputAction.CallbackContext context)
     {
-        _isJumping = false;
-        _jumpCounter = 0f;
-
-        if (_rigidbody.linearVelocity.y > 0f)
+        if (context.interaction is TapInteraction)
         {
-            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 0.6f);
+            _isJumping = false;
+            
+            if (_rigidbody.linearVelocity.y > 0f)
+            {
+                _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 0.8f);
+            }
+        }
+    }
+
+    private void DoJumpCanceled(InputAction.CallbackContext context)
+    {
+        if (context.interaction is TapInteraction)
+        {
+            _isJumping = true;
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 1.25f);
+        }
+        
+        if (context.interaction is HoldInteraction)
+        {
+            Debug.Log("Hold Canceled");
+            _isJumping = false;
+            
+            if (_rigidbody.linearVelocity.y > 0f)
+            {
+                _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 0.8f);
+            }
         }
     }
     
