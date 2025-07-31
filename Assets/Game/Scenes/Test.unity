@@ -443,6 +443,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1050197813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4857633340254820599, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+  m_PrefabInstance: {fileID: 1896344105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d667fb50a7152544adb88f9d93561ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1220938490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4591072508887801695, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+  m_PrefabInstance: {fileID: 1896344105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d667fb50a7152544adb88f9d93561ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1288836320
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +635,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 128611644209935946, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1050197813}
+    - target: {fileID: 4328364970291152491, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1220938490}
+    - target: {fileID: 4591072508887801695, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: otherPlayerMovement
+      value: 
+      objectReference: {fileID: 1050197813}
+    - target: {fileID: 4857633340254820599, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: otherPlayerMovement
+      value: 
+      objectReference: {fileID: 1220938490}
     - target: {fileID: 5157264239850830325, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_Name
       value: Players

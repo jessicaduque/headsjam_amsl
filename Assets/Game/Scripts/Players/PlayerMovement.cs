@@ -1,3 +1,5 @@
+using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,51 +7,122 @@ namespace Game.Scripts.Players
 {
     public class PlayerMovement : MonoBehaviour
     {
-        public Rigidbody2D rb;
+        private Rigidbody2D _rigidbody;
 
         [Header("Movement")]
         public float moveSpeed = 10f;
         private float _horizontalMovement;
-
+        public bool IsMovingFromInput { get; private set; }
+        private PlayerBase _playerBase;
+        
+        // Sprite
+        private SpriteRenderer _spriteRenderer;
+        
+        // Animation
+        private Animator _animator;
+        
         [Header("Jumping")]
-        public float jumpPower = 10f;
-        public float _jumpTime = 0.4f;
+        private readonly float _jumpPower = 4f;
+        private readonly float _jumpTime = 0.4f;
+        private readonly float _jumpMultiplier = 3f;
         private float _jumpCounter;
-        public float _jumpMultiplier = 3f;
         private bool _isJumping;
 
         [Header("Ground Check")] 
         public Transform groundCheck;
         public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
         public LayerMask groundLayer;
-
+        [SerializeField] private PlayerMovement otherPlayerMovement;
+        private Transform OtherPlayerTransform;
+        
         [Header("Gravity")]
-        public float fallMultiplier = 2f;
-        private Vector2 _vecGravity;
+        [SerializeField] float fallMultiplier = 3f;
+        private Vector2 _gravity;
+
+        private void Awake()
+        {
+            _gravity = new Vector2(0, -Physics2D.gravity.y);
+            _rigidbody = GetComponent<Rigidbody2D>();
+            //_animator = GetComponent<Animator>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _playerBase = GetComponent<PlayerBase>();
+        }
 
         private void Start()
         {
-            _vecGravity = new Vector2(0, -Physics2D.gravity.y);
+            OtherPlayerTransform = otherPlayerMovement.GetComponent<Transform>();
         }
-        
+
         private void Update()
         {
-            rb.linearVelocity = new Vector2(_horizontalMovement * moveSpeed, rb.linearVelocity.y);
+            IsMovingFromInput = _horizontalMovement != 0;
+            
+            if (!IsGrounded() && otherPlayerMovement.IsGrounded() && OtherPlayerTransform.position.y - 2 > transform.position.y)
+            {
+                SwingMovement(_horizontalMovement);
+            }
+            else
+            {
+                DoPlayerMovement(_horizontalMovement);
+            } 
             
             Gravity();
             HigherJumping();
+            BodyRotate(_horizontalMovement);
+            MovementAnimationControl(_horizontalMovement);
+            
+            if (_rigidbody.linearVelocity.y < 0f)
+            {
+                _rigidbody.linearVelocity -= _gravity * (fallMultiplier * Time.deltaTime);
+            }
+        
+            if (_rigidbody.linearVelocity.y > 0f && _isJumping)
+            {
+                _jumpCounter += Time.deltaTime;
+                if (_jumpCounter > _jumpTime) _isJumping = false;
+
+                var t = _jumpCounter / _jumpTime;
+                var currentJumpF = _jumpPower;
+            
+                if (t < 0.5f) currentJumpF = _jumpPower * (1 - t);
+            
+                _rigidbody.linearVelocity += _gravity * (currentJumpF * Time.deltaTime);
+            }
         }
     
         public void Move(InputAction.CallbackContext context) 
         {
             _horizontalMovement = context.ReadValue<Vector2>().x;
+            Debug.Log("1! : " + _horizontalMovement);
         }
 
+        private void DoPlayerMovement(float speedX)
+        {
+            _rigidbody.linearVelocity = new Vector2(speedX * moveSpeed, _rigidbody.linearVelocity.y);
+        }
+        
+        private void BodyRotate(float speedX)
+        {
+            if (speedX > 0f)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (speedX < 0f)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);   
+            }
+        }
+
+        private void MovementAnimationControl(float speedX)
+        {
+            //_animator.SetBool("Walking", speedX != 0);
+        }
+        
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.started && IsGrounded())
             {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
+                _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _jumpPower);
                 _isJumping = true;
                 _jumpCounter = 0f;
             }
@@ -58,24 +131,24 @@ namespace Game.Scripts.Players
                 _isJumping = false;
                 _jumpCounter = 0f;
 
-                if (rb.linearVelocity.y > 0)
+                if (_rigidbody.linearVelocity.y > 0)
                 {
-                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+                    _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 0.5f);
                 }
             }
         }
 
         private void Gravity()
         {
-            if (rb.linearVelocity.y < 0)
+            if (_rigidbody.linearVelocity.y < 0)
             {
-                rb.linearVelocity -= _vecGravity * (fallMultiplier * Time.deltaTime);
+                _rigidbody.linearVelocity -= _gravity * (fallMultiplier * Time.deltaTime);
             }
         }
 
         private void HigherJumping()
         {
-            if (rb.linearVelocity.y > 0 && _isJumping)
+            if (_rigidbody.linearVelocity.y > 0 && _isJumping)
             {
                 _jumpCounter += Time.deltaTime;
                 if (_jumpCounter > _jumpTime) _isJumping = false;
@@ -85,11 +158,52 @@ namespace Game.Scripts.Players
                 
                 if (t < 0.5f) currentJumpF = _jumpMultiplier * (1 - t);
                 
-                rb.linearVelocity += _vecGravity * (currentJumpF * Time.deltaTime);
+                _rigidbody.linearVelocity += _gravity * (currentJumpF * Time.deltaTime);
             }
         }
 
-        private bool IsGrounded()
+        private void SwingMovement(float speedX)
+        {
+            Vector2 ropeDirection = (OtherPlayerTransform.position - transform.position).normalized;
+            Vector2 perpendicular = Vector2.Perpendicular(ropeDirection); 
+            float input = speedX;
+
+            if (Vector2.Dot(perpendicular, Vector2.up) < 0)
+                perpendicular = -perpendicular;
+
+            _rigidbody.AddForce(perpendicular * (input * 10f), ForceMode2D.Force); 
+        }
+        
+        
+        public IEnumerator GoTo(Vector3 position)
+        {
+            float speed = 1;
+            if(position.x < transform.position.x) speed = -1f;
+        
+            while (!Mathf.Approximately(transform.position.x, position.x))
+            {
+                DoPlayerMovement(speed);
+                yield return null;
+            }
+            _rigidbody.linearVelocity = Vector2.zero;
+        }
+
+        
+        public IEnumerator GoToEndLevelObject(Vector3 position, EndLevelObject endObject, float fadeDuration)
+        {
+            float speed = 1;
+            if(position.x < transform.position.x) speed = -1f;
+
+            while (Mathf.Abs(transform.position.x - position.x) > 0.2f) 
+            {
+                DoPlayerMovement(speed);
+                yield return null;
+            }
+            _playerBase.FreezePlayer();
+            _spriteRenderer.DOFade(0, fadeDuration).OnComplete(endObject.PlayerEntered);
+        }
+        
+        public bool IsGrounded()
         {
             return Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
         }

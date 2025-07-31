@@ -1,3 +1,4 @@
+using Game.Scripts.Players;
 using UnityEngine;
 
 public class FeetParticleController : MonoBehaviour
@@ -9,7 +10,7 @@ public class FeetParticleController : MonoBehaviour
     [SerializeField] float dustFormationPeriod;
 
     [SerializeField] Rigidbody2D playerRb;
-    [SerializeField] PlayerBase player;
+    [SerializeField] PlayerMovement playerMovement;
     
     private ParticleSystem _movementParticles;
     private float _counter;
@@ -23,7 +24,11 @@ public class FeetParticleController : MonoBehaviour
     {
         _counter += Time.deltaTime;
 
-        if (!player.IsMovingFromInput || !player.isGrounded) return;
+        if (!playerMovement.IsMovingFromInput || !playerMovement.IsGrounded())
+        {
+            _movementParticles.Stop();
+            return;
+        };
         
         if(Mathf.Abs(playerRb.linearVelocity.x) > occurAfterVelocity)
         {

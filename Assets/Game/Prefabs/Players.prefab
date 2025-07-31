@@ -10155,7 +10155,19 @@ MonoBehaviour:
     m_ActionId: da0af694-5e02-4cf0-ad99-85d271d8625e
     m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/w]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7425851379743280028}
+        m_TargetAssemblyTypeName: PlayerTwo, Assembly-CSharp
+        m_MethodName: DoPowerControl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 328ad109-e6b3-4f5e-9066-171c3bb6dc32
     m_ActionName: 'Player/Power[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -10175,16 +10187,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d667fb50a7152544adb88f9d93561ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 659634027230471245}
   moveSpeed: 10
-  jumpPower: 10
-  _jumpTime: 0.4
-  _jumpMultiplier: 3
   groundCheck: {fileID: 8485645472242018855}
   groundCheckSize: {x: 0.7, y: 0.04}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  otherPlayerMovement: {fileID: 4857633340254820599}
   fallMultiplier: 2
 --- !u!114 &7425851379743280028
 MonoBehaviour:
@@ -10248,7 +10257,7 @@ MonoBehaviour:
   occurAfterVelocity: 4
   dustFormationPeriod: 0.2
   playerRb: {fileID: 5706292535732023739}
-  player: {fileID: 5305172490224822820}
+  playerMovement: {fileID: 4857633340254820599}
 --- !u!1 &5147111738959151698
 GameObject:
   m_ObjectHideFlags: 0
@@ -10487,7 +10496,19 @@ MonoBehaviour:
     m_ActionId: e6d54912-b6f5-43dd-b774-321ae4b2bdba
     m_ActionName: 'Player/Jump[/Keyboard/upArrow]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5305172490224822820}
+        m_TargetAssemblyTypeName: PlayerOne, Assembly-CSharp
+        m_MethodName: DoPowerControl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d779351a-4017-4c07-a728-04bff46359f0
     m_ActionName: 'Player/Power[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -10507,16 +10528,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d667fb50a7152544adb88f9d93561ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 5706292535732023739}
   moveSpeed: 10
-  jumpPower: 10
-  _jumpTime: 0.4
-  _jumpMultiplier: 3
   groundCheck: {fileID: 1393273878233585446}
   groundCheckSize: {x: 0.7, y: 0.04}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  otherPlayerMovement: {fileID: 4591072508887801695}
   fallMultiplier: 2
 --- !u!114 &5305172490224822820
 MonoBehaviour:
@@ -10677,4 +10695,4 @@ MonoBehaviour:
   occurAfterVelocity: 4
   dustFormationPeriod: 0.2
   playerRb: {fileID: 659634027230471245}
-  player: {fileID: 7425851379743280028}
+  playerMovement: {fileID: 4591072508887801695}

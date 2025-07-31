@@ -1,4 +1,5 @@
 using System;
+using Game.Scripts.Players;
 using UnityEngine;
 
 public class EndLevelObject : MonoBehaviour
@@ -26,9 +27,9 @@ public class EndLevelObject : MonoBehaviour
             
             _levelManager.LevelComplete();
             
-            PlayerBase[] players = FindObjectsByType<PlayerBase>(FindObjectsSortMode.None);
+            PlayerMovement[] players = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
             RopeVisual.I.RopeFadeOut(_fadeOutTime);
-            foreach (PlayerBase player in players)
+            foreach (PlayerMovement player in players)
             {
                 StartCoroutine(player.GoToEndLevelObject(transform.position, this, _fadeOutTime));
             }
