@@ -167,7 +167,7 @@ public partial class @Player1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""32fc8562-1cc7-4d93-b79f-8f136a45bdda"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",

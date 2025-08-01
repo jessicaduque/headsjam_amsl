@@ -51,11 +51,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     #region Animation
     
-    protected void AnimationTrigger(string triggerName)
-    {
-        _animator.SetTrigger(triggerName);
-    }
-    
     protected void AnimationBool(string boolName, bool enable)
     {
         _animator.SetBool(boolName, enable);

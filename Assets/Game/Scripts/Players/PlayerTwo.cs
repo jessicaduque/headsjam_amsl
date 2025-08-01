@@ -10,7 +10,7 @@ public class PlayerTwo : PlayerBase
         OtherPlayerBase.DisableInputs();
         DisableInputs();
         
-        AnimationBool("singchirp", true);
+        AnimationBool("Singchirp", true);
         StartCoroutine(ChirpingCoroutine());
     }
 
@@ -32,7 +32,7 @@ public class PlayerTwo : PlayerBase
             }
         }
         
-        AnimationBool("singchirp", false);
+        AnimationBool("Singchirp", false);
         OtherPlayerBase.EnableInputs();
         EnableInputs();
     }

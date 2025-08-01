@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.UI;
 using UnityEngine.Serialization;
 
 namespace Game.Scripts.Players
@@ -45,7 +47,7 @@ namespace Game.Scripts.Players
         {
             _gravity = new Vector2(0, -Physics2D.gravity.y);
             _rigidbody = GetComponent<Rigidbody2D>();
-            //_animator = GetComponent<Animator>();
+            _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _playerBase = GetComponent<PlayerBase>();
         }
@@ -72,14 +74,17 @@ namespace Game.Scripts.Players
             HigherJumping();
             BodyRotate(_horizontalMovement);
             MovementAnimationControl(_horizontalMovement);
+
             
-            if (_rigidbody.linearVelocity.y < 0f)
+            if (_rigidbody.linearVelocity.y < 0f && !IsGrounded())
             {
+                Debug.Log("HERE 1");
                 _rigidbody.linearVelocity -= _gravity * (fallMultiplier * Time.deltaTime);
+                _animator.SetInteger("JumpVel", -1);
             }
-        
-            if (_rigidbody.linearVelocity.y > 0f && _isJumping)
+            else if (_rigidbody.linearVelocity.y > 0f && _isJumping)
             {
+                Debug.Log("HERE 2");
                 _jumpCounter += Time.deltaTime;
                 if (_jumpCounter > _jumpTime) _isJumping = false;
 
@@ -90,8 +95,17 @@ namespace Game.Scripts.Players
             
                 _rigidbody.linearVelocity += _gravity * (currentJumpF * Time.deltaTime);
             }
+            else if(IsGrounded())
+            {
+                Debug.Log("HERE 3");
+                _animator.SetBool("IsJumping", false);
+            }
+            // else if (Mathf.Approximately(_rigidbody.linearVelocityY, 0) && IsGrounded())
+            // {
+            //     _animator.SetBool("IsJumping", false);
+            // }
         }
-    
+
         public void Move(InputAction.CallbackContext context) 
         {
             _horizontalMovement = context.ReadValue<Vector2>().x;
@@ -116,13 +130,15 @@ namespace Game.Scripts.Players
 
         private void MovementAnimationControl(float speedX)
         {
-            //_animator.SetBool("Walking", speedX != 0);
+            _animator.SetBool("Walking", speedX != 0);
         }
         
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.started && IsGrounded())
             {
+                _animator.SetBool("IsJumping", true);
+                _animator.SetInteger("JumpVel", 1);
                 _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _jumpPower);
                 _isJumping = true;
                 _jumpCounter = 0f;
