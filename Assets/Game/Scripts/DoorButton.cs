@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DoorButton : MonoBehaviour
 {
+    [SerializeField] private Sprite[] buttonSprites;
     [SerializeField] private Door[] doors;
     private int _amountObjectsPressing = 0;
 

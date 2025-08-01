@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -134,7 +134,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 206
+        width: 205
         height: 1128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -156,7 +156,7 @@ TextureImporter:
         serializedVersion: 2
         x: 205
         y: 0
-        width: 615
+        width: 205
         height: 1128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,11 +172,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: OleoCaindo_2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 205
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436c4cf0ca17b63488f5e2b8b60478cc
+      internalID: 504564491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OleoCaindo_3
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 0
+        width: 205
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138f3fc49179bf441ac075c5541dbbb4
+      internalID: 467949172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 99658972faa61214c881442f7c926614
     internalID: 0
     vertices: []
     indices: 
@@ -188,6 +232,8 @@ TextureImporter:
     nameFileIdTable:
       OleoCaindo_0: -7528684599717439385
       OleoCaindo_1: -7050476293520790346
+      OleoCaindo_2: 504564491
+      OleoCaindo_3: 467949172
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
