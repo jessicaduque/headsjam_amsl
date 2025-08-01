@@ -6,14 +6,24 @@ using UnityEngine.InputSystem;
 public class PlayerTwo : PlayerBase
 {
     [SerializeField] private float rayLength;
-    [SerializeField] private ParticleSystem singingParticles;
+    [SerializeField] private ParticleSystem singingParticlesRight;
+    [SerializeField] private ParticleSystem singingParticlesLeft;
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
         if (!PlayerMovement.IsGrounded()) return;
+
+        if (Mathf.Approximately(PlayerMovement.transform.localScale.x, -1))
+        {
+            singingParticlesLeft.Play();
+        }
+        else
+        {
+            singingParticlesRight.Play();
+        }
         
         OtherPlayerBase.DisableInputs();
         DisableInputs();
-        singingParticles.Play();
+        
         AnimationBool("Singchirp", true);
         StartCoroutine(ChirpingCoroutine());
     }
@@ -21,6 +31,8 @@ public class PlayerTwo : PlayerBase
     private IEnumerator ChirpingCoroutine()
     {
         yield return new WaitForSeconds(2);
+        singingParticlesRight.Stop();
+        yield return new WaitForSeconds(1.5f);
         Vector2 direction = transform.right * Mathf.Sign(transform.localScale.x);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayLength, LayerMask.GetMask("InteractableObjects"));
@@ -35,7 +47,12 @@ public class PlayerTwo : PlayerBase
                 glass.BreakGlassObject();
             }
         }
-        singingParticles.Stop();
+        singingParticlesRight.gameObject.SetActive(false);
+        singingParticlesLeft.gameObject.SetActive(false);
+        singingParticlesRight.Stop();
+        singingParticlesLeft.Stop();
+        singingParticlesRight.gameObject.SetActive(true);
+        singingParticlesLeft.gameObject.SetActive(true);
         AnimationBool("Singchirp", false);
         OtherPlayerBase.EnableInputs();
         EnableInputs();

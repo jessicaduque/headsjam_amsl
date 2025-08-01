@@ -838,10 +838,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Players
       objectReference: {fileID: 0}
-    - target: {fileID: 5676030874848810440, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5856019708904319566, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -881,6 +877,10 @@ PrefabInstance:
     - target: {fileID: 5856019708904319566, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044138749750589928, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_Name
+      value: SingParticleRight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
