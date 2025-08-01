@@ -25,6 +25,8 @@ public class PlayerOne : PlayerBase
 
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
+        if (!PlayerMovement.IsGrounded()) return;
+        
         Debug.Log("Player 1's power not implemented yet!");
         // Não implementado ainda
     }

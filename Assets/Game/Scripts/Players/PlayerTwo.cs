@@ -1,15 +1,19 @@
 using System.Collections;
+using Game.Scripts.Players;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerTwo : PlayerBase
 {
     [SerializeField] private float rayLength;
+    [SerializeField] private ParticleSystem singingParticles;
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
+        if (!PlayerMovement.IsGrounded()) return;
+        
         OtherPlayerBase.DisableInputs();
         DisableInputs();
-        
+        singingParticles.Play();
         AnimationBool("Singchirp", true);
         StartCoroutine(ChirpingCoroutine());
     }
@@ -31,7 +35,7 @@ public class PlayerTwo : PlayerBase
                 glass.BreakGlassObject();
             }
         }
-        
+        singingParticles.Stop();
         AnimationBool("Singchirp", false);
         OtherPlayerBase.EnableInputs();
         EnableInputs();

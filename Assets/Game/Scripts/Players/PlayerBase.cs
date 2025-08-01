@@ -1,3 +1,4 @@
+using Game.Scripts.Players;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,9 +14,9 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     // Collider
     private Rigidbody2D _rigidbody;
-    
+
     // Movement
-    private readonly float _speed = 50f;
+    protected PlayerMovement PlayerMovement;
     
     // Health
     private float _health = 1f;
@@ -31,6 +32,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerInput = GetComponent<PlayerInput>();
+        PlayerMovement = GetComponent<PlayerMovement>();
     }
     
     protected virtual void Start()
