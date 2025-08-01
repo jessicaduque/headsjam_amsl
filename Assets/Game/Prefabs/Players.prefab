@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e30e26773286e74f9deff9ab42893d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOne: {fileID: 8108092301962104773}
-  playerTwo: {fileID: 1614231833163224512}
-  points: 10
-  maxSag: 1
+  ropePointOne: {fileID: 8108092301962104773}
+  ropePointTwo: {fileID: 1614231833163224512}
+  points: 20
+  maxSag: 0.8
   maxRopeDistance: 4
 --- !u!120 &1793562084977113024
 LineRenderer:
@@ -95,9 +95,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -10369,7 +10367,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 815424164945274260, guid: c155207100fd2434cb95086bdbb42cb9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8490566, g: 0.22908504, b: 0.22908504, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10752,7 +10750,7 @@ Transform:
   m_GameObject: {fileID: 8147444521004246810}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.315, y: -0.399, z: 0}
+  m_LocalPosition: {x: 0.275, y: -0.399, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

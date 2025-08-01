@@ -74,17 +74,14 @@ namespace Game.Scripts.Players
             HigherJumping();
             BodyRotate(_horizontalMovement);
             MovementAnimationControl(_horizontalMovement);
-
             
             if (_rigidbody.linearVelocity.y < 0f && !IsGrounded())
             {
-                Debug.Log("HERE 1");
                 _rigidbody.linearVelocity -= _gravity * (fallMultiplier * Time.deltaTime);
                 _animator.SetInteger("JumpVel", -1);
             }
             else if (_rigidbody.linearVelocity.y > 0f && _isJumping)
             {
-                Debug.Log("HERE 2");
                 _jumpCounter += Time.deltaTime;
                 if (_jumpCounter > _jumpTime) _isJumping = false;
 
@@ -97,13 +94,8 @@ namespace Game.Scripts.Players
             }
             else if(IsGrounded())
             {
-                Debug.Log("HERE 3");
                 _animator.SetBool("IsJumping", false);
             }
-            // else if (Mathf.Approximately(_rigidbody.linearVelocityY, 0) && IsGrounded())
-            // {
-            //     _animator.SetBool("IsJumping", false);
-            // }
         }
 
         public void Move(InputAction.CallbackContext context) 
@@ -214,6 +206,8 @@ namespace Game.Scripts.Players
             while (Mathf.Abs(transform.position.x - position.x) > 0.2f) 
             {
                 DoPlayerMovement(speed);
+                BodyRotate(_horizontalMovement);
+                MovementAnimationControl(_horizontalMovement);
                 yield return null;
             }
             _playerBase.FreezePlayer();

@@ -4,9 +4,9 @@ using Utils.Singleton;
 
 public class RopeVisual : Singleton<RopeVisual>
 {
-    [SerializeField] Transform playerOne;
-    [SerializeField] Transform playerTwo;
-    public int points = 20;
+    [SerializeField] Transform ropePointOne;
+    [SerializeField] Transform ropePointTwo;
+    public int points = 30;
     public float maxSag = 1f;
     public float maxRopeDistance = 4f;
 
@@ -26,7 +26,7 @@ public class RopeVisual : Singleton<RopeVisual>
 
     void Update()
     {
-        float distance = Vector3.Distance(playerOne.localPosition, playerTwo.localPosition);
+        float distance = Vector3.Distance(ropePointOne.position, ropePointTwo.position);
         float t = Mathf.Clamp01(1f - (distance / maxRopeDistance));
         float sagAmount = maxSag * t;
         float verticalDrop = sagAmount * 0.5f;
@@ -34,13 +34,18 @@ public class RopeVisual : Singleton<RopeVisual>
         for (int i = 0; i < points; i++)
         {
             float step = i / (float)(points - 1);
-            Vector3 pos = Vector3.Lerp(playerOne.localPosition, playerTwo.localPosition, step);
-            float curve = Mathf.Sin(step * Mathf.PI);
-            pos.y -= curve * sagAmount + verticalDrop;
+            Vector3 pos = Vector3.Lerp(ropePointOne.position, ropePointTwo.position, step);
+
+            if (i != 0 && i != points - 1)
+            {
+                float curve = Mathf.Sin(step * Mathf.PI);
+                pos.y -= curve * sagAmount + verticalDrop;
+            }
+
             line.SetPosition(i, pos);
         }
 
-        line.material.mainTextureScale = new Vector2(distance * 5f, 1);
+        line.material.mainTextureScale = new Vector2(distance * 5f, 0.05f);
     }
 
     public void RopeFadeOut(float time)

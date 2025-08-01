@@ -813,6 +813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6632991331306885153, guid: 5b16d09e761e56340bce371b7d891ba1, type: 3}
+      propertyPath: nameScene
+      value: Test
+      objectReference: {fileID: 0}
     - target: {fileID: 7729026788535734998, guid: 5b16d09e761e56340bce371b7d891ba1, type: 3}
       propertyPath: m_Name
       value: EndLevelObject
@@ -830,22 +834,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1610202913347163034, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
-      propertyPath: points
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2120557035660611406, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
-      propertyPath: m_Color.b
-      value: 0.22908504
-      objectReference: {fileID: 0}
-    - target: {fileID: 2120557035660611406, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
-      propertyPath: m_Color.g
-      value: 0.22908504
-      objectReference: {fileID: 0}
-    - target: {fileID: 2120557035660611406, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8490566
-      objectReference: {fileID: 0}
     - target: {fileID: 5157264239850830325, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_Name
       value: Players
@@ -856,7 +844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5856019708904319566, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.357
       objectReference: {fileID: 0}
     - target: {fileID: 5856019708904319566, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_LocalPosition.z
