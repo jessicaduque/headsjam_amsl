@@ -10155,7 +10155,7 @@ MonoBehaviour:
   moveSpeed: 10
   jumpMultiplier: 3
   groundCheck: {fileID: 8485645472242018855}
-  groundCheckSize: {x: 0.7, y: 0.04}
+  groundCheckSize: {x: 0.2, y: 0.04}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -15349,8 +15349,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.032264113, y: -0.17122784}
-  m_Size: {x: 0.76667666, y: 0.9379497}
+  m_Offset: {x: -0.032264113, y: -0.16917717}
+  m_Size: {x: 0.76667666, y: 0.9338484}
   m_Direction: 0
 --- !u!231 &670757500307913633
 SpringJoint2D:
@@ -15466,7 +15466,7 @@ MonoBehaviour:
   moveSpeed: 10
   jumpMultiplier: 3
   groundCheck: {fileID: 1393273878233585446}
-  groundCheckSize: {x: 0.7, y: 0.04}
+  groundCheckSize: {x: 0.2, y: 0.04}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -15497,7 +15497,7 @@ Animator:
   m_GameObject: {fileID: 5147111738959151698}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e9de95b2b93b9b84791d42522450f80b, type: 2}
+  m_Controller: {fileID: 9100000, guid: d49e96532b1d1a94bbf22f0b86aa1431, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

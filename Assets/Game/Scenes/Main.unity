@@ -878,10 +878,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9044138749750589928, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
-      propertyPath: m_Name
-      value: SingParticleRight
-      objectReference: {fileID: 0}
+    - target: {fileID: 6180162984635349364, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d49e96532b1d1a94bbf22f0b86aa1431, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
