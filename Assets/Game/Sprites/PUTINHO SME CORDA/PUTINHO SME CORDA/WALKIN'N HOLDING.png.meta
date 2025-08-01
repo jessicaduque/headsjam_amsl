@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 5bbd4dd7523bb1a458fd588b2b42ff61
+guid: 0b809a595c0749645a3a92ba61d75cec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3201500218454532868
-    second: rope 1_0
+      213: -1986989790444106786
+    second: WALKIN'N HOLDING_0
+  - first:
+      213: 1777810223712977504
+    second: WALKIN'N HOLDING_1
+  - first:
+      213: -5014928895081007363
+    second: WALKIN'N HOLDING_2
+  - first:
+      213: 6503925977508609205
+    second: WALKIN'N HOLDING_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,16 +46,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,7 +123,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rope 1_0
+      name: WALKIN'N HOLDING_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 87
-        width: 225
-        height: 59
+        x: 11
+        y: 0
+        width: 102
+        height: 101
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfc9eaa738cf193d0800000000000000
-      internalID: -3201500218454532868
+      spriteID: edb4048205bcc64e0800000000000000
+      internalID: -1986989790444106786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALKIN'N HOLDING_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 102
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062487eaafc0ca810800000000000000
+      internalID: 1777810223712977504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALKIN'N HOLDING_2
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 102
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6bada7db4676ab0800000000000000
+      internalID: -5014928895081007363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALKIN'N HOLDING_3
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 102
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bcf5de9736924a50800000000000000
+      internalID: 6503925977508609205
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +235,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      rope 1_0: -3201500218454532868
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

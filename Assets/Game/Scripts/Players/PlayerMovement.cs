@@ -2,6 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Game.Scripts.Players
 {
@@ -21,10 +22,11 @@ namespace Game.Scripts.Players
         // Animation
         private Animator _animator;
         
+        [FormerlySerializedAs("_jumpMultiplier")]
         [Header("Jumping")]
+        [SerializeField] float jumpMultiplier = 3f;
         private readonly float _jumpPower = 4f;
         private readonly float _jumpTime = 0.4f;
-        private readonly float _jumpMultiplier = 3f;
         private float _jumpCounter;
         private bool _isJumping;
 
@@ -93,7 +95,6 @@ namespace Game.Scripts.Players
         public void Move(InputAction.CallbackContext context) 
         {
             _horizontalMovement = context.ReadValue<Vector2>().x;
-            Debug.Log("1! : " + _horizontalMovement);
         }
 
         private void DoPlayerMovement(float speedX)
@@ -154,9 +155,9 @@ namespace Game.Scripts.Players
                 if (_jumpCounter > _jumpTime) _isJumping = false;
 
                 var t = _jumpCounter / _jumpTime;
-                var currentJumpF = _jumpMultiplier;
+                var currentJumpF = jumpMultiplier;
                 
-                if (t < 0.5f) currentJumpF = _jumpMultiplier * (1 - t);
+                if (t < 0.5f) currentJumpF = jumpMultiplier * (1 - t);
                 
                 _rigidbody.linearVelocity += _gravity * (currentJumpF * Time.deltaTime);
             }

@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 530654516907362574}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 0, z: 0}
+  m_LocalPosition: {x: -0.573, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -985,7 +985,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.3
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -9954,8 +9954,9 @@ GameObject:
   - component: {fileID: 2354685303014992481}
   - component: {fileID: 4591072508887801695}
   - component: {fileID: 7425851379743280028}
+  - component: {fileID: 2440235262589868788}
   m_Layer: 3
-  m_Name: Player2
+  m_Name: Tobias
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9970,7 +9971,7 @@ Transform:
   m_GameObject: {fileID: 2669281070988419035}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: -2, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10022,8 +10023,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.42217866, g: 0.66146386, b: 0.7584905, a: 1}
+  m_Sprite: {fileID: 815424164945274260, guid: f245c3d3fe434134b847544a4501aef1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10094,8 +10095,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.0343104, y: -0.03431037}
+  m_Size: {x: 0.8313793, y: 0.8313793}
   m_Direction: 0
 --- !u!114 &2354685303014992481
 MonoBehaviour:
@@ -10188,6 +10189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  jumpMultiplier: 3
   groundCheck: {fileID: 8485645472242018855}
   groundCheckSize: {x: 0.7, y: 0.04}
   groundLayer:
@@ -10209,6 +10211,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 5147111738959151698}
   rayLength: 3
+--- !u!95 &2440235262589868788
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2669281070988419035}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f45856c455a37b448e2620519eebe06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4571801266686941063
 GameObject:
   m_ObjectHideFlags: 0
@@ -10275,7 +10299,7 @@ GameObject:
   - component: {fileID: 4857633340254820599}
   - component: {fileID: 5305172490224822820}
   m_Layer: 3
-  m_Name: Player1
+  m_Name: Adilson
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10529,6 +10553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  jumpMultiplier: 3
   groundCheck: {fileID: 1393273878233585446}
   groundCheckSize: {x: 0.7, y: 0.04}
   groundLayer:
@@ -10641,7 +10666,7 @@ Transform:
   m_GameObject: {fileID: 7761287804967583271}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.423, z: 0}
   m_LocalScale: {x: -0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10673,7 +10698,7 @@ Transform:
   m_GameObject: {fileID: 8963717766081662724}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.401, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

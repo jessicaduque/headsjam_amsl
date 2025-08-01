@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5bbd4dd7523bb1a458fd588b2b42ff61
+guid: a61edfccbcb3812488050cebdeb067d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3201500218454532868
-    second: rope 1_0
+      213: -7318150903150113147
+    second: DEAD_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,13 +40,13 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -114,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rope 1_0
+      name: DEAD_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 87
-        width: 225
-        height: 59
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfc9eaa738cf193d0800000000000000
-      internalID: -3201500218454532868
+      spriteID: 58e880dd684b07a90800000000000000
+      internalID: -7318150903150113147
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 09ed3f8f749ba7541a7f864804554f82
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rope 1_0: -3201500218454532868
+      DEAD_0: -7318150903150113147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
