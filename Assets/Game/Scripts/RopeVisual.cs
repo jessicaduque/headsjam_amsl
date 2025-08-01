@@ -18,8 +18,8 @@ public class RopeVisual : Singleton<RopeVisual>
         
         line = GetComponent<LineRenderer>();
         line.positionCount = points;
-        line.startWidth = 0.3f;
-        line.endWidth = 0.3f;
+        line.startWidth = 0.08f;
+        line.endWidth = 0.08f;
 
         line.textureMode = LineTextureMode.Tile;
     }

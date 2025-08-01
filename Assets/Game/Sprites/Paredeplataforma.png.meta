@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: e5d5f6806965b304a9f0def9476e59bf
+guid: c8f2e3ae48fdc884fa4ab6c2b46cf1d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 532141743101547248
-    second: corda_0
+      213: 8506543321709403160
+    second: Paredeplataforma_0
+  - first:
+      213: -9034231254975580013
+    second: Paredeplataforma_1
+  - first:
+      213: -5276681185678190017
+    second: Paredeplataforma_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,16 +43,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corda_0
+      name: Paredeplataforma_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 72
-        height: 8
+        width: 56
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f299bf881c826700800000000000000
-      internalID: 532141743101547248
+      spriteID: 81cd5fcd4105d0670800000000000000
+      internalID: 8506543321709403160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paredeplataforma_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398f27cf986ff9280800000000000000
+      internalID: -9034231254975580013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paredeplataforma_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a1aae2b6675c6b0800000000000000
+      internalID: -5276681185678190017
       vertices: []
       indices: 
       edges: []
@@ -151,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +210,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      corda_0: 532141743101547248
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
