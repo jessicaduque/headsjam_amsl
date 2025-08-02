@@ -25,7 +25,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     // Input
     private PlayerInput _playerInput;
 
-    private LevelManager _levelManager => LevelManager.I;
+    protected LevelManager _levelManager => LevelManager.I;
     
     protected virtual void Awake()
     {

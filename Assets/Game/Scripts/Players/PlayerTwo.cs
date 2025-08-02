@@ -8,6 +8,17 @@ public class PlayerTwo : PlayerBase
     [SerializeField] private float rayLength;
     [SerializeField] private ParticleSystem singingParticlesRight;
     [SerializeField] private ParticleSystem singingParticlesLeft;
+
+    protected override void Start()
+    {
+        base.Start();
+        
+        _levelManager.timeUpEvent += StopSinging;
+        _levelManager.pauseEvent += StopSinging;
+        _levelManager.gameOverEvent += StopSinging;
+        _levelManager.levelCompleteEvent += StopSinging;
+    }
+
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
         if (!context.started) return;
@@ -59,5 +70,13 @@ public class PlayerTwo : PlayerBase
         AnimationBool("Singchirp", false);
         OtherPlayerBase.EnableInputs();
         EnableInputs();
+    }
+
+    private void StopSinging()
+    {
+        StopAllCoroutines();
+        singingParticlesLeft.gameObject.SetActive(false);
+        singingParticlesRight.gameObject.SetActive(false);
+        AnimationBool("Singchirp", false);
     }
 }

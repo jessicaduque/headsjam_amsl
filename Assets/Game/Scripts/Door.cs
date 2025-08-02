@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class Door : MonoBehaviour
     private float _height;
     private Vector3 _openedPosition;
     private Vector3 _closedPosition;
-    private readonly float _doorSpeed = 1f; 
+    private readonly float _doorSpeed = 4f; 
 
     private void Awake()
     {
