@@ -1664,8 +1664,8 @@ GameObject:
   - component: {fileID: 488873744}
   - component: {fileID: 488873743}
   - component: {fileID: 488873747}
-  - component: {fileID: 488873748}
   - component: {fileID: 488873749}
+  - component: {fileID: 488873748}
   m_Layer: 7
   m_Name: CoxaFrango
   m_TagString: Untagged

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,8 +19,14 @@ public class PlayerOne : PlayerBase
     private Collider2D _objectCollider;
     // Carrying object control
     private bool _isCarryingObject;
+    private bool _canCarryObject = true;
     private HeavyObject _carriedObject;
-    
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
     private void Update()
     {
         float playerDistance = Vector2.Distance(transform.position, OtherPlayerTransform.position);
@@ -37,6 +45,8 @@ public class PlayerOne : PlayerBase
 
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
+        if (!_canCarryObject) return;
+        if (!context.started) return;
         if (!PlayerMovement.IsGrounded()) return;
         
         if (!_isCarryingObject) // Code to hold an object if player isn't already carrying one
@@ -49,21 +59,28 @@ public class PlayerOne : PlayerBase
                 Debug.Log("here 5");
                 _carriedObject = heavyObjectScript;
                 GameObject heavyObject = heavyObjectScript.gameObject;
-                heavyObjectScript.Hold(playerHoldPosition.position);
-                heavyObject.transform.SetParent(transform);
+                heavyObjectScript.Hold(playerHoldPosition);
+                heavyObject.transform.SetParent(playerHoldPosition);
                 AnimationBool("IsHolding", true);
                 _isCarryingObject = true;
             }
         }
         else // Code to release an object if player is already carrying one
         {
-            Debug.Log("here 3");
+            _canCarryObject = false;
             AnimationBool("IsHolding", false);
             _carriedObject.Drop();
             _carriedObject = null;
+            StartCoroutine(PowerCooldownCoroutine());
             _isCarryingObject = false;
         }
     }
+
+    private IEnumerator PowerCooldownCoroutine()
+    {
+        yield return new WaitForSeconds(0.4f);
+        _canCarryObject = true;
+    } 
     
     private void OnDrawGizmos()
     {
