@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b78e06dad32bac5499cc3982b995e736
+guid: 7d015161d24ee48478897177808ed9f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5416559685299172180
-    second: OleoCaindo 1_0
+      213: 2410363504252551450
+    second: OleoEspuma_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,89 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OleoCaindo_0
+      name: OleoEspuma_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 205
-        height: 1138
+        width: 203
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1840a444bd4073d4db29855ba81525f0
-      internalID: -835090675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OleoCaindo_1
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 0
-        width: 205
-        height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a8db6c39b903794eaf033f66e378ee0
-      internalID: 1574051340
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OleoCaindo_2
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 0
-        width: 205
-        height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b76918bc17716841822859576ce30c6
-      internalID: -1420980603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OleoCaindo_3
-      rect:
-        serializedVersion: 2
-        x: 615
-        y: 0
-        width: 205
-        height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60918239bf726c94a90c993548c3a6b4
-      internalID: -212748501
+      spriteID: a110a8226d4537120800000000000000
+      internalID: 2410363504252551450
       vertices: []
       indices: 
       edges: []
@@ -204,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bad9e4f18e923c6489abda642766ec33
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -214,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      OleoCaindo_0: -835090675
-      OleoCaindo_1: 1574051340
-      OleoCaindo_2: -1420980603
-      OleoCaindo_3: -212748501
+      OleoEspuma_0: 2410363504252551450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
