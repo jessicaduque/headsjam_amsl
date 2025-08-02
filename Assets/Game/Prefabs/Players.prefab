@@ -10158,7 +10158,7 @@ MonoBehaviour:
   groundCheckSize: {x: 0.2, y: 0.04}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   otherPlayerMovement: {fileID: 4857633340254820599}
   fallMultiplier: 5
 --- !u!114 &7425851379743280028
@@ -15567,7 +15567,7 @@ Transform:
   m_GameObject: {fileID: 7101727677471067125}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.659, z: 0}
+  m_LocalPosition: {x: 0, y: -0.76833075, z: 0}
   m_LocalScale: {x: -0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15598,7 +15598,7 @@ Transform:
   m_GameObject: {fileID: 7761287804967583271}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6599, z: 0}
+  m_LocalPosition: {x: 0, y: -0.7692308, z: 0}
   m_LocalScale: {x: -0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
