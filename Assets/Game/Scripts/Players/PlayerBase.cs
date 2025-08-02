@@ -114,7 +114,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
 
     private void Death()
     {
-        _rigidbody.bodyType = RigidbodyType2D.Static;
         _animator.SetTrigger("Death");
     }
     
