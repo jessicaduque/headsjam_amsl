@@ -17,12 +17,12 @@ public class OilManager : MonoBehaviour
         {
             Sequence mySequence = DOTween.Sequence();
             mySequence
-                // .OnStart(ActivateBubble(i))
+                .OnStart(() => ActivateBubble(i))
                 .SetDelay(i * 0.8f + Random.Range(0, 0.5f))
                 .Append(dispensedObjects[i].transform.DOMoveY(0f, DurationTime)
                     .SetDelay(0.7f)
                     .SetEase(Ease.Linear))
-                    // .OnStart(DeactivateBubble(i)))
+                    .OnStart(() => DeactivateBubble(i))
                 .Append(
                     dispensedObjects[i].transform.DOMoveY(-18f, DurationTime).SetDelay(TimeOilDispensing)
                         .SetEase(Ease.Linear))
@@ -31,19 +31,15 @@ public class OilManager : MonoBehaviour
         }
     }
 
-    private TweenCallback ActivateBubble(int pos)
+    private void ActivateBubble(int pos)
     {
         Debug.Log("oi");
         oilBubbles[pos].SetActive(true);
-        
-        return null;
     }
     
-    private TweenCallback DeactivateBubble(int pos)
+    private void DeactivateBubble(int pos)
     {
         Debug.Log("ola");
         oilBubbles[pos].SetActive(false);
-        
-        return null;
     }
 }
