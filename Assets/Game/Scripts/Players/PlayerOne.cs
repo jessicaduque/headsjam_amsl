@@ -17,7 +17,7 @@ public class PlayerOne : PlayerBase
     private bool _interactorEnabled;
     private Collider2D _objectCollider;
     // Carrying object control
-    private bool _isCarryingObject;
+    private bool _isCarryingObject = false;
     private HeavyObject _carriedObject;
     
     private void Update()
@@ -40,24 +40,32 @@ public class PlayerOne : PlayerBase
     {
         if (!PlayerMovement.IsGrounded()) return;
 
+        
+        Debug.Log("here 1");
         if (!_isCarryingObject) // Code to hold an object if player isn't already carrying one
         {
+            Debug.Log("here 2");
             if (_objectCollider)
             {
+                Debug.Log("here 4");
                 HeavyObject heavyObjectScript = _objectCollider.gameObject.GetComponent<HeavyObject>();
                 if (!heavyObjectScript) return;
+                Debug.Log("here 5");
                 _carriedObject = heavyObjectScript;
                 GameObject heavyObject = heavyObjectScript.gameObject;
                 heavyObjectScript.Hold(playerHoldPosition.position);
                 heavyObject.transform.SetParent(transform);
                 AnimationBool("IsHolding", true);
+                _isCarryingObject = true;
             }
         }
         else // Code to release an object if player is already carrying one
         {
-            AnimationBool("IsHolding", true);
+            Debug.Log("here 3");
+            AnimationBool("IsHolding", false);
             _carriedObject.Drop();
             _carriedObject = null;
+            _isCarryingObject = false;
         }
     }
     
