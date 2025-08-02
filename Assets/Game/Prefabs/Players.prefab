@@ -10158,7 +10158,7 @@ MonoBehaviour:
   groundCheckSize: {x: 0.2, y: 0.04}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   otherPlayerMovement: {fileID: 4857633340254820599}
   fallMultiplier: 2
 --- !u!114 &7425851379743280028
@@ -10174,7 +10174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 5147111738959151698}
-  rayLength: 3
+  rayLength: 5
   singingParticlesRight: {fileID: 5676030874848810440}
   singingParticlesLeft: {fileID: 7377919793652049038}
 --- !u!95 &2440235262589868788
@@ -15276,7 +15276,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 815424164945274260, guid: c155207100fd2434cb95086bdbb42cb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15469,7 +15469,7 @@ MonoBehaviour:
   groundCheckSize: {x: 0.2, y: 0.04}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   otherPlayerMovement: {fileID: 4591072508887801695}
   fallMultiplier: 2
 --- !u!114 &5305172490224822820

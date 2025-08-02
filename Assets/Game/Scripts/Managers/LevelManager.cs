@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utils.Singleton;
 
 public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] int thisLevel;
-    [SerializeField] private float thisLevelTime;
+    [FormerlySerializedAs("thisLevelTime")] [SerializeField] private float thisLevelTimeSeconds;
     public event Action startLevelEvent;
     public event Action timeUpEvent;
     public event Action pauseEvent;
@@ -65,7 +66,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public float GetLevelTime()
     {
-        return thisLevelTime;
+        return thisLevelTimeSeconds;
     }
     
     #endregion

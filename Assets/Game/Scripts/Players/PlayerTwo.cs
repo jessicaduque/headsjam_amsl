@@ -35,8 +35,9 @@ public class PlayerTwo : PlayerBase
         yield return new WaitForSeconds(1.5f);
         Vector2 direction = transform.right * Mathf.Sign(transform.localScale.x);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayLength, LayerMask.GetMask("InteractableObjects"));
-        Debug.DrawRay(transform.position, direction * rayLength, Color.red, 1f);
+        Vector2 normalizedDirection = direction.normalized;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, normalizedDirection, rayLength, LayerMask.GetMask("InteractableObjects"));
+        Debug.DrawRay(transform.position, normalizedDirection * rayLength, Color.red, 3f);
 
         if (hit.collider != null)
         {

@@ -99,8 +99,15 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         if (_health <= 0)
         {
             _isDead = true;
+            Death();
             _levelManager.GameOver();
         }
+    }
+
+    private void Death()
+    {
+        _rigidbody.bodyType = RigidbodyType2D.Static;
+        _animator.SetTrigger("Death");
     }
     
     #endregion
