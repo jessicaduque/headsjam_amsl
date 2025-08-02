@@ -3,7 +3,7 @@ using UnityEngine;
 using Utils.Singleton;
 using Random = UnityEngine.Random;
 
-public class CameraShake : DontDestroySingleton<CameraShake>
+public class CameraShake : Singleton<CameraShake>
 {
     [SerializeField] private AnimationCurve curve;
     private readonly float _shakeDuration = 0.8f;
