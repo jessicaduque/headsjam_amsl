@@ -14,10 +14,9 @@ public class PlayerOne : PlayerBase
     [SerializeField] private float interactionPointRadius = 2f;
     [SerializeField] private LayerMask interactableObjectsMask; 
     [SerializeField] private Transform playerHoldPosition;
-    private bool _interactorEnabled;
     private Collider2D _objectCollider;
     // Carrying object control
-    private bool _isCarryingObject = false;
+    private bool _isCarryingObject;
     private HeavyObject _carriedObject;
     
     private void Update()
@@ -33,18 +32,16 @@ public class PlayerOne : PlayerBase
             springJoint.distance = maxRopeLength;
         }
         
-        _objectCollider = _interactorEnabled ? Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0) : null;
+        _objectCollider = Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0);
     }
 
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
+        if (!context.started) return;
         if (!PlayerMovement.IsGrounded()) return;
-
         
-        Debug.Log("here 1");
         if (!_isCarryingObject) // Code to hold an object if player isn't already carrying one
         {
-            Debug.Log("here 2");
             if (_objectCollider)
             {
                 Debug.Log("here 4");
