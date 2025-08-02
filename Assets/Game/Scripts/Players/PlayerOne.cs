@@ -8,7 +8,18 @@ public class PlayerOne : PlayerBase
     [SerializeField] private int maxRopeLength = 4;
     
     private Player1 _playerInputs;
-    private GameObject _carriedObject;
+    
+    [Header("Interaction with heavy objects")] 
+    [SerializeField] private Transform interactionPoint;
+    [SerializeField] private float interactionPointRadius = 2f;
+    [SerializeField] private LayerMask interactableObjectsMask; 
+    [SerializeField] private Vector3 playerHoldPosition;
+    private bool _interactorEnabled;
+    private Collider2D _objectCollider;
+    // Carrying object control
+    private bool _isCarryingObject;
+    private HeavyObject _carriedObject;
+    
     private void Update()
     {
         float playerDistance = Vector2.Distance(transform.position, OtherPlayerTransform.position);
@@ -21,13 +32,36 @@ public class PlayerOne : PlayerBase
         {
             springJoint.distance = maxRopeLength;
         }
+        
+        _objectCollider = _interactorEnabled ? Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0) : null;
     }
 
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
         if (!PlayerMovement.IsGrounded()) return;
-        
-        Debug.Log("Player 1's power not implemented yet!");
-        // Não implementado ainda
+
+        if (!_isCarryingObject) // Code to hold an object if player isn't already carrying one
+        {
+            if (_objectCollider)
+            {
+                HeavyObject heavyObjectScript = _objectCollider.gameObject.GetComponent<HeavyObject>();
+                if (!heavyObjectScript) return;
+
+                GameObject heavyObject = heavyObjectScript.gameObject;
+                heavyObject.layer = LayerMask.NameToLayer("Player");
+                heavyObjectScript.Hold(playerHoldPosition);
+                heavyObject.transform.SetParent(transform);
+            }
+        }
+        else // Code to release an object if player is already carrying one
+        {
+            
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(interactionPoint.position, interactionPointRadius);
     }
 }

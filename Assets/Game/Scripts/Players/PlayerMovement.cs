@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.UI;
 using UnityEngine.Serialization;
 
 namespace Game.Scripts.Players
