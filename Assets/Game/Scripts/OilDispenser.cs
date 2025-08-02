@@ -1,17 +1,14 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 
 public class OilDispenser : MonoBehaviour
 {
-    [SerializeField] bool startsDispensing = false;
-    private float _timeTillDispenseOil = 1.2f;
-    private float _timeOilDispensing = 3f;
+    [SerializeField] public GameObject dispensedObject;
 
+    
     private void Start()
     {
-        // spriterenderer.bounds.size.y 
-        transform.DOMoveY();
-        throw new NotImplementedException();
     }
 }
