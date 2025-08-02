@@ -49,7 +49,7 @@ public class PlayerOne : PlayerBase
                 Debug.Log("here 5");
                 _carriedObject = heavyObjectScript;
                 GameObject heavyObject = heavyObjectScript.gameObject;
-                heavyObjectScript.Hold(playerHoldPosition.localPosition);
+                heavyObjectScript.Hold(playerHoldPosition.position);
                 heavyObject.transform.SetParent(transform);
                 AnimationBool("IsHolding", true);
                 _isCarryingObject = true;
