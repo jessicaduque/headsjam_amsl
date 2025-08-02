@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1625436455286440655}
   - component: {fileID: 6632991331306885153}
   m_Layer: 0
-  m_Name: EndLevelObject
+  m_Name: EndDoor
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
