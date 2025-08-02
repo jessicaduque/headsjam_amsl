@@ -5,6 +5,7 @@ public class HeavyObject : MonoBehaviour
     [SerializeField] private LayerMask oilLayer;
     private Rigidbody2D _rigidbody;
     private float _halfHeight;
+    private Collider2D _collider;
     
     AudioManager _audioManager => AudioManager.I;
 
@@ -12,6 +13,7 @@ public class HeavyObject : MonoBehaviour
     {
         _halfHeight = GetComponent<SpriteRenderer>().bounds.size.x / 2;
         _rigidbody = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,15 +28,17 @@ public class HeavyObject : MonoBehaviour
     public void Hold(Vector3 playerHoldPos)
     {
         _rigidbody.gravityScale = 0;
-        transform.position = playerHoldPos + new Vector3(0, _halfHeight, 0);
-        gameObject.layer = LayerMask.NameToLayer("Player");
+        transform.localPosition = playerHoldPos + new Vector3(0, _halfHeight, 0);
+        gameObject.layer = LayerMask.NameToLayer("Players");
         _audioManager.PlaySfx("holdheavyobject");
+        _collider.enabled = false;
     }
 
     public void Drop()
     {
-        _rigidbody.gravityScale = 0;
+        _rigidbody.gravityScale = 1;
         gameObject.layer = LayerMask.NameToLayer("InteractableObjects");
         _audioManager.PlaySfx("holdheavyobject");
+        _collider.enabled = true;
     }
 }

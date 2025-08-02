@@ -112,7 +112,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         }
     }
 
-    private void Death()
+    protected virtual void Death()
     {
         _animator.SetTrigger("Death");
     }

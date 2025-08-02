@@ -37,7 +37,6 @@ public class PlayerOne : PlayerBase
 
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
-        if (!context.started) return;
         if (!PlayerMovement.IsGrounded()) return;
         
         if (!_isCarryingObject) // Code to hold an object if player isn't already carrying one
@@ -50,7 +49,7 @@ public class PlayerOne : PlayerBase
                 Debug.Log("here 5");
                 _carriedObject = heavyObjectScript;
                 GameObject heavyObject = heavyObjectScript.gameObject;
-                heavyObjectScript.Hold(playerHoldPosition.position);
+                heavyObjectScript.Hold(playerHoldPosition.localPosition);
                 heavyObject.transform.SetParent(transform);
                 AnimationBool("IsHolding", true);
                 _isCarryingObject = true;
