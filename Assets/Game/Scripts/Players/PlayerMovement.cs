@@ -8,6 +8,10 @@ namespace Game.Scripts.Players
 {
     public class PlayerMovement : MonoBehaviour
     {
+        private static readonly int IsJumping = Animator.StringToHash("IsJumping");
+        private static readonly int Walking = Animator.StringToHash("Walking");
+        private static readonly int WalkingWithObject = Animator.StringToHash("WalkingWithObject");
+        private static readonly int JumpVel = Animator.StringToHash("JumpVel");
         private Rigidbody2D _rigidbody;
 
         [Header("Movement")]

@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -6,40 +7,53 @@ public class OilManager : MonoBehaviour
     [Header("Oil Dispenser")]
     [SerializeField] private GameObject[] dispensedObjects;
     [SerializeField] private GameObject[] oilBubbles;
+    private Vector3[] _dispensedOriginalPositions;
+
     private const float TimeTillDispenseOil = 1.2f;
     private const float TimeOilDispensing = 3f;
     private const float DurationTime = 0.8f;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        _dispensedOriginalPositions = new Vector3[dispensedObjects.Length];
+        
         for (var i = 0;  i < dispensedObjects.Length; i++)
         {
-            Sequence mySequence = DOTween.Sequence();
-            mySequence
-                .OnStart(() => ActivateBubble(i))
-                .SetDelay(i * 0.8f + Random.Range(0, 0.5f))
-                .Append(dispensedObjects[i].transform.DOMoveY(0f, DurationTime)
-                    .SetDelay(0.7f)
-                    .SetEase(Ease.Linear))
-                    .OnStart(() => DeactivateBubble(i))
-                .Append(
-                    dispensedObjects[i].transform.DOMoveY(-18f, DurationTime).SetDelay(TimeOilDispensing)
-                        .SetEase(Ease.Linear))
-                .SetDelay(TimeTillDispenseOil);
-            mySequence.SetLoops(-1, LoopType.Restart);
+            _dispensedOriginalPositions[i] = dispensedObjects[i].transform.position;
+
+            StartCoroutine(Sequence(i));
         }
     }
 
-    private void ActivateBubble(int pos)
+    private IEnumerator Sequence(int pos)
     {
-        Debug.Log("oi");
-        oilBubbles[pos].SetActive(true);
+        yield return new WaitForSeconds(pos * 0.8f + Random.Range(0, 0.5f));
+        SetBubble(pos, true);
+        
+        yield return new WaitForSeconds(0.7f);
+        SetBubble(pos, false);
+        MoveDispensedObject(pos, 0);
+        
+        yield return new WaitForSeconds(TimeOilDispensing);
+        MoveDispensedObject(pos, -18f);
+        
+        yield return new WaitForSeconds(TimeTillDispenseOil);
+        Restart(pos);
+    }
+
+    private void Restart(int pos)
+    {
+        dispensedObjects[pos].transform.position = _dispensedOriginalPositions[pos];
+        StartCoroutine(Sequence(pos));
     }
     
-    private void DeactivateBubble(int pos)
+    private void MoveDispensedObject(int pos, float yValue)
     {
-        Debug.Log("ola");
-        oilBubbles[pos].SetActive(false);
+        dispensedObjects[pos].transform.DOMoveY(yValue, DurationTime).SetEase(Ease.Linear);
+    }
+
+    private void SetBubble(int pos, bool active)
+    {
+        oilBubbles[pos].SetActive(active);
     }
 }
