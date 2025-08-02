@@ -79,6 +79,8 @@ namespace Game.Scripts.Players
             BodyRotate(_horizontalMovement);
             MovementAnimationControl(_horizontalMovement);
         }
+        
+        #region Movement
 
         public void Move(InputAction.CallbackContext context) 
         {
@@ -108,6 +110,8 @@ namespace Game.Scripts.Players
             if (!isAdilson) return;
             _animator.SetBool("WalkingWithObject", speedX != 0);
         }
+        
+        #endregion
         
         #region Jump
         

@@ -61,12 +61,12 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         _animator.SetBool(boolName, enable);
     }
     
-    #endregion
-    
     private void AnimationRopeControl(bool state)
     {
         _animator.SetLayerWeight(1, (state ? 1 : 0));
     }
+    
+    #endregion
     
     #region Input
     
