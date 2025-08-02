@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class OilDispenser : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class OilDispenser : MonoBehaviour
 
     private void Start()
     {
+        // spriterenderer.bounds.size.y 
+        transform.DOMoveY();
         throw new NotImplementedException();
     }
 }
