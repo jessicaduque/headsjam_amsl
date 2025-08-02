@@ -28,11 +28,10 @@ public class OilManager : MonoBehaviour
     private IEnumerator Sequence(int pos)
     {
         yield return new WaitForSeconds(pos * 0.8f + Random.Range(0, 0.5f));
-        SetBubble(pos, true);
         
+        ActivateBubble(pos);
         yield return new WaitForSeconds(0.7f);
-        SetBubble(pos, false);
-        MoveDispensedObject(pos, 0);
+        MoveDispensedObject(pos, 0.5f);
         
         yield return new WaitForSeconds(TimeOilDispensing);
         MoveDispensedObject(pos, -18f);
@@ -52,8 +51,8 @@ public class OilManager : MonoBehaviour
         dispensedObjects[pos].transform.DOMoveY(yValue, DurationTime).SetEase(Ease.Linear);
     }
 
-    private void SetBubble(int pos, bool active)
+    private void ActivateBubble(int pos)
     {
-        oilBubbles[pos].SetActive(active);
+        dispensedObjects[pos].transform.DOMoveY(16.7f, 0.7f);
     }
 }
