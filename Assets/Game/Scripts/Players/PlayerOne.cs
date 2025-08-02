@@ -13,7 +13,7 @@ public class PlayerOne : PlayerBase
     [SerializeField] private Transform interactionPoint;
     [SerializeField] private float interactionPointRadius = 2f;
     [SerializeField] private LayerMask interactableObjectsMask; 
-    [SerializeField] private Vector3 playerHoldPosition;
+    [SerializeField] private Transform playerHoldPosition;
     private bool _interactorEnabled;
     private Collider2D _objectCollider;
     // Carrying object control
@@ -46,16 +46,18 @@ public class PlayerOne : PlayerBase
             {
                 HeavyObject heavyObjectScript = _objectCollider.gameObject.GetComponent<HeavyObject>();
                 if (!heavyObjectScript) return;
-
+                _carriedObject = heavyObjectScript;
                 GameObject heavyObject = heavyObjectScript.gameObject;
-                heavyObject.layer = LayerMask.NameToLayer("Player");
-                heavyObjectScript.Hold(playerHoldPosition);
+                heavyObjectScript.Hold(playerHoldPosition.position);
                 heavyObject.transform.SetParent(transform);
+                AnimationBool("IsHolding", true);
             }
         }
         else // Code to release an object if player is already carrying one
         {
-            
+            AnimationBool("IsHolding", true);
+            _carriedObject.Drop();
+            _carriedObject = null;
         }
     }
     

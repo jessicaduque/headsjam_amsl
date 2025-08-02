@@ -99,6 +99,7 @@ namespace Game.Scripts.Players
         private void MovementAnimationControl(float speedX)
         {
             _animator.SetBool("Walking", speedX != 0);
+            _animator.SetBool("WalkingWithObject", speedX != 0);
         }
         
         #region Jump
