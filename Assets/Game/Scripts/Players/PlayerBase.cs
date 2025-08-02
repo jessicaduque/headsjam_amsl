@@ -37,6 +37,9 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     protected virtual void Start()
     {
+        // Set correct animation layer
+        AnimationRopeControl(_levelManager.IsLevelTutorial());
+        
         OtherPlayerBase = otherPlayer.GetComponent<PlayerBase>();
         OtherPlayerTransform = otherPlayer.GetComponent<Transform>();
         
@@ -59,6 +62,11 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     }
     
     #endregion
+    
+    private void AnimationRopeControl(bool state)
+    {
+        _animator.SetLayerWeight(1, (state ? 1 : 0));
+    }
     
     #region Input
     

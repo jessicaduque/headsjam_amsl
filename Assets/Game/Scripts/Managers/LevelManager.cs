@@ -5,6 +5,7 @@ using Utils.Singleton;
 
 public class LevelManager : Singleton<LevelManager>
 {
+    private int tutorialLevel = 0;
     [SerializeField] int thisLevel;
     [FormerlySerializedAs("thisLevelTime")] [SerializeField] private float thisLevelTimeSeconds;
     public event Action startLevelEvent;
@@ -67,6 +68,11 @@ public class LevelManager : Singleton<LevelManager>
     public float GetLevelTime()
     {
         return thisLevelTimeSeconds;
+    }
+
+    public bool IsLevelTutorial()
+    {
+        return thisLevel == tutorialLevel;
     }
     
     #endregion
