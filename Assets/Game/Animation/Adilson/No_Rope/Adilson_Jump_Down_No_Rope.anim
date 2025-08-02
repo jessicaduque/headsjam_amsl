@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Adilson_Jump_Down
+  m_Name: Adilson_Jump_Down_No_Rope
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0

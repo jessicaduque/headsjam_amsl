@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Adilson_Jump_Up
+  m_Name: Adilson_Hold_No_Rope
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -6150384008709971305, guid: bcb4ec97499b72043be1e835e3259520, type: 3}
+      value: {fileID: -8595867186998968578, guid: 5563245c5adad5841bbfe4af934b3481, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -6150384008709971305, guid: bcb4ec97499b72043be1e835e3259520, type: 3}
+    - {fileID: -8595867186998968578, guid: 5563245c5adad5841bbfe4af934b3481, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
