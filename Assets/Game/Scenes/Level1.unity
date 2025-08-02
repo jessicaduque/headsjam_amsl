@@ -1942,8 +1942,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4591072508887801695, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: fallMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591072508887801695, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: jumpMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591072508887801695, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857633340254820599, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: fallMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857633340254820599, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: jumpMultiplier
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5157264239850830325, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_Name

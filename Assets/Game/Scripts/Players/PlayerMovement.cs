@@ -27,7 +27,7 @@ namespace Game.Scripts.Players
         [FormerlySerializedAs("_jumpMultiplier")]
         [Header("Jumping")]
         [SerializeField] float jumpMultiplier = 3f;
-        private readonly float _jumpPower = 4f;
+        private readonly float _jumpPower = 8f;
         private readonly float _jumpTime = 0.4f;
         private float _jumpCounter;
         private bool _isJumping;
@@ -61,41 +61,19 @@ namespace Game.Scripts.Players
         {
             IsMovingFromInput = _horizontalMovement != 0;
             
-            if (!IsGrounded() && otherPlayerMovement.IsGrounded() && OtherPlayerTransform.position.y - 2 > transform.position.y)
-            {
-                SwingMovement(_horizontalMovement);
-            }
-            else
-            {
-                DoPlayerMovement(_horizontalMovement);
-            } 
+            DoPlayerMovement(_horizontalMovement);
+            // if (!IsGrounded() && otherPlayerMovement.IsGrounded() && OtherPlayerTransform.position.y - 2 > transform.position.y)
+            // {
+            //     SwingMovement(_horizontalMovement);
+            // }
+            // else
+            // {
+            //     DoPlayerMovement(_horizontalMovement);
+            // } 
             
             Gravity();
-            HigherJumping();
             BodyRotate(_horizontalMovement);
             MovementAnimationControl(_horizontalMovement);
-            
-            if (_rigidbody.linearVelocity.y < 0f && !IsGrounded())
-            {
-                _rigidbody.linearVelocity -= _gravity * (fallMultiplier * Time.deltaTime);
-                _animator.SetInteger("JumpVel", -1);
-            }
-            else if (_rigidbody.linearVelocity.y > 0f && _isJumping)
-            {
-                _jumpCounter += Time.deltaTime;
-                if (_jumpCounter > _jumpTime) _isJumping = false;
-
-                var t = _jumpCounter / _jumpTime;
-                var currentJumpF = _jumpPower;
-            
-                if (t < 0.5f) currentJumpF = _jumpPower * (1 - t);
-            
-                _rigidbody.linearVelocity += _gravity * (currentJumpF * Time.deltaTime);
-            }
-            else if(IsGrounded())
-            {
-                _animator.SetBool("IsJumping", false);
-            }
         }
 
         public void Move(InputAction.CallbackContext context) 
@@ -125,6 +103,8 @@ namespace Game.Scripts.Players
             _animator.SetBool("Walking", speedX != 0);
         }
         
+        #region Jump
+        
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.started && IsGrounded())
@@ -149,15 +129,14 @@ namespace Game.Scripts.Players
 
         private void Gravity()
         {
-            if (_rigidbody.linearVelocity.y < 0)
+            if (_rigidbody.linearVelocity.y < 0f && !IsGrounded())
             {
                 _rigidbody.linearVelocity -= _gravity * (fallMultiplier * Time.deltaTime);
+                _animator.SetInteger("JumpVel", -1);
             }
-        }
-
-        private void HigherJumping()
-        {
-            if (_rigidbody.linearVelocity.y > 0 && _isJumping)
+            
+            
+            if (_rigidbody.linearVelocity.y > 0f && _isJumping)
             {
                 _jumpCounter += Time.deltaTime;
                 if (_jumpCounter > _jumpTime) _isJumping = false;
@@ -169,8 +148,14 @@ namespace Game.Scripts.Players
                 
                 _rigidbody.linearVelocity += _gravity * (currentJumpF * Time.deltaTime);
             }
+            else if (IsGrounded())
+            {
+                _animator.SetBool("IsJumping", false);
+            }
         }
 
+        #endregion
+        
         private void SwingMovement(float speedX)
         {
             Vector2 ropeDirection = (OtherPlayerTransform.position - transform.position).normalized;
@@ -182,7 +167,6 @@ namespace Game.Scripts.Players
 
             _rigidbody.AddForce(perpendicular * (input * 10f), ForceMode2D.Force); 
         }
-        
         
         public IEnumerator GoTo(Vector3 position)
         {
