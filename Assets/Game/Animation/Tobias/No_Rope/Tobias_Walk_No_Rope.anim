@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tobias_Jump_Up
+  m_Name: Tobias_Walk_No_Rope
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -6150384008709971305, guid: 1867ae1bfc0dbc84e90c1c6af676c0c5, type: 3}
+      value: {fileID: 5358156087590392599, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
+    - time: 0.083333336
+      value: {fileID: -1740944407845316278, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
+    - time: 0.16666667
+      value: {fileID: -7702130023640548296, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
+    - time: 0.25
+      value: {fileID: -7322669406771208682, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,13 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -6150384008709971305, guid: 1867ae1bfc0dbc84e90c1c6af676c0c5, type: 3}
+    - {fileID: 5358156087590392599, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
+    - {fileID: -1740944407845316278, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
+    - {fileID: -7702130023640548296, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
+    - {fileID: -7322669406771208682, guid: db88ac9cb87307a49b6f1f814150b8ea, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.083333336
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
