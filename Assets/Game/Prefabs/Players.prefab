@@ -10152,6 +10152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d667fb50a7152544adb88f9d93561ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAdilson: 0
   moveSpeed: 10
   jumpMultiplier: 5
   groundCheck: {fileID: 8485645472242018855}
@@ -15495,6 +15496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d667fb50a7152544adb88f9d93561ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAdilson: 1
   moveSpeed: 10
   jumpMultiplier: 5
   groundCheck: {fileID: 1393273878233585446}

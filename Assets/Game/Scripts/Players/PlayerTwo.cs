@@ -10,8 +10,9 @@ public class PlayerTwo : PlayerBase
     [SerializeField] private ParticleSystem singingParticlesLeft;
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
+        if (!context.started) return;
         if (!PlayerMovement.IsGrounded()) return;
-
+        
         if (Mathf.Approximately(PlayerMovement.transform.localScale.x, -1))
         {
             singingParticlesLeft.Play();
@@ -20,12 +21,13 @@ public class PlayerTwo : PlayerBase
         {
             singingParticlesRight.Play();
         }
-        
+    
         OtherPlayerBase.DisableInputs();
         DisableInputs();
-        
+    
         AnimationBool("Singchirp", true);
         StartCoroutine(ChirpingCoroutine());
+        
     }
 
     private IEnumerator ChirpingCoroutine()

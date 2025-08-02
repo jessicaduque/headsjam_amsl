@@ -14,6 +14,8 @@ namespace Game.Scripts.Players
         private static readonly int JumpVel = Animator.StringToHash("JumpVel");
         private Rigidbody2D _rigidbody;
 
+        [SerializeField] private bool isAdilson;
+        
         [Header("Movement")]
         public float moveSpeed = 10f;
         private float _horizontalMovement;
@@ -103,6 +105,7 @@ namespace Game.Scripts.Players
         private void MovementAnimationControl(float speedX)
         {
             _animator.SetBool("Walking", speedX != 0);
+            if (!isAdilson) return;
             _animator.SetBool("WalkingWithObject", speedX != 0);
         }
         

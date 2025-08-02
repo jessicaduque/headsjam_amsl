@@ -14,7 +14,6 @@ public class PlayerOne : PlayerBase
     [SerializeField] private float interactionPointRadius = 2f;
     [SerializeField] private LayerMask interactableObjectsMask; 
     [SerializeField] private Transform playerHoldPosition;
-    private bool _interactorEnabled;
     private Collider2D _objectCollider;
     // Carrying object control
     private bool _isCarryingObject;
@@ -33,31 +32,36 @@ public class PlayerOne : PlayerBase
             springJoint.distance = maxRopeLength;
         }
         
-        _objectCollider = _interactorEnabled ? Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0) : null;
+        _objectCollider = Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0);
     }
 
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
         if (!PlayerMovement.IsGrounded()) return;
-
+        
         if (!_isCarryingObject) // Code to hold an object if player isn't already carrying one
         {
             if (_objectCollider)
             {
+                Debug.Log("here 4");
                 HeavyObject heavyObjectScript = _objectCollider.gameObject.GetComponent<HeavyObject>();
                 if (!heavyObjectScript) return;
+                Debug.Log("here 5");
                 _carriedObject = heavyObjectScript;
                 GameObject heavyObject = heavyObjectScript.gameObject;
-                heavyObjectScript.Hold(playerHoldPosition.position);
+                heavyObjectScript.Hold(playerHoldPosition.localPosition);
                 heavyObject.transform.SetParent(transform);
                 AnimationBool("IsHolding", true);
+                _isCarryingObject = true;
             }
         }
         else // Code to release an object if player is already carrying one
         {
-            AnimationBool("IsHolding", true);
+            Debug.Log("here 3");
+            AnimationBool("IsHolding", false);
             _carriedObject.Drop();
             _carriedObject = null;
+            _isCarryingObject = false;
         }
     }
     
