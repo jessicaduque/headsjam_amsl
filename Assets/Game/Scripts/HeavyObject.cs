@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class HeavyObject : MonoBehaviour
 {
-    [SerializeField] private LayerMask oilLayer;
     private Transform _playerTransformHold;
     private float _halfHeight;
     private bool _isBeingHeld;
@@ -19,15 +18,6 @@ public class HeavyObject : MonoBehaviour
         if (_isBeingHeld)
         {
             transform.position = _playerTransformHold.position + new Vector3(0, _halfHeight, 0);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.collider.IsTouchingLayers(oilLayer))
-        {
-            _audioManager.PlaySfx("touchoil");
-            Destroy(gameObject);
         }
     }
 

@@ -53,10 +53,8 @@ public class PlayerOne : PlayerBase
         {
             if (_objectCollider)
             {
-                Debug.Log("here 4");
                 HeavyObject heavyObjectScript = _objectCollider.gameObject.GetComponent<HeavyObject>();
                 if (!heavyObjectScript) return;
-                Debug.Log("here 5");
                 _carriedObject = heavyObjectScript;
                 GameObject heavyObject = heavyObjectScript.gameObject;
                 heavyObjectScript.Hold(playerHoldPosition);

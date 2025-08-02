@@ -221,9 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e29ef111f53a1498057f301ba43703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oilLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!60 &74453479
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -291,7 +288,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74453472}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -734,7 +731,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88976195}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -752,7 +749,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!60 &88976201
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -897,7 +894,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e04bc3861bbc814989fa8806b66a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAreaSfxName: 
+  deathAreaSfxName: touchoil
+  interactableObjectsLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &312121726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,9 +1829,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e29ef111f53a1498057f301ba43703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oilLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!50 &488873749
 Rigidbody2D:
   serializedVersion: 5
@@ -3549,6 +3546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathAreaSfxName: touchoil
+  interactableObjectsLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1840833949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,7 +5218,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950284131}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -5236,7 +5236,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!60 &1950284137
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5381,7 +5381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e04bc3861bbc814989fa8806b66a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAreaSfxName: 
+  deathAreaSfxName: touchoil
+  interactableObjectsLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1970545785
 GameObject:
   m_ObjectHideFlags: 0
