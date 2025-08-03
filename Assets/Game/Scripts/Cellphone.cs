@@ -6,7 +6,7 @@ public class Cellphone : MonoBehaviour
     [SerializeField] PlayerBase player2;
     
     [SerializeField] GameObject dialogueManager;
-    private void OnTriggerEnter2D(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

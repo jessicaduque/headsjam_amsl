@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Utils.Singleton;
 
@@ -16,8 +17,9 @@ public class LevelManager : Singleton<LevelManager>
     
     private GameManager _gameManager => GameManager.I;
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitForSeconds(0.2f);
         StartLevel();
     }
 
