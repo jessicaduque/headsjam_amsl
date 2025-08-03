@@ -14,12 +14,6 @@ TextureImporter:
   - first:
       213: 5712972936589503844
     second: Esteira_TILESET_3
-  - first:
-      213: -3765716721555880970
-    second: Esteira_TILESET_4
-  - first:
-      213: -468792317473631763
-    second: Esteira_TILESET_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 58
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -133,7 +127,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 47
-        width: 107
+        width: 58
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,7 +147,7 @@ TextureImporter:
       name: Esteira_TILESET_1
       rect:
         serializedVersion: 2
-        x: 108
+        x: 59
         y: 47
         width: 58
         height: 46
@@ -175,9 +169,9 @@ TextureImporter:
       name: Esteira_TILESET_2
       rect:
         serializedVersion: 2
-        x: 167
-        y: 47
-        width: 42
+        x: 0
+        y: 0
+        width: 58
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,29 +191,7 @@ TextureImporter:
       name: Esteira_TILESET_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 107
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78d0ef6ae81d75d4f9bf1858678ad2e9
-      internalID: -855576320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esteira_TILESET_4
-      rect:
-        serializedVersion: 2
-        x: 108
+        x: 59
         y: 0
         width: 58
         height: 46
@@ -229,32 +201,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 003ce9fdd0942ef409b02aceb7164cca
-      internalID: -482940258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esteira_TILESET_5
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 0
-        width: 42
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ccda5707eaf75044abfeabdd3e362b5
-      internalID: -1799442165
+      spriteID: 46d66d00e9e884f40800000000000000
+      internalID: 5712972936589503844
       vertices: []
       indices: 
       edges: []
@@ -263,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4684caa64f2427647bc8e8c480932970
     internalID: 0
     vertices: []
     indices: 
@@ -276,9 +226,7 @@ TextureImporter:
       Esteira_TILESET_0: -5153805984364878991
       Esteira_TILESET_1: -5846291269474200009
       Esteira_TILESET_2: 259883861953836611
-      Esteira_TILESET_3: -855576320
-      Esteira_TILESET_4: -482940258
-      Esteira_TILESET_5: -1799442165
+      Esteira_TILESET_3: 5712972936589503844
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
