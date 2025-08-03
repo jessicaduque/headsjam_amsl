@@ -11,14 +11,12 @@ namespace Game.Scripts
         public float speed = 500;
         public Vector3 dummySpawn;
 
-        private static PoolManager PoolManager => PoolManager.I;
+        private static PoolManager _poolManager => PoolManager.I;
 
         private void Start()
         {
             if (hasInfiniteChicken)
             {
-                DeathArea.OnDeathArea += ResetChickens;
-            
                 StartCoroutine(InfiniteChicken());
             }
         }
@@ -58,15 +56,10 @@ namespace Game.Scripts
         {
             while (true)
             {
-                PoolManager.GetObject("Dummy", dummySpawn, new Quaternion());
+                _poolManager.GetObject("Dummy", dummySpawn, new Quaternion());
                 
                 yield return new WaitForSeconds(1.25f);
             }
-        }
-
-        private void ResetChickens(GameObject gameObject)
-        {
-            PoolManager.ReturnPool(gameObject);
         }
 
         public void ToggleOnOff()

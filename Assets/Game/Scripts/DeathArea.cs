@@ -4,8 +4,7 @@ public class DeathArea : MonoBehaviour
 {
     [SerializeField] private string deathAreaSfxName;
     [SerializeField] private LayerMask interactableObjectsLayer;
-
-    public static event System.Action<GameObject> OnDeathArea;
+    private static PoolManager _poolManager => PoolManager.I;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +14,7 @@ public class DeathArea : MonoBehaviour
         }
         else if (other.CompareTag("Dummy"))
         {
-            OnDeathArea?.Invoke(other.gameObject);
+            _poolManager.ReturnPool(other.gameObject);
         }
         else if (((1 << other.gameObject.layer) & interactableObjectsLayer) != 0)
         {

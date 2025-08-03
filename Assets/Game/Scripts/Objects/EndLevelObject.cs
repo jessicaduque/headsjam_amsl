@@ -1,10 +1,9 @@
-using System;
 using Game.Scripts.Players;
 using UnityEngine;
 
 public class EndLevelObject : MonoBehaviour
 {
-    [SerializeField] private string nameScene;
+    [SerializeField] private string nameNextScene;
 
     private int _amountPlayersIn = 0;
     private float _fadeOutTime = 1.2f;
@@ -41,7 +40,7 @@ public class EndLevelObject : MonoBehaviour
         _amountPlayersIn++;
         if (_amountPlayersIn == 2)
         {
-            BlackScreenController.FadeOutScene(nameScene);
+            BlackScreenController.FadeOutScene(nameNextScene);
         }
     }
 }

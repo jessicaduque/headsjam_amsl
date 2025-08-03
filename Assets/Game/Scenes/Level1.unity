@@ -1315,7 +1315,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.714286
+  orthographic size: 7.6595745
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1448,9 +1448,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 70
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
+  m_AssetsPPU: 47
+  m_RefResolutionX: 1280
+  m_RefResolutionY: 720
   m_CropFrame: 0
   m_GridSnapping: 0
   m_FilterMode: 0
@@ -2317,7 +2317,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.359375, y: 0.21875, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -3838,6 +3838,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6632991331306885153, guid: 5b16d09e761e56340bce371b7d891ba1, type: 3}
+      propertyPath: nameNextScene
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 7729026788535734998, guid: 5b16d09e761e56340bce371b7d891ba1, type: 3}
       propertyPath: m_Name
       value: EndDoor
@@ -4259,7 +4263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2570984996983866203, guid: ae4a6f4cd00e04e4995957f7ab94f13b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: -0.8532485
       objectReference: {fileID: 0}
     - target: {fileID: 2570984996983866203, guid: ae4a6f4cd00e04e4995957f7ab94f13b, type: 3}
       propertyPath: m_LocalPosition.z

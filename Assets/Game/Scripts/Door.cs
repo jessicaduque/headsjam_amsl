@@ -5,14 +5,16 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private bool normalStateIsOpen;
 
+    private Collider2D _collider;
     private float _height;
     private Vector3 _openedPosition;
     private Vector3 _closedPosition;
-    private readonly float _doorSpeed = 4f; 
+    private readonly float _doorSpeed = 5f; 
 
     private void Awake()
     {
         _height = GetComponent<SpriteRenderer>().bounds.size.y;
+        _collider = GetComponent<Collider2D>();
         _closedPosition = transform.position;
         _openedPosition = _closedPosition - new Vector3(0, _height, 0);
     }
@@ -23,6 +25,8 @@ public class Door : MonoBehaviour
         {
             transform.position = _openedPosition;
         }
+        
+        _collider.enabled = transform.position != _openedPosition;
     }
 
     private void OnDisable()
@@ -42,6 +46,7 @@ public class Door : MonoBehaviour
         }
 
         transform.position = destination; 
+        _collider.enabled = transform.position != _openedPosition;
     }
 
     public void TriggerDoor(bool buttonPressed)

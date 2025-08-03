@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Serialization;
 using Utils.Singleton;
 
 public class TimeCountManager : Singleton<TimeCountManager>
