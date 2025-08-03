@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallWait: 0.8
-  respawnWait: 4
-  appearWait: 1
+  respawnWait: 2
+  appearWait: 0.8
 --- !u!60 &2878313669090283560
 PolygonCollider2D:
   m_ObjectHideFlags: 0
