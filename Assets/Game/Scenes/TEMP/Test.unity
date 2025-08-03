@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &196839875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5147111738959151698, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+  m_PrefabInstance: {fileID: 1896344105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &235510359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -610,9 +615,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOn: 1
   clockwise: 0
-  hasInfiniteChicken: 1
+  hasInfiniteChicken: 0
   speed: 500
+  tagPool: DummyChick
   startPosition: {fileID: 504420527}
+  tilemap: {fileID: 0}
+  normalConveyorTile: []
+  animatedConveyorTile: []
 --- !u!19719996 &677691592
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -980,12 +989,30 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4857633340254820599, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
   m_PrefabInstance: {fileID: 1896344105}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 196839875}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d667fb50a7152544adb88f9d93561ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!231 &1050197817 stripped
+SpringJoint2D:
+  m_CorrespondingSourceObject: {fileID: 670757500307913633, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+  m_PrefabInstance: {fileID: 1896344105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1050197823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196839875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdab47818ebbda4ea2cc9a51f251cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springJoint: {fileID: 1050197817}
 --- !u!1 &1091550200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,7 +1086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1233753166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,6 +1338,30 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 1050197813}
+    - target: {fileID: 670757500307913633, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 670757500307913633, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_Distance
+      value: 2.7624998
+      objectReference: {fileID: 0}
+    - target: {fileID: 670757500307913633, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_Frequency
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 670757500307913633, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670757500307913633, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_AutoConfigureDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 670757500307913633, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4328364970291152491, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: playerMovement
       value: 
@@ -1370,7 +1421,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5147111738959151698, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050197823}
   m_SourcePrefab: {fileID: 100100000, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
 --- !u!1 &1957479835
 GameObject:

@@ -42,6 +42,18 @@ public class PlayerOne : PlayerBase
             springJoint.distance = maxRopeLength;
         }
     }
+    
+    private void FixedUpdate()
+    {
+        if (springJoint.distance < 4)
+        {
+            springJoint.enabled = false;
+        }
+        else
+        {
+            springJoint.enabled = true;
+        }
+    }
 
     public override void DoPowerControl(InputAction.CallbackContext context)
     {
