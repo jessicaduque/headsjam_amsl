@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 97ccc2e7715c7ee45a6b402aa3be2f90
+guid: 488f88cfb3168764d9aab4c9a4ceb2be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5153805984364878991
-    second: Esteira_TILESET_0
+      213: -1536232235775588543
+    second: Janela_0
   - first:
-      213: -5846291269474200009
-    second: Esteira_TILESET_1
+      213: 8977881757050281282
+    second: Janela_1
   - first:
-      213: 259883861953836611
-    second: Esteira_TILESET_2
-  - first:
-      213: 5712972936589503844
-    second: Esteira_TILESET_3
+      213: -3592100831011484216
+    second: Janela_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 58
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,7 +103,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -119,11 +116,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,57 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Esteira_TILESET_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 47
-        width: 58
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17326a463c00a78b0800000000000000
-      internalID: -5153805984364878991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esteira_TILESET_1
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 47
-        width: 58
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 736d58db01dcddea0800000000000000
-      internalID: -5846291269474200009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esteira_TILESET_2
+      name: Janela_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 58
-        height: 46
+        width: 287
+        height: 342
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3467d9adefa4b9300800000000000000
-      internalID: 259883861953836611
+      spriteID: 147871ebbe43eaae0800000000000000
+      internalID: -1536232235775588543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Esteira_TILESET_3
+      name: Janela_1
       rect:
         serializedVersion: 2
-        x: 59
+        x: 286
         y: 0
-        width: 58
-        height: 46
+        width: 288
+        height: 342
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +169,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46d66d00e9e884f40800000000000000
-      internalID: 5712972936589503844
+      spriteID: 24d117424e7d79c70800000000000000
+      internalID: 8977881757050281282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Janela_2
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 0
+        width: 287
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cdcc22735b462ec0800000000000000
+      internalID: -3592100831011484216
       vertices: []
       indices: 
       edges: []
@@ -226,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4684caa64f2427647bc8e8c480932970
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Esteira_TILESET_0: -5153805984364878991
-      Esteira_TILESET_1: -5846291269474200009
-      Esteira_TILESET_2: 259883861953836611
-      Esteira_TILESET_3: 5712972936589503844
+      Janela_0: -1536232235775588543
+      Janela_1: 8977881757050281282
+      Janela_2: -3592100831011484216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

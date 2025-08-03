@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 367187011696236610}
   - component: {fileID: 3557309177970794025}
   m_Layer: 7
-  m_Name: GlassBowls
+  m_Name: GlassBowlsBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

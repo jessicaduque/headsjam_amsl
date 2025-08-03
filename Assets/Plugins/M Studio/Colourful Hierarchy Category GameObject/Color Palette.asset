@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Color Palette
   m_EditorClassIdentifier: 
   colorDesigns:
+  - keyChar: /
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    backgroundColor: {r: 0.31029987, g: 0.5999999, b: 0.16188674, a: 1}
+    textAlignment: 4
+    fontStyle: 1
   - keyChar: //
     textColor: {r: 1, g: 1, b: 1, a: 1}
     backgroundColor: {r: 0.7132075, g: 0.068629384, b: 0.28584567, a: 1}
