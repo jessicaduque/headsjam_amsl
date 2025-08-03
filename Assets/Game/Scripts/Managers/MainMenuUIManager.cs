@@ -51,7 +51,7 @@ public class MainMenuUIManager : Singleton<MainMenuUIManager>
 
     private void PlayButtonControl()
     {
-        _blackScreenController.FadeOutScene("Main");
+        _blackScreenController.FadeOutScene("InitialDialogue");
         _audioManager.FadeOutMusic("menumusic");
     }
 
