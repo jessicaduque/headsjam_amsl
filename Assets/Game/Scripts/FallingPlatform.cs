@@ -53,6 +53,7 @@ namespace Game.Scripts
         {
             _isFalling = false;
             _rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+            _rigidbody2D.linearVelocity = Vector2.zero;
             yield return new WaitForSeconds(respawnWait);
             transform.position = _initialPosition;
             _spriteRenderer.DOFade(1, appearWait).OnComplete(() =>
