@@ -8,6 +8,9 @@ public class ConveyorButton : MonoBehaviour
     private int _amountObjectsPressing;
     private SpriteRenderer _spriteRenderer;
 
+    public static event System.Action OnButtonPressed;
+    public static event System.Action OnButtonUnpressed;
+
     private LevelManager _levelManager => LevelManager.I;
     private void Awake()
     {
@@ -27,6 +30,7 @@ public class ConveyorButton : MonoBehaviour
             Destroy(solidCollider);
             solidCollider = gameObject.AddComponent<PolygonCollider2D>();
             // Function to stop conveyor (including sound!)
+            OnButtonPressed?.Invoke();
         }
     }
 
@@ -42,6 +46,7 @@ public class ConveyorButton : MonoBehaviour
                 Destroy(solidCollider);
                 solidCollider = gameObject.AddComponent<PolygonCollider2D>();
                 // Function to start conveyor (including sound!)
+                OnButtonUnpressed?.Invoke();
             }
         }
     }

@@ -1,24 +1,33 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Game.Scripts
 {
     public class ConveyorBelt : MonoBehaviour
     {
         [Header("Configuration")]
-        public bool isOn = true;
-        public bool clockwise = true;
-        public bool hasInfiniteChicken;
-        public float speed = 500;
-        public string tagPool;
+        [SerializeField] private bool isOn = true;
+        [SerializeField] private bool clockwise = true;
+        [SerializeField] private bool hasInfiniteChicken;
+        [SerializeField] private float speed = 500;
+        [SerializeField] private string tagPool;
         
         [Header("Positioning")]
         public Transform startPosition;
 
+        [Header("Tilemap")]
+        [SerializeField] private Tilemap tilemap;
+        [SerializeField] private Tile[] normalConveyorTile;
+        [SerializeField] private AnimatedTile[] animatedConveyorTile;
+        
         private static PoolManager _poolManager => PoolManager.I;
 
         private void Start()
         {
+            ConveyorButton.OnButtonPressed += StopConveyor;
+            ConveyorButton.OnButtonUnpressed += StartConveyor;
+            
             if (hasInfiniteChicken)
             {
                 StartCoroutine(InfiniteChicken());
@@ -58,7 +67,7 @@ namespace Game.Scripts
 
         private IEnumerator InfiniteChicken()
         {
-            while (hasInfiniteChicken)
+            while (true)
             {
                 _poolManager.GetObject(tagPool, startPosition.position, new Quaternion());
                 
@@ -66,14 +75,21 @@ namespace Game.Scripts
             }
         }
 
-        private void ToggleOnOff()
+        private void StartConveyor()
         {
-            isOn = !isOn;
+            isOn = true;
+            // Start sound
+            gameObject.SetActive(false);
+            gameObject.SetActive(true);
+            if (hasInfiniteChicken) StartCoroutine(InfiniteChicken());
         }
-    
-        public void ToggleDirection()
+
+        private void StopConveyor()
         {
-            clockwise = !clockwise;
+            Debug.Log("Stopping Conveyor");
+            isOn = false;
+            // Stop sound
+            if (hasInfiniteChicken) StopCoroutine(InfiniteChicken());
         }
     }
 }

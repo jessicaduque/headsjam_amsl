@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagPool: DummyFriedChicken
   prefab: {fileID: 5154878152336010672, guid: 7f6649efe616d5d44b4c5ca984be7fbd, type: 3}
-  amount: 5
+  amount: 6
   isExpandable: 0
