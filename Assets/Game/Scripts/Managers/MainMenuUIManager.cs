@@ -17,14 +17,6 @@ public class MainMenuUIManager : Singleton<MainMenuUIManager>
     [SerializeField] Button b_credits;
     [SerializeField] GameObject _creditsPanel;
     [SerializeField] Button b_leaveCredits;
-
-    [Header("How To Play")]
-    [SerializeField] Button b_howToPlay;
-    [SerializeField] GameObject _howToPlayPanel;
-    [SerializeField] Button b_leaveHowToPlay;
-
-    [Header("Quit")]
-    [SerializeField] Button b_quit;
     
     [Header("Cutscene")]
     [SerializeField] Button b_skip;
@@ -75,15 +67,6 @@ public class MainMenuUIManager : Singleton<MainMenuUIManager>
 
     #endregion
 
-    #region How To Play
-
-    private void HowToPlayButtonControl(bool state)
-    {
-        _blackScreenController.FadeBlackToControlPanel(_howToPlayPanel, state);
-    }
-
-    #endregion
-
     #region Quit
 
     private void QuitGame()
@@ -125,11 +108,8 @@ public class MainMenuUIManager : Singleton<MainMenuUIManager>
         b_play.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
         b_settings.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
         b_credits.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
-        b_howToPlay.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
         b_leaveSettings.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
         b_leaveCredits.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
-        b_leaveHowToPlay.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
-        b_quit.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
         b_skip.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
         b_watchCutscene.GetComponent<Image>().alphaHitTestMinimumThreshold = threshold;
     }
@@ -139,12 +119,9 @@ public class MainMenuUIManager : Singleton<MainMenuUIManager>
         b_play.onClick.AddListener(PlayButtonControl);
         b_settings.onClick.AddListener(() => SettingsButtonControl(true));
         b_credits.onClick.AddListener(() => CreditsButtonControl(true));
-        b_howToPlay.onClick.AddListener(() => HowToPlayButtonControl(true));
         b_leaveSettings.onClick.AddListener(() => SettingsButtonControl(false));
         b_leaveCredits.onClick.AddListener(() => CreditsButtonControl(false));
-        b_leaveHowToPlay.onClick.AddListener(() => HowToPlayButtonControl(false));
         b_skip.onClick.AddListener(EndCutscene); 
-        b_quit.onClick.AddListener(QuitGame);
         b_watchCutscene.onClick.AddListener(() => {
             _audioManager.FadeOutMusic("menumusic");
             _blackScreenController.FadeBlackToControlPanel(_cutscenePanel, true); StartCoroutine(StartCutscene()); 
@@ -156,7 +133,6 @@ public class MainMenuUIManager : Singleton<MainMenuUIManager>
         b_play.enabled = state;
         b_settings.enabled = state;
         b_credits.enabled = state;
-        b_howToPlay.enabled = state;
     }
 
     #endregion
