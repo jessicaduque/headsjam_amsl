@@ -29,7 +29,10 @@ public class PlayerOne : PlayerBase
     private void Update()
     {
         float playerDistance = Vector2.Distance(transform.position, OtherPlayerTransform.position);
+
+        _objectCollider = Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0);
         
+        if (!springJoint) return;
         if (playerDistance < maxRopeLength)
         {
             springJoint.distance = playerDistance;
@@ -38,8 +41,6 @@ public class PlayerOne : PlayerBase
         {
             springJoint.distance = maxRopeLength;
         }
-        
-        _objectCollider = Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0);
     }
 
     public override void DoPowerControl(InputAction.CallbackContext context)
