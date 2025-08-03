@@ -119,4 +119,13 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     #endregion
     
+    #region GAMBIARRA
+
+    public void LigarCanto()
+    {
+        _rigidbody.bodyType = RigidbodyType2D.Static;
+    }
+    
+    #endregion
+    
 }

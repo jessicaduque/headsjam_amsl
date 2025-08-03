@@ -25,7 +25,7 @@ public class GlassObject : MonoBehaviour
         _cameraShake.DoCameraShake();
     }
     
-    public void DestroyObject() // Called by event on animator
+    public virtual void DestroyObject() // Called by event on animator
     {
         _spriteRenderer.DOFade(0, 0.5f).OnComplete(() => Destroy(this));
     }

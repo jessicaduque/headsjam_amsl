@@ -25,7 +25,7 @@ namespace Game.Scripts
 
         private void Start()
         {
-            ConveyorButton.OnButtonPressed += StopConveyor;
+            //ConveyorButton.OnButtonPressed += StopConveyor;
             ConveyorButton.OnButtonUnpressed += StartConveyor;
             
             if (hasInfiniteChicken)

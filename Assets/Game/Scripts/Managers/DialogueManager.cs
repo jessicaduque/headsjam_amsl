@@ -186,6 +186,17 @@ public class DialogueManager : Singleton<DialogueManager>
                 tutorial1Ligar.SetActive(true);
             });
         }
+        else if (numberDialogueManager == 1)
+        {
+            cg_DialoguePanel.DOFade(0, 0.6f).OnComplete(() =>
+            {
+                player1.LigarCanto();
+                player2.LigarCanto();
+                player1.EnableInputs();
+                player2.EnableInputs();
+                tutorial2Ligar.SetActive(true);
+            });
+        }
         //_blackScreenController.FadeOutScene(nextScene);
     }
 
