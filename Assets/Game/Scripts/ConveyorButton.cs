@@ -4,6 +4,7 @@ public class ConveyorButton : MonoBehaviour
 {
     [SerializeField] private Sprite[] buttonSprites;
     [SerializeField] private bool startsPressed;
+    [SerializeField] private bool possiblePress = true;
     [SerializeField] private Collider2D solidCollider;
     private int _amountObjectsPressing;
     private SpriteRenderer _spriteRenderer;
@@ -18,11 +19,16 @@ public class ConveyorButton : MonoBehaviour
 
         _spriteRenderer.sprite = startsPressed ? buttonSprites[1] : buttonSprites[0];
     }
-    
+
+    private void Start()
+    {
+        GlassBlockingObject.OnBreak += CanBePressed;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (_levelManager._levelState != LevelState.PLAYING) return;
+        if (!possiblePress) return;
         if (other.CompareTag("HeavyObject") || other.CompareTag("Player") || other.CompareTag("Dummy"))
         {
             _amountObjectsPressing++;
@@ -37,6 +43,7 @@ public class ConveyorButton : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (_levelManager._levelState != LevelState.PLAYING) return;
+        if (!possiblePress) return;
         if (other.CompareTag("HeavyObject")|| other.CompareTag("Player") || other.CompareTag("Dummy"))
         {
             _amountObjectsPressing--;
@@ -49,5 +56,10 @@ public class ConveyorButton : MonoBehaviour
                 OnButtonUnpressed?.Invoke();
             }
         }
+    }
+
+    private void CanBePressed()
+    {
+        possiblePress = true;
     }
 }
