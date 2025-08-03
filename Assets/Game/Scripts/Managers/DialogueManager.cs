@@ -8,6 +8,10 @@ using DG.Tweening;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
+    [Header("Tutorial!")]
+    [SerializeField] private GameObject tutorial1Ligar;
+    [SerializeField] private GameObject tutorial2Ligar;
+    
     [SerializeField] private GameObject[] dialogueManagers;
     [SerializeField] private int numberDialogueManager;
     [SerializeField] private PlayerBase player1;
@@ -117,10 +121,6 @@ public class DialogueManager : Singleton<DialogueManager>
         {
             Speaker_Image.enabled = false;
         }
-        if(speaker == "Berry")
-        {
-            _audioManager.PlaySfx("BerryGrowl");
-        }
         else
         {
             Speaker_Image.enabled = true;
@@ -181,8 +181,9 @@ public class DialogueManager : Singleton<DialogueManager>
         {
             cg_DialoguePanel.DOFade(0, 0.6f).OnComplete(() =>
             {
-                player1.DisableInputs();
-                player2.DisableInputs();
+                player1.EnableInputs();
+                player2.EnableInputs();
+                tutorial1Ligar.SetActive(true);
             });
         }
         //_blackScreenController.FadeOutScene(nextScene);
