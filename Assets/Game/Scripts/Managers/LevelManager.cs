@@ -17,6 +17,11 @@ public class LevelManager : Singleton<LevelManager>
     
     private GameManager _gameManager => GameManager.I;
 
+    private void Start()
+    {
+        StartLevel();
+    }
+
     #region StartLevel Level
     public void StartLevel()
     {
@@ -33,6 +38,7 @@ public class LevelManager : Singleton<LevelManager>
         Time.timeScale = 0;
         pauseEvent?.Invoke();
     }
+
     #endregion
 
     #region Time Up

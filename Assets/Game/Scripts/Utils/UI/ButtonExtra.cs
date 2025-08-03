@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ButtonExtra : MonoBehaviour
 {
-    //[field: SerializeField] public string nameTag { get; private set; }
+    [field: SerializeField] public string nameTag { get; private set; }
     private Button _thisButton;
     AudioManager _audioManager => AudioManager.I;
 
