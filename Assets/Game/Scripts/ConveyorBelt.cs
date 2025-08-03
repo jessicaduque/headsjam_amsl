@@ -5,19 +5,20 @@ namespace Game.Scripts
 {
     public class ConveyorBelt : MonoBehaviour
     {
-        [SerializeField] private GameObject[] friedChickens;
-    
         public bool isOn = true;
         public bool clockwise = true;
         public bool hasInfiniteChicken;
         public float speed = 500;
+        public Vector3 dummySpawn;
+
+        private static PoolManager PoolManager => PoolManager.I;
 
         private void Start()
         {
-            DeathArea.OnDeathArea += ResetChickens;
-            
             if (hasInfiniteChicken)
             {
+                DeathArea.OnDeathArea += ResetChickens;
+            
                 StartCoroutine(InfiniteChicken());
             }
         }
@@ -53,29 +54,19 @@ namespace Game.Scripts
             }
         }
 
-        private void OnCollisionExit2D(Collision2D collision)
-        {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("InteractableObjects"))
-            {
-                // ResetChickens(collision.gameObject);
-                // StartCoroutine(InfiniteChicken());
-            }
-        }
-
         private IEnumerator InfiniteChicken()
         {
-            foreach (var friedChicken in friedChickens)
+            while (true)
             {
-                friedChicken.SetActive(true);
+                PoolManager.GetObject("Dummy", dummySpawn, new Quaternion());
                 
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1.25f);
             }
         }
 
         private void ResetChickens(GameObject gameObject)
         {
-            gameObject.transform.position = new Vector3(16, 0);
-            gameObject.SetActive(false);
+            PoolManager.ReturnPool(gameObject);
         }
 
         public void ToggleOnOff()
