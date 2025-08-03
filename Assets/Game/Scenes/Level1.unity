@@ -3983,7 +3983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774541384736447923, guid: 861ecc3f6efa8c24a9c7c983052ebd41, type: 3}
       propertyPath: thisLevelTimeSeconds
-      value: 2
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4351161629124645626, guid: 861ecc3f6efa8c24a9c7c983052ebd41, type: 3}
       propertyPath: m_LocalPosition.x
