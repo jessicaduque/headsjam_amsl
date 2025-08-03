@@ -19,7 +19,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(-2.2f);
         StartLevel();
     }
 
