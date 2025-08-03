@@ -7,8 +7,6 @@ public class PauseScreen : MonoBehaviour
 {
     private float _animationTime = 0.5f;
 
-    [SerializeField] private Image im_pauseImage;
-    [SerializeField] Sprite[] _possiblePauseImageSprites;
     [SerializeField] Button[] _buttons;
 
     BlackScreenController _blackScreenController => BlackScreenController.I;
@@ -25,7 +23,6 @@ public class PauseScreen : MonoBehaviour
 
     private IEnumerator WaitForPanelStart()
     {
-        //RandomizePauseImage();
         ResetButtons();
 
         yield return new WaitForSecondsRealtime(Helpers.panelFadeTime / 2);
@@ -49,7 +46,7 @@ public class PauseScreen : MonoBehaviour
                 case "resume":
                     _buttons[i].onClick.AddListener(() => {
                         ButtonsActivationControl(false);
-                        Helpers.FadeOutPanel(this.gameObject);
+                        Helpers.FadeOutPanel(gameObject);
                         _levelManager.StartLevel();
                     });
                     break;
@@ -91,8 +88,4 @@ public class PauseScreen : MonoBehaviour
 
     #endregion Buttons
 
-    private void RandomizePauseImage()
-    {
-        im_pauseImage.sprite = _possiblePauseImageSprites[Random.Range(0, _possiblePauseImageSprites.Length)];
-    }
 }

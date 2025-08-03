@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -137,7 +137,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 287
+        width: 286
         height: 342
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -159,7 +159,7 @@ TextureImporter:
         serializedVersion: 2
         x: 286
         y: 0
-        width: 288
+        width: 286
         height: 342
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,9 +179,9 @@ TextureImporter:
       name: Janela_2
       rect:
         serializedVersion: 2
-        x: 573
+        x: 572
         y: 0
-        width: 287
+        width: 286
         height: 342
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -201,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e76ace4a26b736941a801b97eb1b5a34
     internalID: 0
     vertices: []
     indices: 

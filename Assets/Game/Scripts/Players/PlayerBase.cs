@@ -51,7 +51,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         _levelManager.timeUpEvent += DisableInputs;
         _levelManager.pauseEvent += DisableInputs;
         _levelManager.gameOverEvent += DisableInputs;
-        _levelManager.levelCompleteEvent += EnableInputs;
+        _levelManager.levelCompleteEvent += DisableInputs;
     }
     
     #region Animation

@@ -24,27 +24,25 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        _levelManager.startLevelEvent += EnableInputs;
-        _levelManager.pauseEvent += DisableInputs;
-        _levelManager.blessingsEvent += () => _blessingPanel.SetActive(true);
-        _levelManager.countdownEvent += () =>
-        {
-            Helpers.FadeOutPanel(_blessingPanel);
-            Helpers.FadeInPanel(_countdownPanel);
-            
-        };
         _levelManager.startLevelEvent += () =>
         {
-            _audioManager.FadeInMusic("mainmusic");
-            Helpers.FadeCrossPanel(_countdownPanel, _hudPanel);
+            EnableInputs();
+            Helpers.FadeInPanel(_hudPanel);
         };
+        _levelManager.pauseEvent += DisableInputs;
         _levelManager.timeUpEvent += () =>
         {
+            _levelManager.GameOver();
             DisableInputs();
-            _audioManager.PlaySfx("levelend");
         };
-
-        _levelManager.BeginBlessings();
+        _levelManager.gameOverEvent += () =>
+        {
+            ActivateGameOverPanel();
+            DisableInputs();
+        };
+        _levelManager.levelCompleteEvent += DisableInputs;
+        
+        
     }
 
     #region Input
@@ -67,12 +65,18 @@ public class UIManager : Singleton<UIManager>
 
     #region Gameover Control
 
-    public void ActiavateGameOverPanel()
+    public void ActivateGameOverPanel()
     {
         Helpers.FadeInPanel(_gameOverPanel);
     }
     
     #endregion
+
+    private void DialogueControl(bool activate)
+    {
+        if(activate) Helpers.FadeInPanel(_dialoguePanel);
+        else Helpers.FadeOutPanel(_dialoguePanel);
+    }
     
     #region Pause Control
 

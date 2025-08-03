@@ -14,8 +14,6 @@ public class BlackScreenController : DontDestroySingleton<BlackScreenController>
     {
         base.Awake();
 
-        Time.timeScale = 1;
-        
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 

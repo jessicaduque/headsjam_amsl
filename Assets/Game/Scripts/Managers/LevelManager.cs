@@ -1,13 +1,12 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils.Singleton;
 
 public class LevelManager : Singleton<LevelManager>
 {
     private int tutorialLevel = 0;
     [SerializeField] int thisLevel;
-    [FormerlySerializedAs("thisLevelTime")] [SerializeField] private float thisLevelTimeSeconds;
+    [SerializeField] private float thisLevelTimeSeconds;
     public event Action startLevelEvent;
     public event Action timeUpEvent;
     public event Action pauseEvent;
@@ -16,11 +15,6 @@ public class LevelManager : Singleton<LevelManager>
     public LevelState _levelState { get; private set; }
     
     private GameManager _gameManager => GameManager.I;
-
-    private void Start()
-    {
-        StartLevel();
-    }
 
     #region StartLevel Level
     public void StartLevel()
