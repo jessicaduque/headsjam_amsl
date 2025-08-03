@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: holdheavyobject
   m_EditorClassIdentifier: 
   soundName: holdheavyobject
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 784c2645afeb8b342a181a1c796beddf, type: 3}
   loop: 0
   volume: 1
   pitch: 1

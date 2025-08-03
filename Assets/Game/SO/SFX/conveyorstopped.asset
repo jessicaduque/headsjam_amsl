@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: conveyorstopped
   m_EditorClassIdentifier: 
   soundName: conveyorstopped
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 1e0c524612d997c42b6e53c4ebf4c1da, type: 3}
   loop: 0
   volume: 1
   pitch: 1
