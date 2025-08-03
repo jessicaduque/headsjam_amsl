@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CenaCampop2_0: 5122608669635847804
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
