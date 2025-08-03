@@ -74,7 +74,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     #region CheckFullscreen
 
     [DllImport("__Internal")]
-    private static extern void IsFullscreen();
+    private static extern bool IsFullscreen();
 
     public bool IsInFullscreen()
     {

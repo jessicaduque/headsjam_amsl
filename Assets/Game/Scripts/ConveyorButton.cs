@@ -8,7 +8,7 @@ public class ConveyorButton : MonoBehaviour
     private int _amountObjectsPressing;
     private SpriteRenderer _spriteRenderer;
 
-    public static event System.Action OnButtonPressed;
+    public static event System. OnButtonPressed;
     public static event System.Action OnButtonUnpressed;
 
     private LevelManager _levelManager => LevelManager.I;
