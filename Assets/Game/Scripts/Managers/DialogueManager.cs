@@ -70,6 +70,14 @@ public class DialogueManager : Singleton<DialogueManager>
         StartCoroutine(ComecarFalas());
     }
 
+    private void Start()
+    {
+        if (numberDialogueManager == 0)
+        {
+            _audioManager.FadeInMusic("mainmusic");
+        }
+    }
+
     void Update()
     {
         DialogueControl();
