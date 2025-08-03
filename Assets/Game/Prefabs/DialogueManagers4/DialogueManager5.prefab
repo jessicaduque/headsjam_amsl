@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7017516508550355368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8095796566659877469}
+  - component: {fileID: 8745423028934321522}
+  m_Layer: 0
+  m_Name: DialogueManager5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8095796566659877469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017516508550355368}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8745423028934321522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017516508550355368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: "Isso \xE9...?"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Nossa salva\xE7\xE3o"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Uhhhhh
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Um celular?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Confia em mim. Agora esse restaurante acaba.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Tobias, valeu.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Daqui a pouco voc\xEA vai poder voltar pro seu lindo campo..."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Adilson...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 0}
+  cg_DialoguePanel: {fileID: 0}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}

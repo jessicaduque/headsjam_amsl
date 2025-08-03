@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils.Singleton;
 using TMPro;
 using System.Collections;
 using DG.Tweening;
-using UnityEngine.Serialization;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
@@ -29,7 +29,10 @@ public class DialogueManager : Singleton<DialogueManager>
     [Header("DIALOGUE SPECIFICS")]
     [SerializeField] public string nextScene;
     [SerializeField] GameObject PretoExtra;
+    [SerializeField] GameObject BrancoExtra;
 
+    public event Action DialogueEndEvent; 
+    
     // Objetos espec�ficos
     // NENHUM AINDA
 
@@ -170,7 +173,8 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void DialogueOver()
     {
-        _blackScreenController.FadeOutScene(nextScene);
+        DialogueEndEvent?.Invoke();
+        //_blackScreenController.FadeOutScene(nextScene);
     }
 
 

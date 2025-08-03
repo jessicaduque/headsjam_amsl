@@ -119,223 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &14102732
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 14102733}
-  - component: {fileID: 14102734}
-  m_Layer: 0
-  m_Name: DialogueManager1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &14102733
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14102732}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
-  m_LocalScale: {x: 70, y: 70, z: 70}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1393574224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &14102734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14102732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b_pular: {fileID: 0}
-  DialogueDetailsArray:
-  - dialogue: Tem algumas luzes...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Rapz, pior que eu acho que s\xE3o os chefes!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "Eles t\xE3o vindo atr\xE1s da gente!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xE3o pode ser!"
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: E se for a nossa vez?
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xE3o...."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xE3o.... n\xE3o n\xE3o n\xE3o....."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  DialogueSpeakerArray:
-  - speaker: Adilson
-    speakerSprite: {fileID: 0}
-  - speaker: Tobias
-    speakerSprite: {fileID: 0}
-  - speaker: 
-    speakerSprite: {fileID: 0}
-  - speaker: Chefes
-    speakerSprite: {fileID: 0}
-  DialoguePanel: {fileID: 1393574223}
-  cg_DialoguePanel: {fileID: 1393574225}
-  falaTexto: {fileID: 0}
-  NomeFalante_Text: {fileID: 0}
-  Speaker_Image: {fileID: 0}
-  nextScene: 
-  PretoExtra: {fileID: 0}
---- !u!1 &46127483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 46127484}
-  - component: {fileID: 46127485}
-  m_Layer: 0
-  m_Name: DialogueManager4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &46127484
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46127483}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
-  m_LocalScale: {x: 70, y: 70, z: 70}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1393574224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &46127485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46127483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b_pular: {fileID: 0}
-  DialogueDetailsArray:
-  - dialogue: "N\xC3O N\xC3O N\xC3O N\xC3O N\xC3-"
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "VOC\xCA PODE PARAR DE GRITAR NO MEU OUVIDO?"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Eu- eu desisto
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Nos amarraram juntos e tudo.
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Sei que v\xE3o voltar a qualquer momento."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Adilson...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: O QUE?
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: ...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Estamos fritos...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: ...
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xE3o."
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Como assim n-
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xC3O PODEMOS DESISTIR!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Que-
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Tobias! A gente vai conseguir sair daqui!
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "E n\xE3o s\xF3 isso!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Temos que salvar os outros!
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "A gente n\xE3o consegue nem SE salvar Adilson..."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Imagina os outros.
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "VOC\xCA VAI VER!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: VEM!!!
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: O que?
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Calma!
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Ai! N\xE3o puxa tanto!"
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  DialogueSpeakerArray:
-  - speaker: Adilson
-    speakerSprite: {fileID: 0}
-  - speaker: Tobias
-    speakerSprite: {fileID: 0}
-  - speaker: 
-    speakerSprite: {fileID: 0}
-  - speaker: Chefes
-    speakerSprite: {fileID: 0}
-  DialoguePanel: {fileID: 1393574223}
-  cg_DialoguePanel: {fileID: 1393574225}
-  falaTexto: {fileID: 0}
-  NomeFalante_Text: {fileID: 0}
-  Speaker_Image: {fileID: 0}
-  nextScene: 
-  PretoExtra: {fileID: 0}
 --- !u!1 &80045202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,10 +2745,9 @@ RectTransform:
   m_GameObject: {fileID: 605163207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1803968804}
   - {fileID: 842785863}
   - {fileID: 2035728830}
   m_Father: {fileID: 1393574224}
@@ -3090,8 +2872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -185, y: 0}
-  m_SizeDelta: {x: -430, y: -60}
+  m_AnchoredPosition: {x: 135, y: 0}
+  m_SizeDelta: {x: -330, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842785864
 MonoBehaviour:
@@ -3122,8 +2904,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3192,77 +2974,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842785862}
   m_CullTransparentMesh: 1
---- !u!1 &1015085180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1015085181}
-  - component: {fileID: 1015085182}
-  m_Layer: 0
-  m_Name: DialogueManager3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1015085181
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015085180}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
-  m_LocalScale: {x: 70, y: 70, z: 70}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1393574224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1015085182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015085180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b_pular: {fileID: 0}
-  DialogueDetailsArray:
-  - dialogue: Que loucos!
-    speakerID: 3
-    pauseBeforeDialogue: 0
-  - dialogue: Melhor fritar eles logo.
-    speakerID: 3
-    pauseBeforeDialogue: 0
-  - dialogue: Antes que quebrem mais algo...
-    speakerID: 3
-    pauseBeforeDialogue: 0
-  DialogueSpeakerArray:
-  - speaker: Adilson
-    speakerSprite: {fileID: 0}
-  - speaker: Tobias
-    speakerSprite: {fileID: 0}
-  - speaker: 
-    speakerSprite: {fileID: 0}
-  - speaker: Chefes
-    speakerSprite: {fileID: 0}
-  DialoguePanel: {fileID: 1393574223}
-  cg_DialoguePanel: {fileID: 1393574225}
-  falaTexto: {fileID: 0}
-  NomeFalante_Text: {fileID: 0}
-  Speaker_Image: {fileID: 0}
-  nextScene: 
-  PretoExtra: {fileID: 0}
 --- !u!1 &1046710972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,7 +3187,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1054633992
+--- !u!1 &1239579522
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3484,238 +3195,86 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1054633994}
-  - component: {fileID: 1054633995}
-  m_Layer: 0
-  m_Name: DialogueManager
+  - component: {fileID: 1239579523}
+  - component: {fileID: 1239579526}
+  - component: {fileID: 1239579525}
+  - component: {fileID: 1239579524}
+  m_Layer: 5
+  m_Name: BlackScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1054633994
-Transform:
+  m_IsActive: 0
+--- !u!224 &1239579523
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054633992}
-  serializedVersion: 2
+  m_GameObject: {fileID: 1239579522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
-  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1393574224}
+  m_Father: {fileID: 1267341185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1054633995
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1239579524
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239579522}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1239579525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054633992}
+  m_GameObject: {fileID: 1239579522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b_pular: {fileID: 0}
-  DialogueDetailsArray:
-  - dialogue: Ei, ei!
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: 
-    speakerID: 2
-    pauseBeforeDialogue: 0
-  - dialogue: "Voc\xEA se chama Tobias, n\xE9\xE9\xE9\xE9\xE9\xE9\xE9\xE9?"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Sim...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Voc\xEA ouviu os rumores?"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Dizem a gente vai ser frito!
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Fritos?!
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xE3o acredito..."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xE3o n\xE3o n\xE3o n\xE3o n\xE3o n\xE3o....."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Por que eu fui viver em um lindo campo com c\xE9u azul..."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Pra estar nesse galinheiro esquisito...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: E ainda descubro que vou ser frito?
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "\xC9, t\xE1 complicado cara!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "Depois de trazer todo mundo pra c\xE1, parece que j\xE1 tem alguns
-      sendo levados todo dia."
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Tadinhos.
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "J\xE1 j\xE1 chega nossa hora! Destino cruel demais."
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: ...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Tudo bem, eu entendo que o nosso prop\xF3sito \xE9 ser alimento..."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Sendo galinhas e tal...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Mas \xF3, parece que a gente vai ser servido em um restaurando vegano!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: ...O que?
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "\xC9, acho que t\xE3o enganando um monte de gente!"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Isso me deixa com tanta raiva.
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: ...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "N\xC3O VOU NEM VIRAR COMIDA COM DIGNIDADE??"
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Oi?
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "Poxa! Se pra virar comida, que eu fosse o peda\xE7o de frango mais
-      gostoso poss\xEDvel!"
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Os veganos n\xE3o queriam nem comer a gente..."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "\xC9 esse o seu problema com tudo isso??"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Sim!
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Se voc\xEA diz."
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: 
-    speakerID: 2
-    pauseBeforeDialogue: 0
-  - dialogue: "Ei, acho que eu t\xF4 ouvindo algo de longe."
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Como assim?
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Vem, vamo tentar ver pela janela.
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  DialogueSpeakerArray:
-  - speaker: Adilson
-    speakerSprite: {fileID: 0}
-  - speaker: Tobias
-    speakerSprite: {fileID: 0}
-  - speaker: 
-    speakerSprite: {fileID: 0}
-  - speaker: Chefes
-    speakerSprite: {fileID: 0}
-  DialoguePanel: {fileID: 1393574223}
-  cg_DialoguePanel: {fileID: 1393574225}
-  falaTexto: {fileID: 0}
-  NomeFalante_Text: {fileID: 0}
-  Speaker_Image: {fileID: 0}
-  nextScene: 
-  PretoExtra: {fileID: 0}
---- !u!1 &1177629226
-GameObject:
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5dd78971455bd3540a0951c661e841f7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1239579526
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1177629227}
-  - component: {fileID: 1177629228}
-  m_Layer: 0
-  m_Name: DialogueManager2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1177629227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177629226}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
-  m_LocalScale: {x: 70, y: 70, z: 70}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1393574224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1177629228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177629226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b_pular: {fileID: 0}
-  DialogueDetailsArray:
-  - dialogue: Eita, exagerei um pouco?
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: 
-    speakerID: 2
-    pauseBeforeDialogue: 0
-  - dialogue: Vish.
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  DialogueSpeakerArray:
-  - speaker: Adilson
-    speakerSprite: {fileID: 0}
-  - speaker: Tobias
-    speakerSprite: {fileID: 0}
-  - speaker: 
-    speakerSprite: {fileID: 0}
-  - speaker: Chefes
-    speakerSprite: {fileID: 0}
-  DialoguePanel: {fileID: 1393574223}
-  cg_DialoguePanel: {fileID: 1393574225}
-  falaTexto: {fileID: 0}
-  NomeFalante_Text: {fileID: 0}
-  Speaker_Image: {fileID: 0}
-  nextScene: 
-  PretoExtra: {fileID: 0}
+  m_GameObject: {fileID: 1239579522}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1241794574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3902,6 +3461,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1393574224}
+  - {fileID: 1239579523}
+  - {fileID: 1954227474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3958,10 +3519,10 @@ Canvas:
   m_GameObject: {fileID: 1267341184}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 440483208}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4077,13 +3638,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1803968804}
   - {fileID: 605163208}
-  - {fileID: 1054633994}
-  - {fileID: 14102733}
-  - {fileID: 1177629227}
-  - {fileID: 1015085181}
-  - {fileID: 46127484}
-  - {fileID: 1713722569}
   m_Father: {fileID: 1267341185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4357,92 +3913,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1713722568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1713722569}
-  - component: {fileID: 1713722570}
-  m_Layer: 0
-  m_Name: DialogueManager5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1713722569
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713722568}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
-  m_LocalScale: {x: 70, y: 70, z: 70}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1393574224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1713722570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713722568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b_pular: {fileID: 0}
-  DialogueDetailsArray:
-  - dialogue: "Isso \xE9...?"
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: "Nossa salva\xE7\xE3o"
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Uhhhhh
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Um celular?
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  - dialogue: Confia em mim. Agora esse restaurante acaba.
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Tobias, valeu.
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: "Daqui a pouco voc\xEA vai poder voltar pro seu lindo campo..."
-    speakerID: 0
-    pauseBeforeDialogue: 0
-  - dialogue: Adilson...
-    speakerID: 1
-    pauseBeforeDialogue: 0
-  DialogueSpeakerArray:
-  - speaker: Adilson
-    speakerSprite: {fileID: 0}
-  - speaker: Tobias
-    speakerSprite: {fileID: 0}
-  - speaker: 
-    speakerSprite: {fileID: 0}
-  - speaker: Chefes
-    speakerSprite: {fileID: 0}
-  DialoguePanel: {fileID: 1393574223}
-  cg_DialoguePanel: {fileID: 1393574225}
-  falaTexto: {fileID: 0}
-  NomeFalante_Text: {fileID: 0}
-  Speaker_Image: {fileID: 0}
-  nextScene: 
-  PretoExtra: {fileID: 0}
 --- !u!1 &1753506909
 GameObject:
   m_ObjectHideFlags: 0
@@ -4530,6 +4000,7 @@ GameObject:
   - component: {fileID: 1803968807}
   - component: {fileID: 1803968806}
   - component: {fileID: 1803968805}
+  - component: {fileID: 1803968808}
   m_Layer: 5
   m_Name: SkipButton
   m_TagString: Untagged
@@ -4550,11 +4021,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 599435171}
-  m_Father: {fileID: 605163208}
+  m_Father: {fileID: 1393574224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 84.39844, y: 619.6}
+  m_AnchoredPosition: {x: -50, y: -50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1803968805
@@ -4639,6 +4110,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803968803}
   m_CullTransparentMesh: 1
+--- !u!114 &1803968808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803968803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdadaf856e2bb6040bb36d3cb27f747b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <nameTag>k__BackingField: skip
 --- !u!1 &1827214649
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,6 +4154,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1954227473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954227474}
+  - component: {fileID: 1954227477}
+  - component: {fileID: 1954227476}
+  - component: {fileID: 1954227475}
+  m_Layer: 5
+  m_Name: WhiteScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1954227474
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954227473}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1267341185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1954227475
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954227473}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1954227476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954227473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8a2fe0b2a60b81a4fb3c287e676636cd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1954227477
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954227473}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2009931397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4819,7 +4391,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 250, y: 70}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2034640466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4889,11 +4461,367 @@ RectTransform:
   - {fileID: 2034640465}
   m_Father: {fileID: 605163208}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!1001 &294772480176820452
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 602.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 332.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420272411812585289, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603064297151243786, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: b_pular
+      value: 
+      objectReference: {fileID: 1803968805}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: falaTexto
+      value: 
+      objectReference: {fileID: 842785864}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: PretoExtra
+      value: 
+      objectReference: {fileID: 1239579522}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: BrancoExtra
+      value: 
+      objectReference: {fileID: 1954227473}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574223}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: Speaker_Image
+      value: 
+      objectReference: {fileID: 143724607}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: NomeFalante_Text
+      value: 
+      objectReference: {fileID: 1536002291}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: cg_DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574225}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+--- !u!1001 &2209969037093811666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3462328772452445350, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: b_pular
+      value: 
+      objectReference: {fileID: 1803968805}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: falaTexto
+      value: 
+      objectReference: {fileID: 842785864}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: PretoExtra
+      value: 
+      objectReference: {fileID: 1239579522}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: BrancoExtra
+      value: 
+      objectReference: {fileID: 1954227473}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574223}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: Speaker_Image
+      value: 
+      objectReference: {fileID: 143724607}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: NomeFalante_Text
+      value: 
+      objectReference: {fileID: 1536002291}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: cg_DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574225}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 602.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 332.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229299776171450533, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+--- !u!1001 &2590018917907727144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 602.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 332.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 727835653900959491, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: b_pular
+      value: 
+      objectReference: {fileID: 1803968805}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: falaTexto
+      value: 
+      objectReference: {fileID: 842785864}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: PretoExtra
+      value: 
+      objectReference: {fileID: 1239579522}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: BrancoExtra
+      value: 
+      objectReference: {fileID: 1954227473}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574223}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: Speaker_Image
+      value: 
+      objectReference: {fileID: 143724607}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: NomeFalante_Text
+      value: 
+      objectReference: {fileID: 1536002291}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: cg_DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574225}
+    - target: {fileID: 5934302420254637104, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+--- !u!1001 &8843979533738559919
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: b_pular
+      value: 
+      objectReference: {fileID: 1803968805}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: falaTexto
+      value: 
+      objectReference: {fileID: 842785864}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: PretoExtra
+      value: 
+      objectReference: {fileID: 1239579522}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: BrancoExtra
+      value: 
+      objectReference: {fileID: 1954227473}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574223}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: Speaker_Image
+      value: 
+      objectReference: {fileID: 143724607}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: NomeFalante_Text
+      value: 
+      objectReference: {fileID: 1536002291}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: cg_DialoguePanel
+      value: 
+      objectReference: {fileID: 1393574225}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 602.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 332.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394162094422870668, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619158223842298473, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4909,4 +4837,8 @@ SceneRoots:
   - {fileID: 1241794574}
   - {fileID: 1252453608}
   - {fileID: 1620274854}
+  - {fileID: 294772480176820452}
+  - {fileID: 8843979533738559919}
+  - {fileID: 2209969037093811666}
+  - {fileID: 2590018917907727144}
   - {fileID: 1267341185}

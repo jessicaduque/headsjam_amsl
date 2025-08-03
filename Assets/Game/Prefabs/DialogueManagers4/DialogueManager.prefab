@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6603064297151243786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6420272411812585289}
+  - component: {fileID: 6801732752198501846}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6420272411812585289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6603064297151243786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6801732752198501846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6603064297151243786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: Ei, ei!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: 
+    speakerID: 2
+    pauseBeforeDialogue: 0
+  - dialogue: "Voc\xEA se chama Tobias, n\xE9\xE9\xE9\xE9\xE9\xE9\xE9\xE9?"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Sim...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Voc\xEA ouviu os rumores?"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Dizem a gente vai ser frito!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Fritos?!
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o acredito..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o n\xE3o n\xE3o n\xE3o n\xE3o n\xE3o....."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Por que eu fui viver em um lindo campo com c\xE9u azul..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Pra estar nesse galinheiro esquisito...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: E ainda descubro que vou ser frito?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "\xC9, t\xE1 complicado cara!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Depois de trazer todo mundo pra c\xE1, parece que j\xE1 tem alguns
+      sendo levados todo dia."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Tadinhos.
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "J\xE1 j\xE1 chega nossa hora! Destino cruel demais."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Tudo bem, eu entendo que o nosso prop\xF3sito \xE9 ser alimento..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Sendo galinhas e tal...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Mas \xF3, parece que a gente vai ser servido em um restaurando vegano!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...O que?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "\xC9, acho que t\xE3o enganando um monte de gente!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Isso me deixa com tanta raiva.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xC3O VOU NEM VIRAR COMIDA COM DIGNIDADE??"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Oi?
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Poxa! Se pra virar comida, que eu fosse o peda\xE7o de frango mais
+      gostoso poss\xEDvel!"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Os veganos n\xE3o queriam nem comer a gente..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "\xC9 esse o seu problema com tudo isso??"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Sim!
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Se voc\xEA diz."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: 
+    speakerID: 2
+    pauseBeforeDialogue: 0
+  - dialogue: "Ei, acho que eu t\xF4 ouvindo algo de longe."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Como assim?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Vem, vamo tentar ver pela janela.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 0}
+  cg_DialoguePanel: {fileID: 0}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}

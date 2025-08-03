@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6619158223842298473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3394162094422870668}
+  - component: {fileID: 1783013195215958769}
+  m_Layer: 0
+  m_Name: DialogueManager1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3394162094422870668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619158223842298473}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783013195215958769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619158223842298473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: Tem algumas luzes...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Rapz, pior que eu acho que s\xE3o os chefes!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Eles t\xE3o vindo atr\xE1s da gente!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o pode ser!"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: E se for a nossa vez?
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o...."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o.... n\xE3o n\xE3o n\xE3o....."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 0}
+  cg_DialoguePanel: {fileID: 0}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}

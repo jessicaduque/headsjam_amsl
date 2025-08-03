@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9090156542379246353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6379393436240939616}
+  - component: {fileID: 3043712535235101681}
+  m_Layer: 0
+  m_Name: DialogueManager4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6379393436240939616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090156542379246353}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3043712535235101681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090156542379246353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: "N\xC3O N\xC3O N\xC3O N\xC3O N\xC3-"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "VOC\xCA PODE PARAR DE GRITAR NO MEU OUVIDO?"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Eu- eu desisto
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Nos amarraram juntos e tudo.
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Sei que v\xE3o voltar a qualquer momento."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Adilson...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: O QUE?
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Estamos fritos...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Como assim n-
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xC3O PODEMOS DESISTIR!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Que-
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Tobias! A gente vai conseguir sair daqui!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "E n\xE3o s\xF3 isso!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Temos que salvar os outros!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "A gente n\xE3o consegue nem SE salvar Adilson..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Imagina os outros.
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "VOC\xCA VAI VER!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: VEM!!!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: O que?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Calma!
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Ai! N\xE3o puxa tanto!"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 0}
+  cg_DialoguePanel: {fileID: 0}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}

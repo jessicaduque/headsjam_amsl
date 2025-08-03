@@ -65,7 +65,7 @@ public class LevelManager : Singleton<LevelManager>
     public void LevelComplete()
     {
         _levelState = LevelState.END;
-        _gameManager.ChangeLevel(thisLevel + 1);
+        _gameManager.CompleteLevel();
         levelCompleteEvent?.Invoke();
     }
 

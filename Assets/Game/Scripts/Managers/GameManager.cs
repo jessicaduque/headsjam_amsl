@@ -4,9 +4,8 @@ using Utils.Singleton;
 
 public class GameManager : DontDestroySingleton<GameManager>
 {
-    private int currentLevel = 0;
-    private int lastLevel = 4;
-    
+    [SerializeField] private Scene[] _scenes;
+    private int _currentScene;
     private AudioManager _audioManager => AudioManager.I;
     protected override void Awake()
     {
@@ -46,15 +45,15 @@ public class GameManager : DontDestroySingleton<GameManager>
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     #endregion
+
     
-    public void ChangeLevel(int nextLevel)
+    public void CompleteLevel()
     {
-        if (nextLevel > lastLevel)
-        {
-            Debug.Log("Need to implement what happens when end oof last level here!");
-            // Not implemented yet
-            return;
-        }
-        currentLevel = nextLevel;
+        _currentScene += 1;
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(_scenes[_currentScene].name);
     }
 }
