@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: gameovermusic
   m_EditorClassIdentifier: 
   soundName: gameovermusic
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 44af0b7984c44cd4d805f081d1e52880, type: 3}
   loop: 1
   volume: 1
   pitch: 1

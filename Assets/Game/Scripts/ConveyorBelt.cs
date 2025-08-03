@@ -18,8 +18,6 @@ namespace Game.Scripts
 
         [Header("Tilemap")]
         [SerializeField] private Tilemap tilemap;
-        [SerializeField] private Tile[] normalConveyorTile;
-        [SerializeField] private AnimatedTile[] animatedConveyorTile;
         
         private static PoolManager _poolManager => PoolManager.I;
 
@@ -67,7 +65,7 @@ namespace Game.Scripts
 
         private IEnumerator InfiniteChicken()
         {
-            while (true)
+            while (hasInfiniteChicken)
             {
                 _poolManager.GetObject(tagPool, startPosition.position, new Quaternion());
                 
@@ -77,6 +75,7 @@ namespace Game.Scripts
 
         private void StartConveyor()
         {
+            tilemap.animationFrameRate = 1;
             isOn = true;
             // Start sound
             gameObject.SetActive(false);
@@ -84,12 +83,16 @@ namespace Game.Scripts
             if (hasInfiniteChicken) StartCoroutine(InfiniteChicken());
         }
 
-        private IEnumerator StopConveyor()
+        private void StopConveyor()
         {
-            Debug.Log("Stopping Conveyor");
-            if (hasInfiniteChicken) StopCoroutine(InfiniteChicken());
-            yield return new WaitForSeconds(2f);
-            
+            if (hasInfiniteChicken)
+            {
+                hasInfiniteChicken = false;
+                StopCoroutine(InfiniteChicken());
+                hasInfiniteChicken = true;
+            }
+
+            tilemap.animationFrameRate = 0;
             isOn = false;
             // Stop sound
         }

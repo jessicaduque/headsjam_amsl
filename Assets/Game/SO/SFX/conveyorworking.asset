@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 685db7aaf6434d344aab0d01f337b11e, type: 3}
-  m_Name: conveyorstarted
+  m_Name: conveyorworking
   m_EditorClassIdentifier: 
-  soundName: conveyorstarted
-  clip: {fileID: 8300000, guid: ac1bff5fbbbec2046ba596f01e1b8ea5, type: 3}
+  soundName: conveyorworking
+  clip: {fileID: 8300000, guid: e8eb1bb72053384408feadce0685b5f2, type: 3}
   loop: 0
-  volume: 1
-  pitch: 1
+  volume: 0
+  pitch: 0.1

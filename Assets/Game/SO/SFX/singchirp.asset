@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: singchirp
   m_EditorClassIdentifier: 
   soundName: singchirp
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 3a63bd790801c1943afd051098827c18, type: 3}
   loop: 0
   volume: 1
   pitch: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: glassbreak
   m_EditorClassIdentifier: 
   soundName: glassbreak
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: a15b275ef41e8144094d06cf5e77a5c1, type: 3}
   loop: 0
   volume: 1
   pitch: 1

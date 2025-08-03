@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: touchoil
   m_EditorClassIdentifier: 
   soundName: touchoil
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: ae9621ae44965ca4a9355c585fb1d34a, type: 3}
   loop: 0
   volume: 1
   pitch: 1
