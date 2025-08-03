@@ -138,9 +138,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 77
-        height: 90
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -157,12 +157,12 @@ TextureImporter:
       name: ParedePlataforma2_1
       rect:
         serializedVersion: 2
-        x: 77
+        x: 78
         y: 0
-        width: 77
-        height: 90
+        width: 72
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,12 +179,12 @@ TextureImporter:
       name: ParedePlataforma2_2
       rect:
         serializedVersion: 2
-        x: 154
+        x: 151
         y: 0
-        width: 77
-        height: 90
+        width: 82
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d79c533a7c98e6042a0353536c79f2ed
+    spriteID: f4633d384f60ea549ad725b9d22a1b72
     internalID: 0
     vertices: []
     indices: 
