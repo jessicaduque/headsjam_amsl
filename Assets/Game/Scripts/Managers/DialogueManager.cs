@@ -201,6 +201,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else if (numberDialogueManager == 2)
         {
+            PretoExtra.SetActive(true);
             PretoExtra.GetComponent<CanvasGroup>().alpha = 0;
             PretoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).OnComplete(() =>
             {

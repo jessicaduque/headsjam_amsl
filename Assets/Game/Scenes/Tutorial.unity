@@ -305,9 +305,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1484790292}
   - {fileID: 308127692}
   - {fileID: 1026268015}
+  - {fileID: 1484790292}
   - {fileID: 86346947}
   - {fileID: 178078745}
   m_Father: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &722502943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1713,11 +1713,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722502942}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b05376a2239d70418d51fe3b5e888e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dialogue3: {fileID: 1515131438}
+  Dialogue4: {fileID: 2101135748}
 --- !u!61 &722502944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1894,6 +1896,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 422790451}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: continue2
+      value: 
+      objectReference: {fileID: 722502942}
     - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
       propertyPath: falaTexto
       value: 
@@ -2477,6 +2483,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 422790451}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: continue2
+      value: 
+      objectReference: {fileID: 722502942}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: falaTexto
       value: 
       objectReference: {fileID: 1517981954}
@@ -2746,6 +2756,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 422790451}
     - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: continue2
+      value: 
+      objectReference: {fileID: 722502942}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
       propertyPath: falaTexto
       value: 
       objectReference: {fileID: 1517981954}
@@ -2788,6 +2802,10 @@ PrefabInstance:
     - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[2].speaker
       value: ???
+      objectReference: {fileID: 0}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[1].dialogue
+      value: ...
       objectReference: {fileID: 0}
     - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[0].speakerSprite
@@ -2866,6 +2884,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 422790451}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: continue2
+      value: 
+      objectReference: {fileID: 722502942}
     - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
       propertyPath: falaTexto
       value: 
@@ -3487,6 +3509,7 @@ MonoBehaviour:
   Dialogue2: {fileID: 455823232}
   Dialogue3: {fileID: 1515131438}
   playerTwo: {fileID: 422790451}
+  playerOne: {fileID: 422790452}
 --- !u!1 &1734832219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5338,6 +5361,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6603064297151243786, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
   m_PrefabInstance: {fileID: 1210525836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2101135748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5934302420254637104, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+  m_PrefabInstance: {fileID: 855139175}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3748386153130961440
 PrefabInstance:

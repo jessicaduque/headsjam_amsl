@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class ContinueTutorial2 : MonoBehaviour
 {
-    [SerializeField] private GameObject Dialogue2;
     [SerializeField] private GameObject Dialogue3;
+    [SerializeField] private GameObject Dialogue4;
 
     private void Start()
     {
-        Dialogue2.SetActive(false);
-        Dialogue3.SetActive(true);
+        Dialogue3.SetActive(false);
+        Dialogue4.SetActive(true);
     }
 }
