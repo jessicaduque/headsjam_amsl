@@ -1162,7 +1162,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.6595745
+  orthographic size: 7.714286
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1295,9 +1295,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 47
-  m_RefResolutionX: 1280
-  m_RefResolutionY: 720
+  m_AssetsPPU: 70
+  m_RefResolutionX: 1920
+  m_RefResolutionY: 1080
   m_CropFrame: 0
   m_GridSnapping: 0
   m_FilterMode: 0
@@ -2228,7 +2228,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 2, y: 4, z: 0}
@@ -2381,7 +2381,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -12, y: 10, z: 0}
@@ -2633,7 +2633,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 16, y: 10, z: 0}
