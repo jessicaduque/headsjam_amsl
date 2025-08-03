@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6603064297151243786}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
   m_LocalScale: {x: 70, y: 70, z: 70}
   m_ConstrainProportionsScale: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   - dialogue: Ei, ei!
     speakerID: 0
     pauseBeforeDialogue: 0
-  - dialogue: 
+  - dialogue: ...
     speakerID: 2
     pauseBeforeDialogue: 0
   - dialogue: "Voc\xEA se chama Tobias, n\xE9\xE9\xE9\xE9\xE9\xE9\xE9\xE9?"
@@ -141,7 +141,7 @@ MonoBehaviour:
   - dialogue: "Se voc\xEA diz."
     speakerID: 1
     pauseBeforeDialogue: 0
-  - dialogue: 
+  - dialogue: ...
     speakerID: 2
     pauseBeforeDialogue: 0
   - dialogue: "Ei, acho que eu t\xF4 ouvindo algo de longe."
@@ -169,3 +169,4 @@ MonoBehaviour:
   Speaker_Image: {fileID: 0}
   nextScene: 
   PretoExtra: {fileID: 0}
+  BrancoExtra: {fileID: 0}

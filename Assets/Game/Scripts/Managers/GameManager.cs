@@ -34,7 +34,7 @@ public class GameManager : DontDestroySingleton<GameManager>
         {
             
         }
-        else if(sceneName != "MainMenu")
+        else if(sceneName == "Level2" || sceneName == "Level3")
         {
             LevelManager.I.StartLevel();
         }

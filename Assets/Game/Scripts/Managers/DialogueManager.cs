@@ -8,6 +8,10 @@ using DG.Tweening;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
+    [SerializeField] private GameObject[] dialogueManagers;
+    [SerializeField] private int numberDialogueManager;
+    [SerializeField] private PlayerBase player1;
+    [SerializeField] private PlayerBase player2;
     [Header("DIALOGUE")]
     [SerializeField] private Button b_pular;
     [SerializeField] private DialogueDetails[] DialogueDetailsArray;
@@ -67,7 +71,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private IEnumerator ComecarFalas()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(2f);
         _audioManager.PlaySfx("DoorKnock");
         DialoguePanel.SetActive(true);
         cg_DialoguePanel.DOFade(1, 0.8f).OnComplete(() => falasRodando = true);
@@ -87,10 +91,10 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else
         {
-            if (numeroFala == 9)
-            {
-                PretoExtra.GetComponent<CanvasGroup>().DOFade(0, 0.6f);
-            }
+            // if (numeroFala == 9)
+            // {
+            //     PretoExtra.GetComponent<CanvasGroup>().DOFade(0, 0.6f);
+            // }
 
             if (tempo >= DialogueDetailsArray[numeroFala].pauseBeforeDialogue)
             {
@@ -173,7 +177,14 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void DialogueOver()
     {
-        DialogueEndEvent?.Invoke();
+        if (numberDialogueManager == 0)
+        {
+            cg_DialoguePanel.DOFade(0, 0.6f).OnComplete(() =>
+            {
+                player1.DisableInputs();
+                player2.DisableInputs();
+            });
+        }
         //_blackScreenController.FadeOutScene(nextScene);
     }
 
