@@ -119,6 +119,223 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14102732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14102733}
+  - component: {fileID: 14102734}
+  m_Layer: 0
+  m_Name: DialogueManager1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14102733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14102732}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1393574224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14102734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14102732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: Tem algumas luzes...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Rapz, pior que eu acho que s\xE3o os chefes!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Eles t\xE3o vindo atr\xE1s da gente!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o pode ser!"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: E se for a nossa vez?
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o...."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o.... n\xE3o n\xE3o n\xE3o....."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 1393574223}
+  cg_DialoguePanel: {fileID: 1393574225}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}
+--- !u!1 &46127483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46127484}
+  - component: {fileID: 46127485}
+  m_Layer: 0
+  m_Name: DialogueManager4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &46127484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46127483}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1393574224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &46127485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46127483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: "N\xC3O N\xC3O N\xC3O N\xC3O N\xC3-"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "VOC\xCA PODE PARAR DE GRITAR NO MEU OUVIDO?"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Eu- eu desisto
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Nos amarraram juntos e tudo.
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Sei que v\xE3o voltar a qualquer momento."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Adilson...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: O QUE?
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Estamos fritos...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Como assim n-
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xC3O PODEMOS DESISTIR!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Que-
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Tobias! A gente vai conseguir sair daqui!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "E n\xE3o s\xF3 isso!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Temos que salvar os outros!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "A gente n\xE3o consegue nem SE salvar Adilson..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Imagina os outros.
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "VOC\xCA VAI VER!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: VEM!!!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: O que?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Calma!
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Ai! N\xE3o puxa tanto!"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 1393574223}
+  cg_DialoguePanel: {fileID: 1393574225}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}
 --- !u!1 &80045202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +3192,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842785862}
   m_CullTransparentMesh: 1
+--- !u!1 &1015085180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1015085181}
+  - component: {fileID: 1015085182}
+  m_Layer: 0
+  m_Name: DialogueManager3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015085181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015085180}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1393574224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1015085182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015085180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: Que loucos!
+    speakerID: 3
+    pauseBeforeDialogue: 0
+  - dialogue: Melhor fritar eles logo.
+    speakerID: 3
+    pauseBeforeDialogue: 0
+  - dialogue: Antes que quebrem mais algo...
+    speakerID: 3
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 1393574223}
+  cg_DialoguePanel: {fileID: 1393574225}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}
 --- !u!1 &1046710972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,8 +3522,183 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   b_pular: {fileID: 0}
   DialogueDetailsArray:
-  - dialogue: fala 1
+  - dialogue: Ei, ei!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: 
+    speakerID: 2
+    pauseBeforeDialogue: 0
+  - dialogue: "Voc\xEA se chama Tobias, n\xE9\xE9\xE9\xE9\xE9\xE9\xE9\xE9?"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Sim...
     speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Voc\xEA ouviu os rumores?"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Dizem a gente vai ser frito!
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Fritos?!
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o acredito..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xE3o n\xE3o n\xE3o n\xE3o n\xE3o n\xE3o....."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Por que eu fui viver em um lindo campo com c\xE9u azul..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Pra estar nesse galinheiro esquisito...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: E ainda descubro que vou ser frito?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "\xC9, t\xE1 complicado cara!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Depois de trazer todo mundo pra c\xE1, parece que j\xE1 tem alguns
+      sendo levados todo dia."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Tadinhos.
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "J\xE1 j\xE1 chega nossa hora! Destino cruel demais."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Tudo bem, eu entendo que o nosso prop\xF3sito \xE9 ser alimento..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Sendo galinhas e tal...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Mas \xF3, parece que a gente vai ser servido em um restaurando vegano!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...O que?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "\xC9, acho que t\xE3o enganando um monte de gente!"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Isso me deixa com tanta raiva.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: ...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "N\xC3O VOU NEM VIRAR COMIDA COM DIGNIDADE??"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Oi?
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Poxa! Se pra virar comida, que eu fosse o peda\xE7o de frango mais
+      gostoso poss\xEDvel!"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Os veganos n\xE3o queriam nem comer a gente..."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "\xC9 esse o seu problema com tudo isso??"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Sim!
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Se voc\xEA diz."
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: 
+    speakerID: 2
+    pauseBeforeDialogue: 0
+  - dialogue: "Ei, acho que eu t\xF4 ouvindo algo de longe."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Como assim?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Vem, vamo tentar ver pela janela.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 1393574223}
+  cg_DialoguePanel: {fileID: 1393574225}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}
+--- !u!1 &1177629226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177629227}
+  - component: {fileID: 1177629228}
+  m_Layer: 0
+  m_Name: DialogueManager2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177629227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177629226}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1393574224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177629228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177629226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: Eita, exagerei um pouco?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: 
+    speakerID: 2
+    pauseBeforeDialogue: 0
+  - dialogue: Vish.
+    speakerID: 0
     pauseBeforeDialogue: 0
   DialogueSpeakerArray:
   - speaker: Adilson
@@ -3616,6 +4079,11 @@ RectTransform:
   m_Children:
   - {fileID: 605163208}
   - {fileID: 1054633994}
+  - {fileID: 14102733}
+  - {fileID: 1177629227}
+  - {fileID: 1015085181}
+  - {fileID: 46127484}
+  - {fileID: 1713722569}
   m_Father: {fileID: 1267341185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3889,6 +4357,92 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1713722568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713722569}
+  - component: {fileID: 1713722570}
+  m_Layer: 0
+  m_Name: DialogueManager5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1713722569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713722568}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.7, y: -207.90001, z: -6300}
+  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1393574224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713722570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713722568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_pular: {fileID: 0}
+  DialogueDetailsArray:
+  - dialogue: "Isso \xE9...?"
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: "Nossa salva\xE7\xE3o"
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Uhhhhh
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Um celular?
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  - dialogue: Confia em mim. Agora esse restaurante acaba.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Tobias, valeu.
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: "Daqui a pouco voc\xEA vai poder voltar pro seu lindo campo..."
+    speakerID: 0
+    pauseBeforeDialogue: 0
+  - dialogue: Adilson...
+    speakerID: 1
+    pauseBeforeDialogue: 0
+  DialogueSpeakerArray:
+  - speaker: Adilson
+    speakerSprite: {fileID: 0}
+  - speaker: Tobias
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    speakerSprite: {fileID: 0}
+  - speaker: Chefes
+    speakerSprite: {fileID: 0}
+  DialoguePanel: {fileID: 1393574223}
+  cg_DialoguePanel: {fileID: 1393574225}
+  falaTexto: {fileID: 0}
+  NomeFalante_Text: {fileID: 0}
+  Speaker_Image: {fileID: 0}
+  nextScene: 
+  PretoExtra: {fileID: 0}
 --- !u!1 &1753506909
 GameObject:
   m_ObjectHideFlags: 0
