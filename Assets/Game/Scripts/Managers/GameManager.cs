@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utils.Singleton;
@@ -5,8 +6,10 @@ using Utils.Singleton;
 public class GameManager : DontDestroySingleton<GameManager>
 {
     [SerializeField] private Scene[] _scenes;
+    [SerializeField] private GameObject askForFullscreen;
     private int _currentScene;
     private AudioManager _audioManager => AudioManager.I;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -20,6 +23,18 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         CheckStartOfScene("MainMenu");
         _audioManager.FadeInMusic("mainmenu");
+    }
+
+    private void Update()
+    {
+        if (IsInFullscreen())
+        {
+            askForFullscreen.SetActive(false);
+        }
+        else
+        {
+            askForFullscreen.SetActive(true);
+        }
     }
 
     #region OnSceneLoaded
@@ -45,7 +60,6 @@ public class GameManager : DontDestroySingleton<GameManager>
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     #endregion
-
     
     public void CompleteLevel()
     {
@@ -56,4 +70,20 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         SceneManager.LoadScene(_scenes[_currentScene].name);
     }
+
+    #region CheckFullscreen
+
+    [DllImport("__Internal")]
+    private static extern void IsFullscreen();
+
+    public bool IsInFullscreen()
+    {
+    #if UNITY_WEBGL && !UNITY_EDITOR
+        return IsFullscreen();
+    #else
+        return true;
+    #endif
+    }
+
+    #endregion
 }

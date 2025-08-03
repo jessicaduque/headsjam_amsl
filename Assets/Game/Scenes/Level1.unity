@@ -6123,6 +6123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 551895968796010388, guid: 3074606792a648f48b2f8b7572013c15, type: 3}
+      propertyPath: askForFullscreen
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5866127189737382237, guid: 3074606792a648f48b2f8b7572013c15, type: 3}
       propertyPath: m_Name
       value: GameManager
