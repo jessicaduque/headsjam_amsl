@@ -11,6 +11,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [Header("Tutorial!")]
     [SerializeField] private GameObject tutorial1Ligar;
     [SerializeField] private GameObject tutorial2Ligar;
+    [SerializeField] private GameObject continue2;
     
     [SerializeField] private GameObject[] dialogueManagers;
     [SerializeField] private int numberDialogueManager;
@@ -195,9 +196,26 @@ public class DialogueManager : Singleton<DialogueManager>
                 player1.EnableInputs();
                 player2.EnableInputs();
                 tutorial2Ligar.SetActive(true);
+                tutorial1Ligar.SetActive(false);
             });
         }
-        //_blackScreenController.FadeOutScene(nextScene);
+        else if (numberDialogueManager == 2)
+        {
+            PretoExtra.GetComponent<CanvasGroup>().alpha = 0;
+            PretoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).OnComplete(() =>
+            {
+                continue2.SetActive(true);
+                _audioManager.PlaySfx("glassbreak");
+            });
+        }
+        else if (numberDialogueManager == 3)
+        {
+            _blackScreenController.FadeOutScene("InitialDialogue");
+        }
+        else if (numberDialogueManager == 4)
+        {
+            _blackScreenController.FadeOutScene("Level1");
+        }
     }
 
 

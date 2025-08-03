@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ContinueTutorial : MonoBehaviour
 {
+    [SerializeField] private GameObject window;
     [SerializeField] private GameObject Tutorial1;
     [SerializeField] private GameObject Dialogue1;
     [SerializeField] private GameObject Dialogue2;
@@ -23,6 +24,7 @@ public class ContinueTutorial : MonoBehaviour
                 Dialogue2.SetActive(true);
                 player1.DisableInputs();
                 player2.DisableInputs();
+                window.layer = LayerMask.NameToLayer("InteractableObjects");
                 player1.transform.localScale = new Vector3(-1, 1, 1);
                 player2.transform.localScale = new Vector3(-1, 1, 1);
                 alreadyDone = true;

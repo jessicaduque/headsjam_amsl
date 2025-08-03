@@ -4,11 +4,11 @@ using UnityEngine;
 public class GlassObject : MonoBehaviour
 {
     private string _sfxName;
-    private Collider2D _collider2D;
-    private SpriteRenderer _spriteRenderer;
-    private Animator _animator;
+    protected Collider2D _collider2D;
+    protected SpriteRenderer _spriteRenderer;
+    protected Animator _animator;
 
-    private CameraShake _cameraShake => CameraShake.I;
+    protected CameraShake _cameraShake => CameraShake.I;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class GlassObject : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void BreakGlassObject()
+    public virtual void BreakGlassObject()
     {
         _collider2D.enabled = false;
         AudioManager.I.PlaySfx(_sfxName);

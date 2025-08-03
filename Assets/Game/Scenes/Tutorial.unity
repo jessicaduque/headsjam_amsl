@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -20, y: 100}
-  m_SizeDelta: {x: 800, y: 450}
+  m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &86346948
 MonoBehaviour:
@@ -234,7 +234,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -200}
-  m_SizeDelta: {x: 800, y: 450}
+  m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &178078746
 MonoBehaviour:
@@ -1380,9 +1380,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2120557035660611406, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5157264239850830325, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_Name
       value: Players
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252248198029126568, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5305172490224822820, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: springJoint
@@ -1705,7 +1713,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722502942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b05376a2239d70418d51fe3b5e888e6, type: 3}
   m_Name: 
@@ -1907,6 +1915,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 357644883}
     - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: tutorial1Ligar
+      value: 
+      objectReference: {fileID: 86346946}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: tutorial2Ligar
+      value: 
+      objectReference: {fileID: 178078744}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
       propertyPath: NomeFalante_Text
       value: 
       objectReference: {fileID: 1690508559}
@@ -1914,6 +1930,10 @@ PrefabInstance:
       propertyPath: cg_DialoguePanel
       value: 
       objectReference: {fileID: 1484790293}
+    - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
+      propertyPath: numberDialogueManager
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4646088823516686376, guid: 9933426391ee5d94087d61f67c17399e, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[2].speaker
       value: ???
@@ -2182,6 +2202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b6ef9c7817585499d5b3f27717c3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  window: {fileID: 1698863408}
   Tutorial1: {fileID: 86346946}
   Dialogue1: {fileID: 2088467203}
   Dialogue2: {fileID: 455823232}
@@ -2745,6 +2766,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 357644883}
     - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: tutorial1Ligar
+      value: 
+      objectReference: {fileID: 86346946}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: tutorial2Ligar
+      value: 
+      objectReference: {fileID: 178078744}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
       propertyPath: NomeFalante_Text
       value: 
       objectReference: {fileID: 1690508559}
@@ -2752,6 +2781,10 @@ PrefabInstance:
       propertyPath: cg_DialoguePanel
       value: 
       objectReference: {fileID: 1484790293}
+    - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+      propertyPath: numberDialogueManager
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[2].speaker
       value: ???
@@ -2854,6 +2887,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 357644883}
     - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: tutorial1Ligar
+      value: 
+      objectReference: {fileID: 86346946}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: tutorial2Ligar
+      value: 
+      objectReference: {fileID: 178078744}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
       propertyPath: NomeFalante_Text
       value: 
       objectReference: {fileID: 1690508559}
@@ -2862,8 +2903,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1484790293}
     - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: numberDialogueManager
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[2].speaker
       value: ???
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[1].dialogue
+      value: "Rapaz, pior que eu acho que s\xE3o os chefes!"
       objectReference: {fileID: 0}
     - target: {fileID: 1783013195215958769, guid: ff58ee68ec649de4aa4b07e72f11d164, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[0].speakerSprite
@@ -3133,6 +3182,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484790291}
   m_CullTransparentMesh: 1
+--- !u!1 &1515131438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3462328772452445350, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
+  m_PrefabInstance: {fileID: 1286778978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1517981951
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,6 +3459,34 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1698863408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3936785192229139400, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+  m_PrefabInstance: {fileID: 2085001804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1698863411 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 870481943082007374, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+  m_PrefabInstance: {fileID: 2085001804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1698863413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698863408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88cc6a07119b3d4389ef09b0ace01cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstChange: {fileID: 8977881757050281282, guid: 488f88cfb3168764d9aab4c9a4ceb2be, type: 3}
+  _spriteRenedrer: {fileID: 1698863411}
+  tutorial2: {fileID: 178078744}
+  Dialogue2: {fileID: 455823232}
+  Dialogue3: {fileID: 1515131438}
+  playerTwo: {fileID: 422790451}
 --- !u!1 &1734832219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,6 +5297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3557309177970794025, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3936785192229139400, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
       propertyPath: m_Name
       value: Window
@@ -5223,11 +5309,30 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5059278201926265999, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+      propertyPath: m_Size.x
+      value: 4.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059278201926265999, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+      propertyPath: m_Size.y
+      value: 5.34375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059278201926265999, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059278201926265999, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.34375
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3557309177970794025, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+    - {fileID: 367187011696236610, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3936785192229139400, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1698863413}
   m_SourcePrefab: {fileID: 100100000, guid: 8586a633ecf7ab649bbb917df5ab75a1, type: 3}
 --- !u!1 &2088467203 stripped
 GameObject:

@@ -72,7 +72,7 @@ public class PlayerTwo : PlayerBase
         EnableInputs();
     }
 
-    private void StopSinging()
+    public void StopSinging()
     {
         StopAllCoroutines();
         singingParticlesLeft.gameObject.SetActive(false);
