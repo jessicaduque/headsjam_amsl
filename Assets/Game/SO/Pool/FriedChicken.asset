@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c5a62e3fb5164f4f9a67dc70f143a53, type: 3}
-  m_Name: DummyChicken
+  m_Name: FriedChicken
   m_EditorClassIdentifier: 
-  tagPool: DummyChick
-  prefab: {fileID: 1745254568263304729, guid: f71daeb3ef8123749a80dfce79a58c12, type: 3}
-  amount: 10
-  isExpandable: 1
+  tagPool: DummyFriedChicken
+  prefab: {fileID: 5154878152336010672, guid: 7f6649efe616d5d44b4c5ca984be7fbd, type: 3}
+  amount: 5
+  isExpandable: 0

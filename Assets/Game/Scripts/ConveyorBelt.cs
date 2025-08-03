@@ -5,11 +5,15 @@ namespace Game.Scripts
 {
     public class ConveyorBelt : MonoBehaviour
     {
+        [Header("Configuration")]
         public bool isOn = true;
         public bool clockwise = true;
         public bool hasInfiniteChicken;
         public float speed = 500;
-        public Vector3 dummySpawn;
+        public string tagPool;
+        
+        [Header("Positioning")]
+        public Transform startPosition;
 
         private static PoolManager _poolManager => PoolManager.I;
 
@@ -31,22 +35,22 @@ namespace Game.Scripts
                 {
                     if (clockwise)
                     {
-                        rb.AddForce(Vector2.left * speed, ForceMode2D.Force);
+                        rb.AddForce(Vector2.right * speed, ForceMode2D.Force);
                     }
                     else
                     {
-                        rb.AddForce(Vector2.right * speed, ForceMode2D.Force);
+                        rb.AddForce(Vector2.left * speed, ForceMode2D.Force);
                     }
                 }
                 else if (collision.gameObject.layer == LayerMask.NameToLayer("InteractableObjects"))
                 {
                     if (clockwise)
                     {
-                        rb.AddForce(Vector2.left * speed / 20, ForceMode2D.Force);
+                        rb.AddForce(Vector2.right * speed / 20, ForceMode2D.Force);
                     }
                     else
                     {
-                        rb.AddForce(Vector2.right * speed / 20, ForceMode2D.Force);
+                        rb.AddForce(Vector2.left * speed / 20, ForceMode2D.Force);
                     }
                 }
             }
@@ -56,7 +60,7 @@ namespace Game.Scripts
         {
             while (true)
             {
-                _poolManager.GetObject("Dummy", dummySpawn, new Quaternion());
+                _poolManager.GetObject(tagPool, startPosition.position, new Quaternion());
                 
                 yield return new WaitForSeconds(1.25f);
             }
