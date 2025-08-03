@@ -11,7 +11,6 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Panels for each game state")]
     [SerializeField] private GameObject _hudPanel;
-    [SerializeField] private GameObject _dialoguePanel;
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _pausePanel;
     
@@ -81,12 +80,6 @@ public class UIManager : Singleton<UIManager>
     }
     
     #endregion
-
-    private void DialogueControl(bool activate)
-    {
-        if(activate) Helpers.FadeInPanel(_dialoguePanel);
-        else Helpers.FadeOutPanel(_dialoguePanel);
-    }
     
     #region Pause Control
 

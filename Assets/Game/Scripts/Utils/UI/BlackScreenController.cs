@@ -52,8 +52,8 @@ public class BlackScreenController : DontDestroySingleton<BlackScreenController>
     #region Fades with scenes
     private void FadeOutSceneStart() // When it's the first frame of scene, ideal to apply to start as pitch black then fade out
     {
-        blackScreenPanel.SetActive(true);
         blackScreenCanvasGroup.alpha = 1f;
+        blackScreenPanel.SetActive(true);
         blackScreenCanvasGroup.DOFade(0, BlackFadeTime).SetUpdate(true).OnComplete(() => blackScreenPanel.SetActive(false));
     }
 

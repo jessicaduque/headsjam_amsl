@@ -5,6 +5,7 @@ using Utils.Singleton;
 using TMPro;
 using System.Collections;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
@@ -76,8 +77,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private IEnumerator ComecarFalas()
     {
-        yield return new WaitForSeconds(2f);
-        _audioManager.PlaySfx("DoorKnock");
+        yield return new WaitForSeconds(1.4f);
         DialoguePanel.SetActive(true);
         cg_DialoguePanel.DOFade(1, 0.8f).OnComplete(() => falasRodando = true);
         falasRodando = true;
@@ -96,10 +96,6 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else
         {
-            // if (numeroFala == 9)
-            // {
-            //     PretoExtra.GetComponent<CanvasGroup>().DOFade(0, 0.6f);
-            // }
 
             if (tempo >= DialogueDetailsArray[numeroFala].pauseBeforeDialogue)
             {
@@ -216,6 +212,15 @@ public class DialogueManager : Singleton<DialogueManager>
         else if (numberDialogueManager == 4)
         {
             _blackScreenController.FadeOutScene("Level1");
+        }
+        else if (numberDialogueManager == 5)
+        {
+            BrancoExtra.SetActive(true);
+            BrancoExtra.GetComponent<CanvasGroup>().alpha = 0;
+            BrancoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).OnComplete(() =>
+            {
+                SceneManager.LoadScene("FinalDialogue");
+            });
         }
     }
 

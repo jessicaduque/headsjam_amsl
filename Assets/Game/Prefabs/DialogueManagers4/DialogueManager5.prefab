@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660146b6b61f98a4a99ecc2d79a43ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial1Ligar: {fileID: 0}
+  tutorial2Ligar: {fileID: 0}
+  continue2: {fileID: 0}
+  dialogueManagers: []
+  numberDialogueManager: 0
+  player1: {fileID: 0}
+  player2: {fileID: 0}
   b_pular: {fileID: 0}
   DialogueDetailsArray:
   - dialogue: "Isso \xE9...?"
@@ -72,13 +79,13 @@ MonoBehaviour:
     pauseBeforeDialogue: 0
   DialogueSpeakerArray:
   - speaker: Adilson
-    speakerSprite: {fileID: 0}
+    speakerSprite: {fileID: 8443794771774750484, guid: d9638120a84fbec4592293bbcc44ba06, type: 3}
   - speaker: Tobias
-    speakerSprite: {fileID: 0}
-  - speaker: 
+    speakerSprite: {fileID: 4727800999719197018, guid: 13e3b8f26af725b499252269e7ec66d6, type: 3}
+  - speaker: ???
     speakerSprite: {fileID: 0}
   - speaker: Chefes
-    speakerSprite: {fileID: 0}
+    speakerSprite: {fileID: -5001601152502926789, guid: 66bb0b3b56d532f429108de61fd993b4, type: 3}
   DialoguePanel: {fileID: 0}
   cg_DialoguePanel: {fileID: 0}
   falaTexto: {fileID: 0}
@@ -86,3 +93,4 @@ MonoBehaviour:
   Speaker_Image: {fileID: 0}
   nextScene: 
   PretoExtra: {fileID: 0}
+  BrancoExtra: {fileID: 0}

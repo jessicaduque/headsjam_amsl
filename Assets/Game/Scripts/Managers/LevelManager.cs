@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using Utils.Singleton;
 
@@ -16,6 +15,11 @@ public class LevelManager : Singleton<LevelManager>
     public LevelState _levelState { get; private set; }
     
     private GameManager _gameManager => GameManager.I;
+
+    private void Start()
+    {
+        StartLevel();
+    }
 
     #region StartLevel Level
     public void StartLevel()
