@@ -2058,7 +2058,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 4, y: 4, z: 0}
@@ -2067,7 +2067,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 5, y: 4, z: 0}
@@ -2085,7 +2085,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 7, y: 4, z: 0}
@@ -2139,7 +2139,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 4, z: 0}
@@ -2884,7 +2884,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -8, y: 10, z: 0}
@@ -2974,7 +2974,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 2, y: 10, z: 0}
@@ -6518,10 +6518,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8622522671887179366}
   - component: {fileID: 4394710518941645097}
-  - component: {fileID: 7322814702391910710}
   - component: {fileID: 5042506565472124423}
   - component: {fileID: 5406956220899538862}
   - component: {fileID: 2009477233823456377}
+  - component: {fileID: 8622522671887179367}
   m_Layer: 6
   m_Name: ConveyorButton
   m_TagString: Untagged
@@ -6598,24 +6598,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4a6f4cd00e04e4995957f7ab94f13b, type: 3}
---- !u!114 &7322814702391910710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5993380224675095868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f29c1f8126818d41ad4d288ac6c8461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonSprites:
-  - {fileID: -3828746426031234298, guid: ecace4cbd478f284a8214a7c51e4e4f3, type: 3}
-  - {fileID: 600293392, guid: ecace4cbd478f284a8214a7c51e4e4f3, type: 3}
-  doors: []
-  startsPressed: 0
-  solidCollider: {fileID: 5042506565472124423}
 --- !u!114 &7644438712320413542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6807,6 +6789,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8622522671887179367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5993380224675095868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c5c671db954d5459b4ec31056c6442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSprites:
+  - {fileID: -3828746426031234298, guid: ecace4cbd478f284a8214a7c51e4e4f3, type: 3}
+  - {fileID: 600293392, guid: ecace4cbd478f284a8214a7c51e4e4f3, type: 3}
+  startsPressed: 0
+  solidCollider: {fileID: 5042506565472124423}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

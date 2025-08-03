@@ -58,7 +58,7 @@ namespace Game.Scripts
 
         private IEnumerator InfiniteChicken()
         {
-            while (true)
+            while (hasInfiniteChicken)
             {
                 _poolManager.GetObject(tagPool, startPosition.position, new Quaternion());
                 
@@ -66,7 +66,7 @@ namespace Game.Scripts
             }
         }
 
-        public void ToggleOnOff()
+        private void ToggleOnOff()
         {
             isOn = !isOn;
         }
