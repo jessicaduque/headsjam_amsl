@@ -84,12 +84,14 @@ namespace Game.Scripts
             if (hasInfiniteChicken) StartCoroutine(InfiniteChicken());
         }
 
-        private void StopConveyor()
+        private IEnumerator StopConveyor()
         {
             Debug.Log("Stopping Conveyor");
+            if (hasInfiniteChicken) StopCoroutine(InfiniteChicken());
+            yield return new WaitForSeconds(2f);
+            
             isOn = false;
             // Stop sound
-            if (hasInfiniteChicken) StopCoroutine(InfiniteChicken());
         }
     }
 }
