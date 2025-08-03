@@ -10,7 +10,7 @@ public static class Helpers
     public static void FadeInPanel(GameObject panel)
     {
         panel.SetActive(true);
-        panel.GetComponent<CanvasGroup>().alpha = 0;
+        //panel.GetComponent<CanvasGroup>().alpha = 0;
         panel.GetComponent<CanvasGroup>().DOFade(1, panelFadeTime).SetUpdate(true);
     }
 

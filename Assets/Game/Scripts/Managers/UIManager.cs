@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using Utils.Singleton;
 
 public class UIManager : Singleton<UIManager>
@@ -12,7 +14,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject _dialoguePanel;
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _pausePanel;
-
+    
+    [SerializeField] private Button _pauseButton;
     LevelManager _levelManager => LevelManager.I;
     private AudioManager _audioManager => AudioManager.I;
     protected override void Awake()
@@ -24,12 +27,18 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
+        _pauseButton.onClick.AddListener(_levelManager.Pause);
         _levelManager.startLevelEvent += () =>
         {
+            _pauseButton.interactable = true;
             EnableInputs();
             Helpers.FadeInPanel(_hudPanel);
         };
-        _levelManager.pauseEvent += DisableInputs;
+        _levelManager.pauseEvent += () =>
+        {
+            _pauseButton.interactable = false;
+            DisableInputs();
+        };
         _levelManager.timeUpEvent += () =>
         {
             _levelManager.GameOver();
@@ -37,7 +46,7 @@ public class UIManager : Singleton<UIManager>
         };
         _levelManager.gameOverEvent += () =>
         {
-            ActivateGameOverPanel();
+            StartCoroutine(ActivateGameOverPanel());
             DisableInputs();
         };
         _levelManager.levelCompleteEvent += DisableInputs;
@@ -65,8 +74,9 @@ public class UIManager : Singleton<UIManager>
 
     #region Gameover Control
 
-    public void ActivateGameOverPanel()
+    public IEnumerator ActivateGameOverPanel()
     {
+        yield return new WaitForSeconds(2f);
         Helpers.FadeInPanel(_gameOverPanel);
     }
     
@@ -81,6 +91,11 @@ public class UIManager : Singleton<UIManager>
     #region Pause Control
 
     private void DoPauseControl(InputAction.CallbackContext obj)
+    {
+        PauseGame();
+    }
+
+    public void PauseGame()
     {
         _levelManager.Pause();
 

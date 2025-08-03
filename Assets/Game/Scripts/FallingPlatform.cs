@@ -51,7 +51,8 @@ namespace Game.Scripts
 
         private IEnumerator Respawn()
         {
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _isFalling = false;
+            _rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
             yield return new WaitForSeconds(respawnWait);
             transform.position = _initialPosition;
             _spriteRenderer.DOFade(1, appearWait).OnComplete(() =>

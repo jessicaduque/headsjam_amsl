@@ -1355,19 +1355,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 396701808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &396701808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,6 +1900,7 @@ MonoBehaviour:
   _dialoguePanel: {fileID: 83072888}
   _gameOverPanel: {fileID: 6460921289746707371}
   _pausePanel: {fileID: 747846601480077836}
+  _pauseButton: {fileID: 396701807}
 --- !u!4 &1245632881
 Transform:
   m_ObjectHideFlags: 0
@@ -6708,7 +6697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd0e860ffb67b0c4bad9264994c14e62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a2fe0b2a60b81a4fb3c287e676636cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: c69c016f77a130046947c5a3b513c028
+guid: 88ab59096cd5e6f4384bc0dac3f105ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1949447107695116448
-    second: BatataFrita_0
+      213: -3400497820169584107
+    second: CapaVidroQuebrando_0
+  - first:
+      213: 3015197208349277024
+    second: CapaVidroQuebrando_1
+  - first:
+      213: -4279030102016096547
+    second: CapaVidroQuebrando_2
+  - first:
+      213: -2384630388668345011
+    second: CapaVidroQuebrando_3
+  - first:
+      213: -3935659052083239834
+    second: CapaVidroQuebrando_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,13 +58,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 78, y: 4, z: 75, w: 4}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -126,23 +138,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BatataFrita_0
+      name: CapaVidroQuebrando_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 218
-        height: 41
+        width: 189
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a0849ad0d3dd0b10800000000000000
-      internalID: 1949447107695116448
+      spriteID: 5124d49cf310fc0d0800000000000000
+      internalID: -3400497820169584107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CapaVidroQuebrando_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 189
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06b7863c2e128d920800000000000000
+      internalID: 3015197208349277024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CapaVidroQuebrando_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 189
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd680222bc4dd94c0800000000000000
+      internalID: -4279030102016096547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CapaVidroQuebrando_3
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 0
+        width: 189
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4552dabb4718eed0800000000000000
+      internalID: -2384630388668345011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CapaVidroQuebrando_4
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 189
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6642783b1fab169c0800000000000000
+      internalID: -3935659052083239834
       vertices: []
       indices: 
       edges: []
@@ -151,8 +251,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 0ad5c18c4fb75d64db85fe26cb29e492
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BatataFrita_0: 1949447107695116448
+      CapaVidroQuebrando_0: -3400497820169584107
+      CapaVidroQuebrando_1: 3015197208349277024
+      CapaVidroQuebrando_2: -4279030102016096547
+      CapaVidroQuebrando_3: -2384630388668345011
+      CapaVidroQuebrando_4: -3935659052083239834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
