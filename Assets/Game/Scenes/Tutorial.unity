@@ -1720,6 +1720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue3: {fileID: 1515131438}
   Dialogue4: {fileID: 2101135748}
+  tutorial2: {fileID: 178078744}
 --- !u!61 &722502944
 BoxCollider2D:
   m_ObjectHideFlags: 0

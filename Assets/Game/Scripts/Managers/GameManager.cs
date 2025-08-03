@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -45,14 +46,16 @@ public class GameManager : DontDestroySingleton<GameManager>
 
     private void CheckStartOfScene(string sceneName)
     {
-        if (sceneName == "Level1")
+        if (sceneName == "Level1" || sceneName == "Level2" || sceneName == "Level3")
         {
-            
+            StartCoroutine(AAA());
         }
-        else if(sceneName == "Level2" || sceneName == "Level3")
-        {
-            LevelManager.I.StartLevel();
-        }
+    }
+
+    private IEnumerator AAA()
+    {
+        yield return new WaitForSeconds(0.2f);
+        LevelManager.I.StartLevel();
     }
 
     private void OnDestroy()

@@ -17,12 +17,6 @@ public class LevelManager : Singleton<LevelManager>
     
     private GameManager _gameManager => GameManager.I;
 
-    private IEnumerator Start()
-    {
-        yield return new WaitForSeconds(0.2f);
-        StartLevel();
-    }
-
     #region StartLevel Level
     public void StartLevel()
     {
