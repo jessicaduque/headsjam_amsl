@@ -22,7 +22,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     private void Start()
     {
         CheckStartOfScene("MainMenu");
-        _audioManager.FadeInMusic("mainmenu");
+        _audioManager.FadeInMusic("menumusic");
     }
 
     private void Update()
