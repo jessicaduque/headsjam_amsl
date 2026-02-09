@@ -2988,7 +2988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[2].speaker
-      value: ???
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6383335086528774040, guid: 1ee6f22a5b87f3948a3c43a9c53c691c, type: 3}
       propertyPath: DialogueDetailsArray.Array.data[1].dialogue
