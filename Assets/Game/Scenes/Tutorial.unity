@@ -1585,7 +1585,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2526,12 +2526,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1484790293}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueSpeakerArray.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[2].speaker
       value: ???
       objectReference: {fileID: 0}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueSpeakerArray.Array.data[4].speaker
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueDetailsArray.Array.data[1].dialogue
-      value: ...
+      value: ...Eu?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[9].dialogue
+      value: "Como \xE9 que eu fui de viver em um lindo campo com c\xE9u azul..."
       objectReference: {fileID: 0}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueDetailsArray.Array.data[22].dialogue
@@ -2546,12 +2558,20 @@ PrefabInstance:
       value: ...
       objectReference: {fileID: 0}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[16].speakerID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueDetailsArray.Array.data[22].speakerID
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueDetailsArray.Array.data[30].speakerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[31].speakerID
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueDetailsArray.Array.data[32].speakerID
@@ -2570,9 +2590,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4727800999719197018, guid: 13e3b8f26af725b499252269e7ec66d6, type: 3}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueSpeakerArray.Array.data[2].speakerSprite
+      value: 
+      objectReference: {fileID: 4727800999719197018, guid: 13e3b8f26af725b499252269e7ec66d6, type: 3}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[3].speakerSprite
       value: 
       objectReference: {fileID: -5001601152502926789, guid: 66bb0b3b56d532f429108de61fd993b4, type: 3}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueSpeakerArray.Array.data[4].speakerSprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

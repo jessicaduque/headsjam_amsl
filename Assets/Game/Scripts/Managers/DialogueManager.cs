@@ -107,7 +107,7 @@ public class DialogueManager : Singleton<DialogueManager>
         //ControleDosObjetosEspecificos(falas);
 
         string speaker = DialogueSpeakerArray[DialogueDetailsArray[numeroFala].speakerID].speaker;
-        if (speaker == null || speaker == "???")
+        if (string.IsNullOrEmpty(speaker))
         {
             Speaker_Image.enabled = false;
         }
