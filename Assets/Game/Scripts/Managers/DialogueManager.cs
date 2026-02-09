@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils.Singleton;
@@ -19,6 +20,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private PlayerBase player2;
     [Header("DIALOGUE")]
     [SerializeField] private Button b_pular;
+    [SerializeField] private Button b_continuarFalas;
     [SerializeField] private DialogueDetails[] DialogueDetailsArray;
     [SerializeField] private DialogueSpeaker[] DialogueSpeakerArray;
 
@@ -27,6 +29,9 @@ public class DialogueManager : Singleton<DialogueManager>
     private float tempoLetras = 0.0f;
     private int letra = 1;
     private bool falasRodando;
+    private bool podeClicar;
+    private bool dialogueOver;
+    private string dialogue;
 
     [Header("UI")]
     [SerializeField] private GameObject DialoguePanel;
@@ -49,10 +54,21 @@ public class DialogueManager : Singleton<DialogueManager>
         numeroFala = 0;
         falaTexto.text = "";
 
+        
         DialoguePanel.SetActive(false);
         cg_DialoguePanel.alpha = 0;
 
         StartCoroutine(ComecarFalas());
+    }
+
+    private void OnEnable()
+    {
+        b_continuarFalas.onClick.AddListener(MouseClick);
+    }
+
+    private void OnDisable()
+    {
+        b_continuarFalas.onClick.RemoveAllListeners();
     }
 
     private void Start()
@@ -85,17 +101,18 @@ public class DialogueManager : Singleton<DialogueManager>
 
         if (numeroFala == DialogueDetailsArray.Length)
         {
+            podeClicar = false;
             DialogueOver();
         }
         else
         {
-
             if (tempo >= DialogueDetailsArray[numeroFala].pauseBeforeDialogue)
             {
                 ScriptFalas();
             }
             else
             {
+                podeClicar = false;
                 falaTexto.text = "";
             }
         }
@@ -103,7 +120,6 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void ScriptFalas()
     {
-
         //ControleDosObjetosEspecificos(falas);
 
         string speaker = DialogueSpeakerArray[DialogueDetailsArray[numeroFala].speakerID].speaker;
@@ -123,13 +139,14 @@ public class DialogueManager : Singleton<DialogueManager>
 
         LettersOneByOne(line);
 
-        MouseClick(line);
+        dialogue = line;
+        podeClicar = true;
 
     }
 
-    void MouseClick(string dialogue)
+    void MouseClick()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton0))
+        if (podeClicar && !dialogueOver)
         {
             if (letra != dialogue.Length + 1)
             {
@@ -167,6 +184,8 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void DialogueOver()
     {
+        dialogueOver = true;
+        
         if (numberDialogueManager == 0)
         {
             cg_DialoguePanel.DOFade(0, 0.6f).OnComplete(() =>

@@ -79,11 +79,16 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     public void EnableInputs()
     {
         _playerInput.enabled = true;
+        PlayerMovement.enabled = true;
     }
     
     public void DisableInputs()
     {
         _playerInput.enabled = false;
+        PlayerMovement.enabled = false;
+        _animator.SetBool("Walking", false);
+        _animator.SetInteger("JumpVel", -1);
+        _animator.SetBool("IsJumping", false);
     }
     
     #endregion

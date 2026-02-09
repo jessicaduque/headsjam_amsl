@@ -1,4 +1,4 @@
-using System;
+using DG.Tweening;
 using UnityEngine;
 
 public class ContinueTutorial : MonoBehaviour
@@ -16,28 +16,23 @@ public class ContinueTutorial : MonoBehaviour
         if (alreadyDone) return;
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<PlayerBase>().FreezePlayer();
+            other.transform.localScale = new Vector3(-1, 1, 1);
             amount++;
+            Debug.Log("entered");   
             if (amount == 2)
             {
                 Tutorial1.SetActive(false);
                 Dialogue1.SetActive(false);
                 Dialogue2.SetActive(true);
-                player1.DisableInputs();
-                player2.DisableInputs();
                 window.layer = LayerMask.NameToLayer("InteractableObjects");
-                player1.transform.localScale = new Vector3(-1, 1, 1);
-                player2.transform.localScale = new Vector3(-1, 1, 1);
                 alreadyDone = true;
+            }
+            else if (amount == 1)
+            {
+                other.transform.DOMoveX(transform.position.x + 0.3f, 0.8f);
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (alreadyDone) return;
-        if (other.CompareTag("Player"))
-        {
-            amount--;
-        }
-    }
 }
