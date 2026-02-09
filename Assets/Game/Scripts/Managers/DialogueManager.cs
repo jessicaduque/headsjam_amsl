@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils.Singleton;
@@ -40,24 +39,10 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] public string nextScene;
     [SerializeField] GameObject PretoExtra;
     [SerializeField] GameObject BrancoExtra;
-
-    public event Action DialogueEndEvent; 
-    
-    // Objetos espec�ficos
-    // NENHUM AINDA
-
     private BlackScreenController _blackScreenController => BlackScreenController.I;
     private AudioManager _audioManager => AudioManager.I;
     //private PausePanel _pausePanel => PausePanel.I;
-
-    private void OnValidate()
-    {
-        if(cg_DialoguePanel == null)
-        {
-            cg_DialoguePanel = DialoguePanel.GetComponent<CanvasGroup>();
-        }
-    }
-
+    
     private new void Awake()
     {
         b_pular.onClick.AddListener(() => DialogueOver());

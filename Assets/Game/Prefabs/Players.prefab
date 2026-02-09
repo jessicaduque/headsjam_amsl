@@ -15519,6 +15519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 2669281070988419035}
+  hasRope: 1
   springJoint: {fileID: 670757500307913633}
   maxRopeLength: 4
   interactionPoint: {fileID: 7712182338801149821}

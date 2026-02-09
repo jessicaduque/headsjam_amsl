@@ -149,16 +149,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86346946}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 196307109}
+  m_Father: {fileID: 3748386153130961441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -20, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 918.75, y: -428.75}
   m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &86346948
@@ -224,16 +224,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178078744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 196307109}
+  m_Father: {fileID: 3748386153130961441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -200}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -813.75, y: 411.25}
   m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &178078746
@@ -308,8 +308,6 @@ RectTransform:
   - {fileID: 308127692}
   - {fileID: 1026268015}
   - {fileID: 1484790292}
-  - {fileID: 86346947}
-  - {fileID: 178078745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1391,6 +1389,10 @@ PrefabInstance:
     - target: {fileID: 5252248198029126568, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305172490224822820, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
+      propertyPath: hasRope
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5305172490224822820, guid: 364321a453872fc4daefe47ad09a0268, type: 3}
       propertyPath: springJoint
@@ -2532,8 +2534,32 @@ PrefabInstance:
       value: ...
       objectReference: {fileID: 0}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[22].dialogue
+      value: "N\xE3o acredito..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[30].dialogue
+      value: "Se voc\xEA diz..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueDetailsArray.Array.data[31].dialogue
       value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[22].speakerID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[30].speakerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[32].speakerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
+      propertyPath: DialogueDetailsArray.Array.data[34].speakerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6801732752198501846, guid: 6f90067022e3fcd4da172d3449705d94, type: 3}
       propertyPath: DialogueSpeakerArray.Array.data[0].speakerSprite
@@ -5470,9 +5496,20 @@ PrefabInstance:
       objectReference: {fileID: 970054910}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5831246511366439897, guid: 19dceadef40e0a04392d625d072bda6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 86346947}
+    - targetCorrespondingSourceObject: {fileID: 5831246511366439897, guid: 19dceadef40e0a04392d625d072bda6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 178078745}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19dceadef40e0a04392d625d072bda6e, type: 3}
+--- !u!224 &3748386153130961441 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5831246511366439897, guid: 19dceadef40e0a04392d625d072bda6e, type: 3}
+  m_PrefabInstance: {fileID: 3748386153130961440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5255082162321233126
 PrefabInstance:
   m_ObjectHideFlags: 0

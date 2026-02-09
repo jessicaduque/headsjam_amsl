@@ -1,5 +1,4 @@
 using System.Collections;
-using Game.Scripts.Players;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

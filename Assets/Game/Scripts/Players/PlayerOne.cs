@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerOne : PlayerBase
 {
     [Header("For rope mechanics")]
+    [SerializeField] private bool hasRope = true;
     [SerializeField] private SpringJoint2D springJoint;
     [SerializeField] private int maxRopeLength = 4;
     
@@ -32,7 +33,8 @@ public class PlayerOne : PlayerBase
 
         _objectCollider = Physics2D.OverlapCircle(interactionPoint.position, interactionPointRadius, interactableObjectsMask, 0);
         
-        if (!springJoint) return;
+        if (!hasRope) return;
+        
         if (playerDistance < maxRopeLength)
         {
             springJoint.distance = playerDistance;
@@ -45,6 +47,8 @@ public class PlayerOne : PlayerBase
     
     private void FixedUpdate()
     {
+        if (!hasRope) return;
+        
         if (springJoint.distance < 4)
         {
             springJoint.enabled = false;
