@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GlassObject : MonoBehaviour
 {
-    private string _sfxName;
+    private string _sfxName = "glassbreak";
     protected Collider2D _collider2D;
     protected SpriteRenderer _spriteRenderer;
     protected Animator _animator;

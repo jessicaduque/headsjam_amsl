@@ -184,6 +184,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void DialogueOver()
     {
+        if (dialogueOver) return;
         dialogueOver = true;
         
         if (numberDialogueManager == 0)

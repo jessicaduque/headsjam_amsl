@@ -26,17 +26,12 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        _pauseButton.onClick.AddListener(_levelManager.Pause);
+        _pauseButton.onClick.AddListener(PauseGame);
         _levelManager.startLevelEvent += () =>
         {
             _pauseButton.interactable = true;
             EnableInputs();
             Helpers.FadeInPanel(_hudPanel);
-        };
-        _levelManager.pauseEvent += () =>
-        {
-            _pauseButton.interactable = false;
-            DisableInputs();
         };
         _levelManager.timeUpEvent += () =>
         {
@@ -88,11 +83,12 @@ public class UIManager : Singleton<UIManager>
         PauseGame();
     }
 
-    public void PauseGame()
+    private void PauseGame()
     {
-        _levelManager.Pause();
-
+        _pauseButton.interactable = false;
+        DisableInputs();
         Helpers.FadeInPanel(_pausePanel);
+        _levelManager.Pause();
     }
 
     #endregion

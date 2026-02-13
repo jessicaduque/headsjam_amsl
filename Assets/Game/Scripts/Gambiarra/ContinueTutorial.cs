@@ -19,7 +19,7 @@ public class ContinueTutorial : MonoBehaviour
             other.GetComponent<PlayerBase>().FreezePlayer();
             other.transform.localScale = new Vector3(-1, 1, 1);
             amount++;
-            Debug.Log("entered");   
+            
             if (amount == 2)
             {
                 Tutorial1.SetActive(false);

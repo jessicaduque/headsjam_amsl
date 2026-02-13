@@ -18,14 +18,14 @@ public class Window : GlassObject
         _spriteRenedrer.sprite = firstChange;
         tutorial2.SetActive(false);
         Dialogue2.SetActive(false);
-        StartCoroutine(aa());
+        StartCoroutine(BreakGlassCoroutine());
         _collider2D.enabled = false;
     }
 
-    private IEnumerator aa()
+    private IEnumerator BreakGlassCoroutine()
     {
         yield return new WaitForSeconds(1);
-        Debug.Log("AQUI: 2");
+        
         playerTwo.StopSinging();
         playerTwo.DisableInputs();
         playerOne.DisableInputs();

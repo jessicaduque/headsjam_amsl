@@ -89,6 +89,7 @@ namespace Game.Scripts.Players
 
         private void DoPlayerMovement(float speedX)
         {
+            if (_rigidbody.bodyType == RigidbodyType2D.Static) return;
             _rigidbody.linearVelocity = new Vector2(speedX * moveSpeed, _rigidbody.linearVelocity.y);
         }
         
