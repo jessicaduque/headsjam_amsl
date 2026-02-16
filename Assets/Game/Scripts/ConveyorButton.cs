@@ -1,6 +1,7 @@
 using UnityEngine;
+using Utils.Singleton;
 
-public class ConveyorButton : MonoBehaviour
+public class ConveyorButton : Singleton<ConveyorButton>
 {
     [SerializeField] private Sprite[] buttonSprites;
     [SerializeField] private bool startsPressed;
@@ -9,12 +10,14 @@ public class ConveyorButton : MonoBehaviour
     private int _amountObjectsPressing;
     private SpriteRenderer _spriteRenderer;
 
-    public static event System.Action OnButtonPressed;
-    public static event System.Action OnButtonUnpressed;
+    public event System.Action OnButtonPressed;
+    public event System.Action OnButtonUnpressed;
 
     private LevelManager _levelManager => LevelManager.I;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _spriteRenderer.sprite = startsPressed ? buttonSprites[1] : buttonSprites[0];

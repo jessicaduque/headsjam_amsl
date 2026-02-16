@@ -92,4 +92,13 @@ public class UIManager : Singleton<UIManager>
     }
 
     #endregion
+    
+    #region HUD Panel
+
+    public void DisableHUD()
+    {
+        Helpers.FadeOutPanel(_hudPanel);
+    }
+    
+    #endregion
 }

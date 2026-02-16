@@ -51,7 +51,6 @@ public class Door : MonoBehaviour
 
     public void TriggerDoor(bool buttonPressed)
     {
-        StopAllCoroutines();
         StartCoroutine(Move(buttonPressed));
     }
 }

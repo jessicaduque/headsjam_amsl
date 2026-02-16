@@ -2223,7 +2223,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5153805984364878991, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 259883861953836611, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 1, y: 4, z: 0}
@@ -2376,7 +2376,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 18, y: 4, z: 0}
@@ -3252,7 +3252,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -5846291269474200009, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
       - {fileID: 5712972936589503844, guid: 97ccc2e7715c7ee45a6b402aa3be2f90, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 0, y: 10, z: 0}
@@ -3489,6 +3489,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 415418810218015174, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020867065823358303, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 169.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020867065823358303, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -17.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6402607867219917071, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -3575,7 +3587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8731455542945147568, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
       propertyPath: _startTimeSeconds
-      value: 180
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062297365598134227, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
+      propertyPath: m_Alpha
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6259,7 +6275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774541384736447923, guid: 861ecc3f6efa8c24a9c7c983052ebd41, type: 3}
       propertyPath: thisLevelTimeSeconds
-      value: 140
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4351161629124645626, guid: 861ecc3f6efa8c24a9c7c983052ebd41, type: 3}
       propertyPath: m_LocalPosition.x

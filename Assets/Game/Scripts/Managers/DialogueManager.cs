@@ -210,6 +210,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else if (numberDialogueManager == 2)
         {
+            cg_DialoguePanel.DOFade(0, 0.6f);
             PretoExtra.SetActive(true);
             PretoExtra.GetComponent<CanvasGroup>().alpha = 0;
             PretoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).OnComplete(() =>
@@ -220,10 +221,12 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else if (numberDialogueManager == 3)
         {
+            cg_DialoguePanel.DOFade(0, 0.6f);
             _blackScreenController.FadeOutScene("InitialDialogue");
         }
         else if (numberDialogueManager == 4)
         {
+            cg_DialoguePanel.DOFade(0, 0.6f);
             _blackScreenController.FadeOutScene("Level1");
         }
         else if (numberDialogueManager == 5)
@@ -236,73 +239,6 @@ public class DialogueManager : Singleton<DialogueManager>
             });
         }
     }
-
-
-    #region Possibly Useful Extra Functions
-    //private void OlharParaAlgo()
-    //{
-    //    if (ondeOlhar != null)
-    //    {
-    //        if (ondeOlhar.transform.position.x > Player.transform.position.x)
-    //        {
-    //            Player.transform.localScale = new Vector3(-1, 1, 1);
-    //        }
-    //        else
-    //        {
-    //            Player.transform.localScale = new Vector3(1, 1, 1);
-    //        }
-    //    }
-    //}
-
-    //void ControleDosObjetosEspecificos(List<string> falas)
-    //{
-    //    if (falas[numeroFala] == "EI!" || falas[numeroFala] == "HEY!")
-    //    {
-    //        LigarObjetosEspecificos("Drag�o");
-    //    }
-    //    else if (falas[numeroFala] == "Voc� adquiriu uma escama da Senhora Drag�o." || falas[numeroFala] == "You have acquired a scale from Ms. Dragon.")
-    //    {
-    //        LigarObjetosEspecificos("Escama");
-    //    }
-    //    else if (falas[numeroFala] == "T� vendo essa porta atr�s de mim? Ela sempre levar� voc� ao caminho que precisar� seguir." || falas[numeroFala] == "Ya see that door behind me? It will always take you to the path you�ll need to follow.")
-    //    {
-    //        LigarObjetosEspecificos("Porta");
-    //        Mago.transform.localScale = new Vector3(-1, 1, 1);
-    //    }
-    //    else if (falas[numeroFala] == "VOC�!" || falas[numeroFala] == "YOU!")
-    //    {
-    //        Mago.transform.localScale = new Vector3(1, 1, 1);
-    //    }
-    //    else if (falas[numeroFala] == "Agora v�!" || falas[numeroFala] == "Now go!")
-    //    {
-    //        Mago.transform.localScale = new Vector3(1, 1, 1);
-    //    }
-    //    else if (falas[numeroFala] == "Enfim! � s� seguir pela mesma porta que voc� foi anteriormente." || falas[numeroFala] == "Anyways! Just go through the same door from before." || falas[numeroFala] == "Fique atento." || falas[numeroFala] == "Be aware.")
-    //    {
-    //        LigarObjetosEspecificos("PortaPassada");
-    //        LigarObjetosEspecificos("Porta");
-    //    }
-    //    else if (falas[numeroFala] == "V� se n�o demora!" || falas[numeroFala] == "Try not to take long!" || falas[numeroFala] == "Encontre o Grande P� de Feij�o." || falas[numeroFala] == "Find the Big Beanstalk.")
-    //    {
-    //        LigarObjetosEspecificos("Porta");
-    //    }
-
-    //}
-
-    //void LigarObjetosEspecificos(string objeto, bool state)
-    //{
-    //    if (objeto == "Drag�o")
-    //    {
-    //        DragonEyes.SetActive(true);
-    //    }
-
-    //    if (objeto == "Escama")
-    //    {
-    //        Escama.SetActive(false);
-    //    }
-    //}
-
-    #endregion
 
     #region Extra Classes
     [System.Serializable]

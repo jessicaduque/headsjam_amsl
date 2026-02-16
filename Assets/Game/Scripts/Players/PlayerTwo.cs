@@ -12,10 +12,10 @@ public class PlayerTwo : PlayerBase
     {
         base.Start();
         
-        _levelManager.timeUpEvent += StopSinging;
-        _levelManager.pauseEvent += StopSinging;
-        _levelManager.gameOverEvent += StopSinging;
-        _levelManager.levelCompleteEvent += StopSinging;
+        LevelManager.I.timeUpEvent += StopSinging;
+        LevelManager.I.pauseEvent += StopSinging;
+        LevelManager.I.gameOverEvent += StopSinging;
+        LevelManager.I.levelCompleteEvent += StopSinging;
     }
 
     public override void DoPowerControl(InputAction.CallbackContext context)

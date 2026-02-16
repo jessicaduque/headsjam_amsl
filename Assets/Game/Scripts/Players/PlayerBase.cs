@@ -24,8 +24,6 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     
     // Input
     private PlayerInput _playerInput;
-
-    protected LevelManager _levelManager => LevelManager.I;
     
     protected virtual void Awake()
     {
@@ -38,7 +36,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
     protected virtual void Start()
     {
         // Set correct animation layer
-        AnimationRopeControl(_levelManager.IsLevelTutorial());
+        AnimationRopeControl(LevelManager.I.IsLevelTutorial());
         
         OtherPlayerBase = otherPlayer.GetComponent<PlayerBase>();
         OtherPlayerTransform = otherPlayer.GetComponent<Transform>();
@@ -46,14 +44,14 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         Debug.Log("Remember that for now player inputs are being automatically turned on at the start!");
         EnableInputs();
         
-        _levelManager.startLevelEvent += EnableInputs;
+        LevelManager.I.startLevelEvent += EnableInputs;
         
-        _levelManager.timeUpEvent += DisableInputs;
-        _levelManager.pauseEvent += DisableInputs;
-        _levelManager.gameOverEvent += DisableInputs;
-        _levelManager.levelCompleteEvent += DisableInputs;
+        LevelManager.I.timeUpEvent += DisableInputs;
+        LevelManager.I.pauseEvent += DisableInputs;
+        LevelManager.I.gameOverEvent += DisableInputs;
+        LevelManager.I.levelCompleteEvent += DisableInputs;
     }
-    
+
     #region Animation
     
     protected void AnimationBool(string boolName, bool enable)
@@ -113,7 +111,7 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         {
             _isDead = true;
             Death();
-            _levelManager.GameOver();
+            LevelManager.I.GameOver();
         }
     }
 

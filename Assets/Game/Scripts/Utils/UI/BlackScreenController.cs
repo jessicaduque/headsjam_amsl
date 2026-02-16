@@ -69,6 +69,11 @@ public class BlackScreenController : DontDestroySingleton<BlackScreenController>
     {
         blackScreenPanel.SetActive(true);
         blackScreenCanvasGroup.DOFade(1, BlackFadeTime).OnComplete(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name)).SetUpdate(true);
+        if (LevelManager.I._levelState == LevelState.PAUSED)
+        {
+            UIManager.I.DisableHUD();
+        }
+        
     }
 
     #endregion

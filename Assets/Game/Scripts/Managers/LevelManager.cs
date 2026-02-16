@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using Utils.Singleton;
 
@@ -58,8 +57,8 @@ public class LevelManager : Singleton<LevelManager>
     public void LevelComplete()
     {
         _levelState = LevelState.END;
-        _gameManager.CompleteLevel();
         levelCompleteEvent?.Invoke();
+        _gameManager.CompleteLevel();
     }
 
     #endregion

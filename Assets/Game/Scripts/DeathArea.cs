@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DeathArea : MonoBehaviour
 {
-    [SerializeField] private string deathAreaSfxName;
+    private string deathAreaSfxName = "touchoil";
     [SerializeField] private LayerMask interactableObjectsLayer;
     private static PoolManager _poolManager => PoolManager.I;
     

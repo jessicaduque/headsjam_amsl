@@ -41,6 +41,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     #region OnSceneLoaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        StopAllCoroutines();
         CheckStartOfScene(scene.name);
     }
 
@@ -48,13 +49,14 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         if (sceneName == "Level1" || sceneName == "Level2" || sceneName == "Level3")
         {
-            StartCoroutine(AAA());
+            StartCoroutine(StartLevel());
         }
     }
 
-    private IEnumerator AAA()
+    private IEnumerator StartLevel()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForSecondsRealtime(1f);
         LevelManager.I.StartLevel();
     }
 

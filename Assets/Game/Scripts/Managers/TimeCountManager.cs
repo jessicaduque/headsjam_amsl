@@ -9,25 +9,32 @@ public class TimeCountManager : Singleton<TimeCountManager>
     [SerializeField] private TextMeshProUGUI t_time;
 
     [Header("Timer Settings")]
-    [SerializeField] private float _startTimeSeconds;
+    private float _startTimeSeconds;
     private float _currentTime;
 
     private bool _timeOver = false;
     private bool _timerEnding = false;
 
-    private LevelManager _levelManager => LevelManager.I;
     private AudioManager _audioManager => AudioManager.I;
 
     private void Start()
     {
-        _currentTime = _levelManager.GetLevelTime() + 1;
+        _startTimeSeconds = LevelManager.I.GetLevelTime() + 1;
+        Debug.Log("_startTimeSeconds: " + _startTimeSeconds);
+        _currentTime = _startTimeSeconds;
+        
         SetTimeText();
         
-        _levelManager.startLevelEvent += delegate { StartCoroutine(StartTimer()); };
+        LevelManager.I.startLevelEvent += delegate { StartCoroutine(StartTimer()); };
         
-        _levelManager.pauseEvent += TimerEnd;
-        _levelManager.gameOverEvent += TimerEnd;
-        _levelManager.levelCompleteEvent += TimerEnd;
+        LevelManager.I.pauseEvent += TimerEnd;
+        LevelManager.I.gameOverEvent += TimerEnd;
+        LevelManager.I.levelCompleteEvent += TimerEnd;
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator StartTimer()
@@ -56,7 +63,7 @@ public class TimeCountManager : Singleton<TimeCountManager>
             yield return null;
         }
         
-        _levelManager.TimeUp();
+        LevelManager.I.TimeUp();
         TimerEnd();
     }
 

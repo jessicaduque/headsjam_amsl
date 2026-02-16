@@ -21,6 +21,11 @@ public class PauseScreen : MonoBehaviour
         StartCoroutine(WaitForPanelStart());
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     private IEnumerator WaitForPanelStart()
     {
         ResetButtons();

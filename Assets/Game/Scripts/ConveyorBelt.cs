@@ -18,20 +18,15 @@ namespace Game.Scripts
 
         [Header("Tilemap")]
         [SerializeField] private Tilemap tilemap;
-
-        private Coroutine _routine;
         
         private static PoolManager _poolManager => PoolManager.I;
 
         private void Start()
         {
-            ConveyorButton.OnButtonPressed += StopConveyor;
-            ConveyorButton.OnButtonUnpressed += StartConveyor;
+            ConveyorButton.I.OnButtonPressed += StopConveyor;
+            ConveyorButton.I.OnButtonUnpressed += StartConveyor;
             
-            if (hasInfiniteChicken)
-            {
-                _routine = StartCoroutine(InfiniteChicken());
-            }
+            StartCoroutine(InfiniteChicken());
         }
     
         private void OnCollisionStay2D(Collision2D collision)
@@ -67,6 +62,8 @@ namespace Game.Scripts
 
         private IEnumerator InfiniteChicken()
         {
+            StopAllCoroutines();
+            
             while (true)
             {
                 _poolManager.GetObject(tagPool, startPosition.position, new Quaternion());
@@ -82,14 +79,14 @@ namespace Game.Scripts
             // Start sound
             gameObject.SetActive(false);
             gameObject.SetActive(true);
-            if (hasInfiniteChicken) _routine = StartCoroutine(InfiniteChicken());
+            if (hasInfiniteChicken) StartCoroutine(InfiniteChicken());
         }
 
         private void StopConveyor()
         {
             if (hasInfiniteChicken)
             {
-                StopCoroutine(_routine);
+                StopAllCoroutines();
             }
 
             tilemap.animationFrameRate = 0;

@@ -8,7 +8,6 @@ public class EndLevelObject : MonoBehaviour
     private int _amountPlayersIn = 0;
     private float _fadeOutTime = 1.2f;
     private BlackScreenController BlackScreenController => BlackScreenController.I;
-    private LevelManager _levelManager => LevelManager.I;
 
     private void OnDisable()
     {
@@ -19,12 +18,12 @@ public class EndLevelObject : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (_levelManager._levelState == LevelState.END) // Make sure the level hasn't been considered finished already by some death or something
+            if (LevelManager.I._levelState == LevelState.END) // Make sure the level hasn't been considered finished already by some death or something
             {
                 return;
             }
             
-            _levelManager.LevelComplete();
+            LevelManager.I.LevelComplete();
             
             PlayerMovement[] players = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
             RopeVisual.I.RopeFadeOut(_fadeOutTime);

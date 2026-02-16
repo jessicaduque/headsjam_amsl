@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class OilManager : MonoBehaviour
 {
@@ -23,6 +25,11 @@ public class OilManager : MonoBehaviour
 
             StartCoroutine(Sequence(i));
         }
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator Sequence(int pos)

@@ -9,7 +9,6 @@ public class DoorButton : MonoBehaviour
     private int _amountObjectsPressing;
     private SpriteRenderer _spriteRenderer;
 
-    private LevelManager _levelManager => LevelManager.I;
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -20,7 +19,7 @@ public class DoorButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_levelManager._levelState != LevelState.PLAYING) return;
+        if (LevelManager.I._levelState != LevelState.PLAYING) return;
         if (other.CompareTag("HeavyObject") || other.CompareTag("Player"))
         {
             _amountObjectsPressing++;
@@ -29,14 +28,14 @@ public class DoorButton : MonoBehaviour
             solidCollider = gameObject.AddComponent<PolygonCollider2D>();
             foreach (Door door in doors)
             {
-                door.TriggerDoor(true);
+                door?.TriggerDoor(true);
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (_levelManager._levelState != LevelState.PLAYING) return;
+        if (LevelManager.I._levelState != LevelState.PLAYING) return;
         if (other.CompareTag("HeavyObject")|| other.CompareTag("Player"))
         {
             _amountObjectsPressing--;
@@ -47,7 +46,7 @@ public class DoorButton : MonoBehaviour
                 solidCollider = gameObject.AddComponent<PolygonCollider2D>();
                 foreach (Door door in doors)
                 {
-                    door.TriggerDoor(false);
+                    door?.TriggerDoor(false);
                 }   
             }
         }

@@ -276,7 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e04bc3861bbc814989fa8806b66a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAreaSfxName: touchoil
   interactableObjectsLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -2232,7 +2231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e04bc3861bbc814989fa8806b66a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAreaSfxName: touchoil
   interactableObjectsLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -3633,7 +3631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e04bc3861bbc814989fa8806b66a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAreaSfxName: touchoil
   interactableObjectsLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -4212,6 +4209,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 970054910}
+    - target: {fileID: 6274503210362977215, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6402607867219917071, guid: 9b9971a633600b34493273ad86fc84dd, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -4356,7 +4357,7 @@ PrefabInstance:
     - target: {fileID: 551895968796010388, guid: 3074606792a648f48b2f8b7572013c15, type: 3}
       propertyPath: askForFullscreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4313870790424187927}
     - target: {fileID: 5866127189737382237, guid: 3074606792a648f48b2f8b7572013c15, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -4366,6 +4367,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3074606792a648f48b2f8b7572013c15, type: 3}
+--- !u!1 &4313870790424187927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4969891849035174418, guid: 3074606792a648f48b2f8b7572013c15, type: 3}
+  m_PrefabInstance: {fileID: 4313870790424187926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5255082162321233126
 PrefabInstance:
   m_ObjectHideFlags: 0
