@@ -72,6 +72,7 @@ public class BlackScreenController : DontDestroySingleton<BlackScreenController>
         if (LevelManager.I._levelState == LevelState.PAUSED)
         {
             UIManager.I.DisableHUD();
+            UIManager.I.DisablePause();
         }
         
     }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils.Singleton;
@@ -50,7 +49,7 @@ public class DialogueManager : Singleton<DialogueManager>
     
     private new void Awake()
     {
-        b_pular.onClick.AddListener(() => DialogueOver());
+        
         numeroFala = 0;
         falaTexto.text = "";
 
@@ -88,7 +87,11 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         yield return new WaitForSeconds(1.4f);
         DialoguePanel.SetActive(true);
-        cg_DialoguePanel.DOFade(1, 0.8f).OnComplete(() => falasRodando = true);
+        cg_DialoguePanel.DOFade(1, 0.8f).OnComplete(() =>
+        {
+            b_pular.onClick.AddListener(() => DialogueOver());
+            falasRodando = true;
+        });
         falasRodando = true;
     }
 
@@ -189,7 +192,7 @@ public class DialogueManager : Singleton<DialogueManager>
         
         if (numberDialogueManager == 0)
         {
-            cg_DialoguePanel.DOFade(0, 0.6f).OnComplete(() =>
+            cg_DialoguePanel.DOFade(0, 0.3f).OnComplete(() =>
             {
                 player1.EnableInputs();
                 player2.EnableInputs();
@@ -198,7 +201,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else if (numberDialogueManager == 1)
         {
-            cg_DialoguePanel.DOFade(0, 0.6f).OnComplete(() =>
+            cg_DialoguePanel.DOFade(0, 0.3f).OnComplete(() =>
             {
                 player1.LigarCanto();
                 player2.LigarCanto();
@@ -210,7 +213,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else if (numberDialogueManager == 2)
         {
-            cg_DialoguePanel.DOFade(0, 0.6f);
+            cg_DialoguePanel.DOFade(0, 0.3f);
             PretoExtra.SetActive(true);
             PretoExtra.GetComponent<CanvasGroup>().alpha = 0;
             PretoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).OnComplete(() =>
@@ -221,12 +224,12 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else if (numberDialogueManager == 3)
         {
-            cg_DialoguePanel.DOFade(0, 0.6f);
+            cg_DialoguePanel.DOFade(0, 0.3f);
             _blackScreenController.FadeOutScene("InitialDialogue");
         }
         else if (numberDialogueManager == 4)
         {
-            cg_DialoguePanel.DOFade(0, 0.6f);
+            cg_DialoguePanel.DOFade(0, 0.3f);
             _blackScreenController.FadeOutScene("Level1");
         }
         else if (numberDialogueManager == 5)

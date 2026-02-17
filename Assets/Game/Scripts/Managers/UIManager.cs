@@ -15,7 +15,6 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject _pausePanel;
     
     [SerializeField] private Button _pauseButton;
-    LevelManager _levelManager => LevelManager.I;
     private AudioManager _audioManager => AudioManager.I;
     protected override void Awake()
     {
@@ -27,23 +26,23 @@ public class UIManager : Singleton<UIManager>
     private void Start()
     {
         _pauseButton.onClick.AddListener(PauseGame);
-        _levelManager.startLevelEvent += () =>
+        LevelManager.I.startLevelEvent += () =>
         {
             _pauseButton.interactable = true;
             EnableInputs();
             Helpers.FadeInPanel(_hudPanel);
         };
-        _levelManager.timeUpEvent += () =>
+        LevelManager.I.timeUpEvent += () =>
         {
-            _levelManager.GameOver();
+            LevelManager.I.GameOver();
             DisableInputs();
         };
-        _levelManager.gameOverEvent += () =>
+        LevelManager.I.gameOverEvent += () =>
         {
             StartCoroutine(ActivateGameOverPanel());
             DisableInputs();
         };
-        _levelManager.levelCompleteEvent += DisableInputs;
+        LevelManager.I.levelCompleteEvent += DisableInputs;
         
         
     }
@@ -88,7 +87,7 @@ public class UIManager : Singleton<UIManager>
         _pauseButton.interactable = false;
         DisableInputs();
         Helpers.FadeInPanel(_pausePanel);
-        _levelManager.Pause();
+        LevelManager.I.Pause();
     }
 
     #endregion
@@ -98,6 +97,11 @@ public class UIManager : Singleton<UIManager>
     public void DisableHUD()
     {
         Helpers.FadeOutPanel(_hudPanel);
+    }
+    
+    public void DisablePause()
+    {
+        Helpers.FadeOutPanel(_pausePanel);
     }
     
     #endregion

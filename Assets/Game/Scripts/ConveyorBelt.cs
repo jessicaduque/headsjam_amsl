@@ -23,8 +23,12 @@ namespace Game.Scripts
 
         private void Start()
         {
-            ConveyorButton.I.OnButtonPressed += StopConveyor;
-            ConveyorButton.I.OnButtonUnpressed += StartConveyor;
+            if (hasInfiniteChicken)
+            {
+                ConveyorButton.I.OnButtonPressed += StopConveyor;
+                ConveyorButton.I.OnButtonUnpressed += StartConveyor;
+            }
+            
             
             StartCoroutine(InfiniteChicken());
         }
@@ -62,8 +66,6 @@ namespace Game.Scripts
 
         private IEnumerator InfiniteChicken()
         {
-            StopAllCoroutines();
-            
             while (true)
             {
                 _poolManager.GetObject(tagPool, startPosition.position, new Quaternion());
@@ -74,24 +76,20 @@ namespace Game.Scripts
 
         private void StartConveyor()
         {
+            Debug.Log("start conv");
+            
+            if (isOn) return;
             tilemap.animationFrameRate = 1;
             isOn = true;
-            // Start sound
-            gameObject.SetActive(false);
-            gameObject.SetActive(true);
-            if (hasInfiniteChicken) StartCoroutine(InfiniteChicken());
+            StartCoroutine(InfiniteChicken());
         }
 
         private void StopConveyor()
         {
-            if (hasInfiniteChicken)
-            {
-                StopAllCoroutines();
-            }
+            StopAllCoroutines();
 
             tilemap.animationFrameRate = 0;
             isOn = false;
-            // Stop sound
         }
     }
 }
