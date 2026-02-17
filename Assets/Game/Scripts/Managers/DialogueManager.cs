@@ -236,7 +236,7 @@ public class DialogueManager : Singleton<DialogueManager>
         {
             BrancoExtra.SetActive(true);
             BrancoExtra.GetComponent<CanvasGroup>().alpha = 0;
-            BrancoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).OnComplete(() =>
+            BrancoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).SetUpdate(true).OnComplete(() =>
             {
                 SceneManager.LoadScene("FinalDialogue");
             });

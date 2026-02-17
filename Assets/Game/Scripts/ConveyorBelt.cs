@@ -76,8 +76,6 @@ namespace Game.Scripts
 
         private void StartConveyor()
         {
-            Debug.Log("start conv");
-            
             if (isOn) return;
             tilemap.animationFrameRate = 1;
             isOn = true;

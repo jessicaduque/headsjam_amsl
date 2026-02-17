@@ -37,8 +37,6 @@ public class ConveyorButton : Singleton<ConveyorButton>
             _spriteRenderer.sprite = buttonSprites[1];
             Destroy(solidCollider);
             solidCollider = gameObject.AddComponent<PolygonCollider2D>();
-            Debug.Log("trigger enter");
-            Debug.Log("naee : " + other.name);
             OnButtonPressed?.Invoke();
         }
     }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ public class FinalDialogue : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         BlackScreenController.I.FadeBlackToControlPanel(happyPanel, true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
         BlackScreenController.I.FadeOutScene("MainMenu");
     }
 }

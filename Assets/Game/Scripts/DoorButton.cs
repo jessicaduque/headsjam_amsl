@@ -39,6 +39,10 @@ public class DoorButton : MonoBehaviour
         if (other.CompareTag("HeavyObject")|| other.CompareTag("Player"))
         {
             _amountObjectsPressing--;
+            if (_amountObjectsPressing < 0)
+            {
+                _amountObjectsPressing = 0;
+            }
             if (_amountObjectsPressing == 0)
             {
                 _spriteRenderer.sprite = buttonSprites[0];

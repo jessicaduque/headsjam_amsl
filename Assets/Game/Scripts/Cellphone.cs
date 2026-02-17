@@ -10,6 +10,7 @@ public class Cellphone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            TimeCountManager.I.enabled = false;
             player1.DisableInputs();
             player2.DisableInputs();
             dialogueManager.SetActive(true);
