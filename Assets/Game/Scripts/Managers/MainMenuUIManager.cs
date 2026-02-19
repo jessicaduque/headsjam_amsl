@@ -44,7 +44,7 @@ public class MainMenuUIManager : Singleton<MainMenuUIManager>
     private void PlayButtonControl()
     {
         _blackScreenController.FadeOutScene("Tutorial");
-        _audioManager.FadeOutMusic("menumusic");
+        _audioManager.PlayCrossFade("mainmusic");
     }
 
     #endregion

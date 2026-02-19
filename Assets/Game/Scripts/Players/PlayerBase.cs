@@ -1,6 +1,7 @@
 using Game.Scripts.Players;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public abstract class PlayerBase : MonoBehaviour, IDamageable
 {
@@ -33,19 +34,19 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         PlayerMovement = GetComponent<PlayerMovement>();
     }
     
+
     protected virtual void Start()
     {
-        // Set correct animation layer
-        AnimationRopeControl(LevelManager.I.IsLevelTutorial());
-        
         OtherPlayerBase = otherPlayer.GetComponent<PlayerBase>();
         OtherPlayerTransform = otherPlayer.GetComponent<Transform>();
-        
-        Debug.Log("Remember that for now player inputs are being automatically turned on at the start!");
-        EnableInputs();
-        
-        LevelManager.I.startLevelEvent += EnableInputs;
-        
+
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            AnimationRopeControl(true);
+            return;
+        }
+     
+        AnimationRopeControl(false);
         LevelManager.I.timeUpEvent += DisableInputs;
         LevelManager.I.pauseEvent += DisableInputs;
         LevelManager.I.gameOverEvent += DisableInputs;

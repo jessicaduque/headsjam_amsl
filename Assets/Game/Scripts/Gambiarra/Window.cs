@@ -14,6 +14,7 @@ public class Window : GlassObject
     public override void BreakGlassObject()
     {
         AudioManager.I.PlaySfx("glassbreak");
+        AudioManager.I.FadeOutMusic("mainmusic");
         _cameraShake.DoCameraShake();
         _spriteRenedrer.sprite = firstChange;
         tutorial2.SetActive(false);

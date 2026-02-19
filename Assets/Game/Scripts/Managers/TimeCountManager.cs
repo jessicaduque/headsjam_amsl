@@ -16,16 +16,12 @@ public class TimeCountManager : Singleton<TimeCountManager>
     private bool _timerEnding = false;
 
     private AudioManager _audioManager => AudioManager.I;
-
+    
     private void Start()
     {
         _startTimeSeconds = LevelManager.I.GetLevelTime() + 1;
-        Debug.Log("_startTimeSeconds: " + _startTimeSeconds);
         _currentTime = _startTimeSeconds;
-        
         SetTimeText();
-        
-        LevelManager.I.startLevelEvent += delegate { StartCoroutine(StartTimer()); };
         
         LevelManager.I.pauseEvent += TimerEnd;
         LevelManager.I.gameOverEvent += TimerEnd;
@@ -37,7 +33,7 @@ public class TimeCountManager : Singleton<TimeCountManager>
         StopAllCoroutines();
     }
 
-    private IEnumerator StartTimer()
+    public IEnumerator StartTimer()
     {
         while (!_timeOver)
         {
@@ -51,7 +47,7 @@ public class TimeCountManager : Singleton<TimeCountManager>
             else if (_currentTime <= 0)
             {
                 _audioManager.StopSfx2();
-                _timeOver = true;
+                LevelManager.I.TimeUp();
             }
             else if (_currentTime > 6)
             {
@@ -63,7 +59,6 @@ public class TimeCountManager : Singleton<TimeCountManager>
             yield return null;
         }
         
-        LevelManager.I.TimeUp();
         TimerEnd();
     }
 

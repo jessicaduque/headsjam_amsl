@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerTwo : PlayerBase
 {
@@ -12,6 +13,7 @@ public class PlayerTwo : PlayerBase
     {
         base.Start();
         
+        if (SceneManager.GetActiveScene().name == "Tutorial") return;
         LevelManager.I.timeUpEvent += StopSinging;
         LevelManager.I.pauseEvent += StopSinging;
         LevelManager.I.gameOverEvent += StopSinging;
@@ -38,6 +40,11 @@ public class PlayerTwo : PlayerBase
         AnimationBool("Singchirp", true);
         StartCoroutine(ChirpingCoroutine());
         
+    }
+    
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator ChirpingCoroutine()

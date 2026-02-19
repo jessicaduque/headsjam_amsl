@@ -32,7 +32,12 @@ namespace Game.Scripts
             
             StartCoroutine(InfiniteChicken());
         }
-    
+
+        private void OnDisable()
+        {
+            StopAllCoroutines();
+        }
+
         private void OnCollisionStay2D(Collision2D collision)
         {
             if (isOn)

@@ -1,33 +1,44 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
-using Utils.Singleton;
 
-public class LevelManager : Singleton<LevelManager>
+public class LevelManager : Utils.Singleton.Singleton<LevelManager>
 {
     private int tutorialLevel = 0;
     [SerializeField] int thisLevel;
     [SerializeField] private float thisLevelTimeSeconds;
-    public event Action startLevelEvent;
+    [SerializeField] private PlayerBase[] players;
     public event Action timeUpEvent;
     public event Action pauseEvent;
     public event Action gameOverEvent;
     public event Action levelCompleteEvent;
     public LevelState _levelState { get; private set; }
-    
-    private GameManager _gameManager => GameManager.I;
+
+    private void Start()
+    {
+        StartLevel();
+    }
 
     #region StartLevel Level
     public void StartLevel()
     {
+        Debug.Log("start level?");
         Time.timeScale = 1;
+        if (_levelState == LevelState.PLAYING) return;
         _levelState = LevelState.PLAYING;
-        startLevelEvent?.Invoke();
+        StartCoroutine(TimeCountManager.I.StartTimer());
+        UIManager.I.StartMethod();
+        foreach (var player in players)
+        {
+            player.EnableInputs();
+        }
     }
     #endregion
 
     #region Pause
     public void Pause()
     {
+        if (_levelState == LevelState.PAUSED) return;
         _levelState = LevelState.PAUSED;
         Time.timeScale = 0;
         pauseEvent?.Invoke();
@@ -38,8 +49,11 @@ public class LevelManager : Singleton<LevelManager>
     #region Time Up
     public void TimeUp()
     {
+        if (_levelState == LevelState.END) return;
+        Debug.Log("Time Up Started!");
         _levelState = LevelState.END;
         timeUpEvent?.Invoke();
+        Debug.Log("Time Up Ended!");
     }
 
     #endregion
@@ -47,8 +61,11 @@ public class LevelManager : Singleton<LevelManager>
     #region Game Over
     public void GameOver()
     {
+        if (_levelState == LevelState.END) return;
+        Debug.Log("Game Over Started!");
         _levelState = LevelState.END;
         gameOverEvent?.Invoke();
+        Debug.Log("Game Over Ended");
     }
 
     #endregion
@@ -56,9 +73,11 @@ public class LevelManager : Singleton<LevelManager>
     #region Level Complete
     public void LevelComplete()
     {
+        if (_levelState == LevelState.END) return;
+        Debug.Log("Level Complete Started!");
         _levelState = LevelState.END;
         levelCompleteEvent?.Invoke();
-        _gameManager.CompleteLevel();
+        Debug.Log("Level Complete Ended!");
     }
 
     #endregion

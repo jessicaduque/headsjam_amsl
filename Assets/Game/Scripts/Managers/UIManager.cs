@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,24 +24,31 @@ public class UIManager : Singleton<UIManager>
         _playerUIActionsAsset = new Player_UI();
     }
 
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    public void StartMethod()
+    {
+        _pauseButton.interactable = true;
+        EnableInputs();
+        Helpers.FadeInPanel(_hudPanel);
+    }
+
     private void Start()
     {
         _pauseButton.onClick.AddListener(PauseGame);
-        LevelManager.I.startLevelEvent += () =>
-        {
-            _pauseButton.interactable = true;
-            EnableInputs();
-            Helpers.FadeInPanel(_hudPanel);
-        };
+        
         LevelManager.I.timeUpEvent += () =>
         {
             LevelManager.I.GameOver();
-            DisableInputs();
         };
         LevelManager.I.gameOverEvent += () =>
         {
-            StartCoroutine(ActivateGameOverPanel());
             DisableInputs();
+            StartCoroutine(ActivateGameOverPanel());
         };
         LevelManager.I.levelCompleteEvent += DisableInputs;
         

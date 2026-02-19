@@ -56,26 +56,23 @@ public class DialogueManager : Singleton<DialogueManager>
         
         DialoguePanel.SetActive(false);
         cg_DialoguePanel.alpha = 0;
-
-        StartCoroutine(ComecarFalas());
     }
+    
 
     private void OnEnable()
     {
         b_continuarFalas.onClick.AddListener(MouseClick);
     }
 
-    private void OnDisable()
-    {
-        b_continuarFalas.onClick.RemoveAllListeners();
-    }
 
     private void Start()
     {
         if (numberDialogueManager == 0)
         {
-            _audioManager.FadeInMusic("mainmusic");
+            //_audioManager.FadeInMusic("mainmusic");
         }
+        StartCoroutine(ComecarFalas());
+        
     }
 
     void Update()
@@ -87,7 +84,7 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         yield return new WaitForSeconds(1.4f);
         DialoguePanel.SetActive(true);
-        cg_DialoguePanel.DOFade(1, 0.8f).OnComplete(() =>
+        cg_DialoguePanel.DOFade(1, 0.3f).OnComplete(() =>
         {
             b_pular.onClick.AddListener(() => DialogueOver());
             falasRodando = true;
@@ -188,6 +185,7 @@ public class DialogueManager : Singleton<DialogueManager>
     void DialogueOver()
     {
         if (dialogueOver) return;
+        b_continuarFalas.onClick.RemoveAllListeners();
         dialogueOver = true;
         
         if (numberDialogueManager == 0)

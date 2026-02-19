@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -59,6 +60,11 @@ namespace Game.Scripts.Players
         private void Start()
         {
             OtherPlayerTransform = otherPlayerMovement.GetComponent<Transform>();
+        }
+
+        private void OnDestroy()
+        {
+            StopAllCoroutines();
         }
 
         private void Update()

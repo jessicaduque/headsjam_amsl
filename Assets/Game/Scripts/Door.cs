@@ -39,7 +39,7 @@ public class Door : MonoBehaviour
         bool shouldBeOpen = normalStateIsOpen ? !buttonPressed : buttonPressed;
         Vector3 destination = shouldBeOpen ? _openedPosition : _closedPosition;
 
-        while (Vector3.Distance(transform.position, destination) > 0.01f)
+        while (Vector3.Distance(transform.position, destination) > 0.001f)
         {
             transform.position = Vector3.MoveTowards(transform.position, destination, Time.deltaTime * _doorSpeed);
             yield return null;
@@ -51,6 +51,7 @@ public class Door : MonoBehaviour
 
     public void TriggerDoor(bool buttonPressed)
     {
+        if (LevelManager.I._levelState == LevelState.END) return;
         StartCoroutine(Move(buttonPressed));
     }
 }

@@ -48,8 +48,10 @@ public class DoorButton : MonoBehaviour
                 _spriteRenderer.sprite = buttonSprites[0];
                 Destroy(solidCollider);
                 solidCollider = gameObject.AddComponent<PolygonCollider2D>();
+                
                 foreach (Door door in doors)
                 {
+                    if (LevelManager.I._levelState == LevelState.END) return;
                     door?.TriggerDoor(false);
                 }   
             }

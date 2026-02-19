@@ -8,7 +8,6 @@ public class GameManager : DontDestroySingleton<GameManager>
 {
     [SerializeField] private Scene[] _scenes;
     [SerializeField] private GameObject askForFullscreen;
-    private int _currentScene;
     private AudioManager _audioManager => AudioManager.I;
     
     protected override void Awake()
@@ -22,7 +21,6 @@ public class GameManager : DontDestroySingleton<GameManager>
 
     private void Start()
     {
-        CheckStartOfScene("MainMenu");
         _audioManager.FadeInMusic("menumusic");
     }
 
@@ -42,39 +40,9 @@ public class GameManager : DontDestroySingleton<GameManager>
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         StopAllCoroutines();
-        CheckStartOfScene(scene.name);
     }
 
-    private void CheckStartOfScene(string sceneName)
-    {
-        if (sceneName == "Level1" || sceneName == "Level2" || sceneName == "Level3")
-        {
-            StartCoroutine(StartLevel());
-        }
-    }
-
-    private IEnumerator StartLevel()
-    {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForSecondsRealtime(1f);
-        LevelManager.I.StartLevel();
-    }
-
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
     #endregion
-    
-    public void CompleteLevel()
-    {
-        _currentScene += 1;
-    }
-
-    public void ChangeScene()
-    {
-        SceneManager.LoadScene(_scenes[_currentScene].name);
-    }
 
     #region CheckFullscreen
 
