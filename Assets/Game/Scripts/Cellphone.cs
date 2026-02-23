@@ -13,6 +13,7 @@ public class Cellphone : MonoBehaviour
             TimeCountManager.I.enabled = false;
             player1.DisableInputs();
             player2.DisableInputs();
+            UIManager.I.DisableHUD();
             dialogueManager.SetActive(true);
         }
     }

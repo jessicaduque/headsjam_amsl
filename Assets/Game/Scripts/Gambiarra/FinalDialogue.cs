@@ -11,5 +11,6 @@ public class FinalDialogue : MonoBehaviour
         BlackScreenController.I.FadeBlackToControlPanel(happyPanel, true);
         yield return new WaitForSeconds(8);
         BlackScreenController.I.FadeOutScene("MainMenu");
+        AudioManager.I.FadeInMusic("menumusic");
     }
 }
