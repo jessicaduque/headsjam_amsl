@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -50,6 +49,7 @@ public class OilManager : MonoBehaviour
     private void Restart(int pos)
     {
         dispensedObjects[pos].transform.position = _dispensedOriginalPositions[pos];
+        
         StartCoroutine(Sequence(pos));
     }
     

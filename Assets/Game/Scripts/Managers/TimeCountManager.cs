@@ -10,7 +10,7 @@ public class TimeCountManager : Singleton<TimeCountManager>
 
     [Header("Timer Settings")]
     private float _startTimeSeconds;
-    private float _currentTime;
+    private float _currentTime = 120;
 
     private bool _timeOver = false;
     private bool _timerEnding = false;
@@ -20,7 +20,7 @@ public class TimeCountManager : Singleton<TimeCountManager>
     private void Start()
     {
         _startTimeSeconds = LevelManager.I.GetLevelTime() + 1;
-        _currentTime = _startTimeSeconds;
+        _currentTime = _startTimeSeconds == 0 ? _startTimeSeconds : _currentTime;
         SetTimeText();
         
         LevelManager.I.pauseEvent += TimerEnd;

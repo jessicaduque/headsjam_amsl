@@ -21,12 +21,12 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        if (normalStateIsOpen)
-        {
-            transform.position = _openedPosition;
-        }
-        
         _collider.enabled = transform.position != _openedPosition;
+    }
+
+    public void SetInitialPosition(bool isPressed)
+    {
+        if(!isPressed && normalStateIsOpen) transform.position = _openedPosition;
     }
 
     private void OnDisable()
@@ -52,6 +52,7 @@ public class Door : MonoBehaviour
     public void TriggerDoor(bool buttonPressed)
     {
         if (LevelManager.I._levelState == LevelState.END) return;
+        StopAllCoroutines();
         StartCoroutine(Move(buttonPressed));
     }
 }

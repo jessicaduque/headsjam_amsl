@@ -1,4 +1,4 @@
-using System.Collections;
+
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,10 +15,7 @@ public class GameManager : DontDestroySingleton<GameManager>
         base.Awake();
 
         Time.timeScale = 1;
-        
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
     private void Start()
     {
         _audioManager.FadeInMusic("menumusic");
@@ -35,14 +32,6 @@ public class GameManager : DontDestroySingleton<GameManager>
             askForFullscreen.SetActive(true);
         }
     }
-
-    #region OnSceneLoaded
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        StopAllCoroutines();
-    }
-
-    #endregion
 
     #region CheckFullscreen
 

@@ -22,7 +22,6 @@ public class LevelManager : Utils.Singleton.Singleton<LevelManager>
     #region StartLevel Level
     public void StartLevel()
     {
-        Debug.Log("start level?");
         Time.timeScale = 1;
         if (_levelState == LevelState.PLAYING) return;
         _levelState = LevelState.PLAYING;

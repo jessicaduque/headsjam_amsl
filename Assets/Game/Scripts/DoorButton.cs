@@ -15,7 +15,14 @@ public class DoorButton : MonoBehaviour
 
         _spriteRenderer.sprite = startsPressed ? buttonSprites[1] : buttonSprites[0];
     }
-    
+
+    private void Start()
+    {
+        foreach (Door door in doors)
+        {
+            door?.SetInitialPosition(startsPressed);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
