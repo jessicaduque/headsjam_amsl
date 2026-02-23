@@ -10,10 +10,12 @@ public class TimeCountManager : Singleton<TimeCountManager>
 
     [Header("Timer Settings")]
     private float _startTimeSeconds;
-    private float _currentTime = 120;
+    private float _currentTime = 121;
 
     private bool _timeOver = false;
     private bool _timerEnding = false;
+    
+    Coroutine _timerCoroutine;
 
     private AudioManager _audioManager => AudioManager.I;
     
@@ -30,13 +32,20 @@ public class TimeCountManager : Singleton<TimeCountManager>
 
     private void OnDisable()
     {
-        StopAllCoroutines();
+        StopCoroutine(_timerCoroutine);
     }
 
-    public IEnumerator StartTimer()
+    public void StartTimer()
+    {
+        Debug.Log("coroutine startt");
+        _timerCoroutine = StartCoroutine(StartTimerCoroutine());
+    }
+
+    public IEnumerator StartTimerCoroutine()
     {
         while (!_timeOver)
         {
+            Debug.Log("still here");
             _currentTime -= Time.deltaTime;
 
             if (!_timerEnding && _currentTime <= 6)
@@ -66,7 +75,8 @@ public class TimeCountManager : Singleton<TimeCountManager>
     {
         _audioManager.StopSfx2();
         _timerEnding = false;
-        StopAllCoroutines();
+        StopCoroutine(_timerCoroutine);
+        Debug.Log("coroutine stopped? ");
     }
 
     #region Set

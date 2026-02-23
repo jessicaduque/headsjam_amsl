@@ -25,11 +25,11 @@ public class LevelManager : Utils.Singleton.Singleton<LevelManager>
         Time.timeScale = 1;
         if (_levelState == LevelState.PLAYING) return;
         _levelState = LevelState.PLAYING;
-        StartCoroutine(TimeCountManager.I.StartTimer());
+        TimeCountManager.I.StartTimer();
         UIManager.I.StartMethod();
         foreach (var player in players)
         {
-            player.EnableInputs();
+            player?.EnableInputs();
         }
     }
     #endregion
@@ -38,6 +38,7 @@ public class LevelManager : Utils.Singleton.Singleton<LevelManager>
     public void Pause()
     {
         if (_levelState == LevelState.PAUSED) return;
+        TimeCountManager.I.TimerEnd();
         _levelState = LevelState.PAUSED;
         Time.timeScale = 0;
         pauseEvent?.Invoke();

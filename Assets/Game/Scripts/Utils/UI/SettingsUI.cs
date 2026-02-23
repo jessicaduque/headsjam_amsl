@@ -80,9 +80,9 @@ public class SettingsUI : MonoBehaviour
             _musicOn = !_musicOn;
             ChangeSpritesMusic();
             _audioManager.ChangeStateMixerMusic(_musicOn);
-            StartCoroutine(MusicCooldown());
             b_music.enabled = false;
             _musicCooldown = true;
+            StartCoroutine(MusicCooldown());
         }
     }
     private void ChangeEffectsState()
@@ -93,9 +93,9 @@ public class SettingsUI : MonoBehaviour
             ChangeSpritesEffects();
             _audioManager.ChangeStateMixerSFX(_effectsOn);
             if (_effectsOn) { _audioManager.PlaySfx("uibuttonclick"); }
-            StartCoroutine(EffectsCooldown());
             b_effects.enabled = false;
             _effectsCooldown = true;
+            StartCoroutine(EffectsCooldown());
         }
     }
 
@@ -132,14 +132,14 @@ public class SettingsUI : MonoBehaviour
 
     private IEnumerator MusicCooldown()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         b_music.enabled = true;
         _musicCooldown = false;
     }
 
     private IEnumerator EffectsCooldown()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         b_effects.enabled = true;
         _effectsCooldown = false;
     }

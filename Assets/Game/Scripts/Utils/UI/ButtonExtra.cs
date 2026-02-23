@@ -26,9 +26,9 @@ public class ButtonExtra : MonoBehaviour
         StartCoroutine(Reset());
     }        
 
-    IEnumerator Reset()
+    private IEnumerator Reset()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         _thisButton.enabled = true;
     }
 

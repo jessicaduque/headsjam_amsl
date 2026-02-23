@@ -34,7 +34,6 @@ public class GameOver : Singleton<GameOver>
         }
         Time.timeScale = 0;
         b_replay.onClick.AddListener(() => {
-            AudioManager.I.FadeOutMusic("mainmusic");
             _blackScreenController.RestartGame();
         });
 

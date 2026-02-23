@@ -228,12 +228,14 @@ public class DialogueManager : Singleton<DialogueManager>
         else if (numberDialogueManager == 4)
         {
             cg_DialoguePanel.DOFade(0, 0.3f);
+            AudioManager.I.FadeInMusic("mainmusic2");
             _blackScreenController.FadeOutScene("Level1");
         }
         else if (numberDialogueManager == 5)
         {
             BrancoExtra.SetActive(true);
             BrancoExtra.GetComponent<CanvasGroup>().alpha = 0;
+            AudioManager.I.FadeOutMusic("mainmusic2");
             BrancoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).SetUpdate(true).OnComplete(() =>
             {
                 SceneManager.LoadScene("FinalDialogue");
