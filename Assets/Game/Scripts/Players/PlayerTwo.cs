@@ -50,7 +50,6 @@ public class PlayerTwo : PlayerBase
     private IEnumerator ChirpingCoroutine()
     {
         yield return new WaitForSeconds(2);
-        singingParticlesRight.Stop();
         yield return new WaitForSeconds(1.5f);
         Vector2 direction = transform.right * Mathf.Sign(transform.localScale.x);
 

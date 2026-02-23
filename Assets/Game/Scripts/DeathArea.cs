@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DeathArea : MonoBehaviour
 {
-    private string deathAreaSfxName = "touchoil";
     [SerializeField] private LayerMask interactableObjectsLayer;
     private static PoolManager _poolManager => PoolManager.I;
     
@@ -14,13 +13,13 @@ public class DeathArea : MonoBehaviour
         }
         else if (other.CompareTag("Dummy"))
         {
+            AudioManager.I.PlaySfx("touchoil");
             _poolManager.ReturnPool(other.gameObject);
         }
         else if (((1 << other.gameObject.layer) & interactableObjectsLayer) != 0)
         {
+            AudioManager.I.PlaySfx("touchoil");
             Destroy(other.gameObject);
         }
-        else return;
-        AudioManager.I.PlaySfx(deathAreaSfxName);
     }
 }

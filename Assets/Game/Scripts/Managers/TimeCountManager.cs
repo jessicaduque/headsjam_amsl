@@ -37,7 +37,6 @@ public class TimeCountManager : Singleton<TimeCountManager>
 
     public void StartTimer()
     {
-        Debug.Log("coroutine startt");
         _timerCoroutine = StartCoroutine(StartTimerCoroutine());
     }
 
@@ -45,7 +44,6 @@ public class TimeCountManager : Singleton<TimeCountManager>
     {
         while (!_timeOver)
         {
-            Debug.Log("still here");
             _currentTime -= Time.deltaTime;
 
             if (!_timerEnding && _currentTime <= 6)
@@ -76,7 +74,6 @@ public class TimeCountManager : Singleton<TimeCountManager>
         _audioManager.StopSfx2();
         _timerEnding = false;
         StopCoroutine(_timerCoroutine);
-        Debug.Log("coroutine stopped? ");
     }
 
     #region Set

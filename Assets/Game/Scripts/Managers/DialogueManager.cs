@@ -44,7 +44,6 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] GameObject PretoExtra;
     [SerializeField] GameObject BrancoExtra;
     private BlackScreenController _blackScreenController => BlackScreenController.I;
-    private AudioManager _audioManager => AudioManager.I;
     //private PausePanel _pausePanel => PausePanel.I;
     
     private new void Awake()
@@ -217,7 +216,7 @@ public class DialogueManager : Singleton<DialogueManager>
             PretoExtra.GetComponent<CanvasGroup>().DOFade(1, 0.6f).OnComplete(() =>
             {
                 continue2.SetActive(true);
-                _audioManager.PlaySfx("glassbreak");
+                AudioManager.I.PlaySfx("windowbreak");
             });
         }
         else if (numberDialogueManager == 3)

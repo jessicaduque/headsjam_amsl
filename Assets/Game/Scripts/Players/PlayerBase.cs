@@ -111,14 +111,10 @@ public abstract class PlayerBase : MonoBehaviour, IDamageable
         if (_health <= 0)
         {
             _isDead = true;
-            Death();
+            _animator.SetTrigger("Death");
+            AudioManager.I.PlaySfx("touchoil");
             LevelManager.I.GameOver();
         }
-    }
-
-    protected virtual void Death()
-    {
-        _animator.SetTrigger("Death");
     }
     
     #endregion
